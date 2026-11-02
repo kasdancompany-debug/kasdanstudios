@@ -16,3 +16,12 @@ export function isProductionDeployment(): boolean {
   if (process.env.VERCEL_ENV) return process.env.VERCEL_ENV === "production";
   return process.env.NODE_ENV === "production";
 }
+
+/**
+ * Whether search engines may index the site. Requires a production
+ * deployment *and* ALLOW_INDEXING=true, so the *.vercel.app address and any
+ * pre-launch production deploy stay out of search until you switch it on.
+ */
+export function isIndexable(): boolean {
+  return isProductionDeployment() && process.env.ALLOW_INDEXING === "true";
+}

@@ -263,7 +263,7 @@ All 3D elements are procedural today, built from real geometry (lathe profiles, 
 4. Deploy. Then under **Settings → Domains**, add your domain and follow the DNS instructions.
 5. After the first production deploy, submit `https://www.yourdomain.com/sitemap.xml` in Google Search Console.
 
-Preview deployments automatically serve a `robots.txt` that disallows crawling. Production allows crawling and points to the sitemap. If `NEXT_PUBLIC_SITE_URL` is missing, canonical URLs fall back to the Vercel production URL — set it before launch.
+**Search indexing is off until you launch.** Every deployment sends `noindex` and a `robots.txt` that blocks crawlers, unless it is the Production deployment **and** `ALLOW_INDEXING=true` is set. Add that variable (Production only) on launch day, after the real domain is connected. If `NEXT_PUBLIC_SITE_URL` is missing, canonical URLs fall back to the Vercel production URL — set it before launch.
 
 Security headers (`next.config.ts`): `X-Frame-Options: DENY`, CSP `frame-ancestors 'none'; object-src 'none'; base-uri 'self'; form-action 'self'`, `nosniff`, a strict referrer policy, a restrictive `Permissions-Policy`, COOP and HSTS. A full script-src CSP is deliberately omitted: it would require per-request nonces and turn every static page dynamic.
 
@@ -285,6 +285,7 @@ These are **launch blockers** — the site should not go live until they are don
 
 - [ ] Configure Resend (verified domain + env vars) and send a real test enquiry from the production domain.
 - [ ] Set `NEXT_PUBLIC_SITE_URL` to the production domain.
+- [ ] On launch day, set `ALLOW_INDEXING=true` (Production only) and redeploy so search engines can index the site.
 - [ ] Set `site.email` and real social links in `content/site.ts` (or consciously leave them hidden).
 - [ ] Confirm the exact naming of each award against the awarding bodies' records (`content/recognition.ts`). The organization names currently shown are NATAS Mid-South Chapter, IABC and D&AD.
 - [ ] Confirm year and recipient for Tokyo Design Awards, Muse Creative Awards, CBMAs, the Guinness World Record and the iHorror Award (`awardsRoll` in `content/recognition.ts`).

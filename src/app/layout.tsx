@@ -10,6 +10,7 @@ import { GLRoot } from "@/components/gl/GLRoot";
 import { Emulsion } from "@/components/gl/Emulsion";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationJsonLd } from "@/lib/seo";
+import { isIndexable } from "@/lib/content/preview";
 import "./globals.css";
 
 // Condensed poster capitals for display type
@@ -39,6 +40,8 @@ export const metadata: Metadata = {
   formatDetection: { telephone: false, email: false, address: false },
   openGraph: { siteName: site.name, locale: site.locale, type: "website" },
   twitter: { card: "summary_large_image" },
+  // Belt and braces with robots.txt: every page says noindex until launch.
+  ...(isIndexable() ? {} : { robots: { index: false, follow: false } }),
 };
 
 export const viewport: Viewport = {
