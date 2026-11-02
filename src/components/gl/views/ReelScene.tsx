@@ -352,6 +352,25 @@ function Rig({ spin, speed }: { spin: React.RefObject<number>; speed: React.RefO
   );
 }
 
+/** Project screens only exist for the last stretch, so they never show through behind the chapter titles. */
+function EndScreens({ projects }: { projects: ScreenProject[] }) {
+  const group = useRef<THREE.Group>(null);
+  useFrame(() => {
+    const g = group.current;
+    if (!g) return;
+    const k = THREE.MathUtils.smoothstep(studio.progress, 0.74, 0.86);
+    g.visible = k > 0.001;
+    g.position.y = (1 - k) * -3;
+  });
+  return (
+    <group ref={group} visible={false}>
+      {[0, 1, 2].map((slot) => (
+        <Screen key={slot} slot={slot} index={slot} project={projects[slot]} />
+      ))}
+    </group>
+  );
+}
+
 export function ReelScene({ tier, projects }: { tier: Tier; projects: ScreenProject[] }) {
   const spin = useRef(0);
   const speed = useRef(0.35);
@@ -385,9 +404,7 @@ export function ReelScene({ tier, projects }: { tier: Tier; projects: ScreenProj
       {strips.map((s, i) => (
         <FilmStrip key={s.seed} def={s} index={i} />
       ))}
-      {[0, 1, 2].map((slot) => (
-        <Screen key={slot} slot={slot} index={slot} project={projects[slot]} />
-      ))}
+      <EndScreens projects={projects} />
     </>
   );
 }

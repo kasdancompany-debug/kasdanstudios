@@ -65,7 +65,7 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
 
   return (
     <section ref={section} id={id} aria-labelledby="awards-title" className="group/reel relative">
-      <div ref={sticky} className="flex min-h-[100svh] flex-col justify-center overflow-hidden py-24">
+      <div ref={sticky} className="flex min-h-[100svh] flex-col justify-center overflow-hidden py-16 md:py-20">
         <div className="shell flex items-end justify-between gap-6">
           <h2 id="awards-title" className="type-headline text-cream">
             Awards <span className="italic text-bone">&amp; recognition</span>
@@ -80,13 +80,14 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
           tabIndex={0}
           aria-label="Awards and recognition"
           className={cn(
-            "mt-12 flex gap-5 px-5 will-change-transform md:mt-16 md:gap-6 md:px-10 xl:px-14",
+            "mt-10 flex gap-5 px-5 will-change-transform md:mt-12 md:gap-6 md:px-10 xl:px-14",
             // Native horizontal scroll until the pinned version takes over
             "overflow-x-auto group-data-[pinned]/reel:overflow-visible",
           )}
         >
           {entries.map((a, i) => (
-            <li key={a.name} className="w-[82vw] shrink-0 sm:w-[60vw] lg:w-[40vw] xl:w-[34vw]">
+            // Sized from the viewport height so a whole frame always fits on screen
+            <li key={a.name} className="w-[min(80vw,42svh)] shrink-0">
               <Frame entry={a} index={i} />
             </li>
           ))}
@@ -98,27 +99,22 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
 
 function Frame({ entry, index }: { entry: ReelEntry; index: number }) {
   return (
-    <article className="relative bg-[#0f0d0b] px-3 py-9 md:px-4 md:py-11">
+    // Container queries: type inside the frame scales with the frame, never the viewport.
+    <article className="@container relative bg-[#0f0d0b] px-3 py-9 md:px-4 md:py-10">
       {/* Sprocket rows */}
       <span aria-hidden className="sprockets absolute inset-x-3 top-3 h-4" />
       <span aria-hidden className="sprockets absolute inset-x-3 bottom-3 h-4" />
 
-      <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-coal p-6 sm:aspect-[5/6] md:p-8">
+      <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-coal p-[7cqw]">
         <div aria-hidden className="absolute inset-0" style={{ background: LEAKS[index % LEAKS.length] }} />
         <div className="relative flex items-start justify-between gap-4">
           <span className="type-label text-gold">KS·AW {String(index + 1).padStart(2, "0")}</span>
-          <span
-            className={cn(
-              "font-display text-[clamp(3.5rem,7vw,6.5rem)] leading-[0.8]",
-              entry.year ? "text-cream" : "type-outline",
-            )}
-          >
-            {entry.year ?? "——"}
-          </span>
+          {/* No year until it's confirmed — nothing is shown rather than a placeholder */}
+          {entry.year && <span className="font-display text-[24cqw] leading-[0.8] text-cream">{entry.year}</span>}
         </div>
 
         <div className="relative">
-          <h3 className="type-headline text-cream">{entry.name}</h3>
+          <h3 className="font-display text-[13cqw] leading-[0.88] text-cream">{entry.name}</h3>
           {entry.organization && <p className="type-label mt-4 text-bone">{entry.organization}</p>}
           {entry.recipient && <p className="mt-3 text-sm text-mute">Awarded to {entry.recipient}</p>}
         </div>

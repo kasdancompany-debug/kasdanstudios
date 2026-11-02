@@ -64,15 +64,16 @@ function Stage({ projects, tier, children }: { projects: ScreenProject[]; tier: 
       el.querySelectorAll<HTMLElement>("[data-chapter]").forEach((node, i) => {
         const at = CHAPTERS[i].at;
         const lines = node.querySelectorAll("[data-line]");
-        tl.fromTo(node, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.02 }, at - 0.07)
+        // Quick in, long readable hold, quick out.
+        tl.fromTo(node, { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.02 }, at - 0.08)
           .fromTo(
             lines,
-            { yPercent: 105, rotate: 2 },
-            { yPercent: 0, rotate: 0, duration: 0.07, stagger: 0.015, ease: "power3.out" },
-            at - 0.07,
+            { yPercent: 130, rotate: 2 },
+            { yPercent: 0, rotate: 0, duration: 0.04, stagger: 0.01, ease: "power3.out" },
+            at - 0.08,
           )
-          .to(lines, { yPercent: -105, duration: 0.06, stagger: 0.01, ease: "power2.in" }, at + 0.09)
-          .set(node, { autoAlpha: 0 }, at + 0.16);
+          .to(lines, { yPercent: -130, duration: 0.035, stagger: 0.008, ease: "power2.in" }, at + 0.1)
+          .set(node, { autoAlpha: 0 }, at + 0.15);
       });
 
       tl.fromTo(
@@ -113,21 +114,21 @@ function Stage({ projects, tier, children }: { projects: ScreenProject[]; tier: 
           <div
             key={c.kicker}
             data-chapter
-            className="invisible absolute inset-0 flex flex-col justify-center opacity-0"
+            className="invisible absolute inset-0 flex flex-col justify-center bg-[radial-gradient(75%_65%_at_22%_50%,rgba(11,10,9,0.78),rgba(11,10,9,0.35)_55%,transparent_80%)] opacity-0"
           >
             <div className="shell">
-              <p className="type-label overflow-hidden text-gold">
+              <p className="type-label overflow-hidden py-1 text-gold">
                 <span data-line className="block">
                   {c.kicker}
                 </span>
               </p>
               <p className="type-display mt-6 max-w-[18ch] text-cream">
-                <span className="block overflow-hidden pb-[0.06em]">
+                <span className="-my-[0.15em] block overflow-hidden py-[0.15em]">
                   <span data-line className="block">
                     {c.a}
                   </span>
                 </span>
-                <span className="block overflow-hidden pb-[0.1em]">
+                <span className="-mt-[0.15em] -mb-[0.25em] block overflow-hidden pt-[0.15em] pb-[0.25em]">
                   <span data-line className="block italic text-bone">
                     {c.b}
                   </span>
