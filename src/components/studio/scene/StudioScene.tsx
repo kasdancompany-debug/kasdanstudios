@@ -50,7 +50,7 @@ export type ScreenProject = {
 
 const POS = new THREE.CatmullRomCurve3([
   new THREE.Vector3(0, 0, 8),
-  new THREE.Vector3(0.9, 0.35, 1.5),
+  new THREE.Vector3(-0.4, 0.2, 3.2),
   new THREE.Vector3(-0.8, -0.15, -6),
   new THREE.Vector3(0.5, 0.25, -11.5),
   new THREE.Vector3(0, 0.15, -16.5),

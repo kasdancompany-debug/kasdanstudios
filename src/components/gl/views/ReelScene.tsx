@@ -95,7 +95,8 @@ function Reel({ spin }: { spin: React.RefObject<number> }) {
   );
 
   useFrame(() => {
-    if (group.current) group.current.rotation.z = -spin.current;
+    // Counter-clockwise: the film pays out downward off the left side of the pack.
+    if (group.current) group.current.rotation.z = spin.current;
   });
 
   return (
@@ -204,21 +205,26 @@ function Ribbon({
   const { geometry, map } = useMemo(() => {
     const L = (x: number, y: number, z = 0) => new THREE.Vector3(x, y, z).applyMatrix4(reelMatrix);
     const axis = new THREE.Vector3(0, 0, 1).transformDirection(reelMatrix);
-    // Leaves the bottom of the pack tangentially (the unwinding direction),
-    // runs a short straight, then sweeps across the frame and dives into
-    // depth along the path the camera will follow.
-    const p0 = L(0, -R_PACK);
-    const p1 = L(-0.9, -R_PACK - 0.02);
-    // One clean sweep: low and left across the frame, then rising away into depth.
+    // Pays out from the left side of the pack and drops straight down, clear
+    // of the flanges (rim radius 2.6) — like film hanging off a spool — then
+    // sweeps low across the frame and rises away into depth along the
+    // camera's path.
+    const p0 = L(-R_PACK, 0.2);
+    const p1 = L(-R_PACK - 0.02, -2.4);
+    const p2 = L(-R_PACK - 0.5, -3.3, 0.4);
     const curve = new THREE.CatmullRomCurve3(
       [
         p0,
         p1,
-        new THREE.Vector3(p1.x - 1.7, p1.y - 0.3, p1.z + 1.1),
-        new THREE.Vector3(-1.6, -1.2, 0.9),
-        new THREE.Vector3(-3.4, 0.2, -2.6),
-        new THREE.Vector3(1.2, -0.5, -6.5),
-        new THREE.Vector3(-1.1, 0.3, -11),
+        p2,
+        new THREE.Vector3(p2.x - 2.2, p2.y + 0.1, p2.z + 1.2),
+        new THREE.Vector3(-2.2, -1.9, 0.6),
+        new THREE.Vector3(-3.6, -0.2, -2.8),
+        // Recedes up and out to the left, well clear of the reel, so it never
+        // reads as running back into it; fog takes it before it nears centre.
+        new THREE.Vector3(-4.6, 1.8, -6),
+        new THREE.Vector3(-4.2, 1.4, -10),
+        new THREE.Vector3(-2.2, 0.4, -13.5),
         new THREE.Vector3(0.8, -0.7, -16),
         new THREE.Vector3(0, -1.6, -24),
       ],
