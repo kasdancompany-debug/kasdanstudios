@@ -225,8 +225,11 @@ function Ribbon({
         new THREE.Vector3(-4.6, 1.8, -6),
         new THREE.Vector3(-4.2, 1.4, -10),
         new THREE.Vector3(-2.2, 0.4, -13.5),
-        new THREE.Vector3(0.8, -0.7, -16),
-        new THREE.Vector3(0, -1.6, -24),
+        // Tail: curls down under the camera's final position and falls away into
+        // the dark below the screens, so the cut end of the strip is never in shot.
+        new THREE.Vector3(-1.4, -2.8, -18),
+        new THREE.Vector3(0.6, -5.5, -24),
+        new THREE.Vector3(2.4, -12, -32),
       ],
       false,
       "centripetal",
