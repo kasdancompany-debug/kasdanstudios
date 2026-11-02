@@ -1,0 +1,640 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Design tokens                                                       */
+/* ------------------------------------------------------------------ */
+
+@theme {
+  /* Darkroom blacks — never pure #000 */
+  --color-ink: #0b0a09;
+  --color-coal: #12100e;
+  --color-char: #1a1714;
+  --color-line: #2c2723;
+  --color-line-strong: #433b34;
+
+  /* Print-paper whites */
+  --color-cream: #f2ebdf;
+  --color-bone: #d6cbb9;
+  --color-mute: #a09685; /* 6.8:1 on ink — safe for body copy */
+  --color-dim: #776d60; /* decorative / large text only */
+
+  /* Safelight red — the one loud colour. "gold" kept as the token name. */
+  --color-gold: #ff5a2c;
+  --color-gold-soft: #b8442a;
+  /* Tungsten light leak */
+  --color-amber: #ffb061;
+
+  --color-danger: #ff9a80;
+
+  --font-display: var(--font-shoulders), "Arial Narrow", sans-serif;
+  --font-accent: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-martian), ui-monospace, monospace;
+
+  --ease-cinema: cubic-bezier(0.19, 0.72, 0.12, 1);
+  --ease-inout: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --breakpoint-3xl: 1800px;
+}
+
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+
+@layer base {
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: var(--color-cream);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  ::selection {
+    background: var(--color-gold);
+    color: var(--color-ink);
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--color-gold);
+    outline-offset: 4px;
+    border-radius: 1px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  img,
+  video {
+    max-width: 100%;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Type scale                                                          */
+/* Condensed poster capitals (Big Shoulders) cut with Fraunces italics. */
+/* ------------------------------------------------------------------ */
+
+@utility type-mega {
+  font-family: var(--font-display);
+  font-weight: 850;
+  font-size: clamp(4.25rem, 16.5vw, 19rem);
+  line-height: 0.8;
+  letter-spacing: -0.012em;
+  text-transform: uppercase;
+}
+
+@utility type-display {
+  font-family: var(--font-display);
+  font-weight: 820;
+  font-size: clamp(3.4rem, 10vw, 10.5rem);
+  line-height: 0.84;
+  letter-spacing: -0.008em;
+  text-transform: uppercase;
+}
+
+@utility type-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.6rem, 6vw, 6.2rem);
+  line-height: 0.88;
+  letter-spacing: -0.004em;
+  text-transform: uppercase;
+}
+
+@utility type-title {
+  font-family: var(--font-display);
+  font-weight: 760;
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: 0.95;
+  letter-spacing: 0.004em;
+  text-transform: uppercase;
+}
+
+@utility type-lede {
+  font-size: clamp(1.2rem, 1.55vw, 1.5rem);
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* Instrument / camera-HUD metadata */
+@utility type-label {
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
+  line-height: 1.45;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@utility type-nav {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Italic accents inside capitals switch to Fraunces, set soft and wonky. */
+.type-mega .italic,
+.type-display .italic,
+.type-headline .italic,
+.type-title .italic {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 300;
+  text-transform: none;
+  letter-spacing: -0.045em;
+  font-variation-settings:
+    "SOFT" 100,
+    "WONK" 1,
+    "opsz" 144;
+}
+
+/* Bare font-display usages read as poster caps too */
+.font-display {
+  font-weight: 780;
+  text-transform: uppercase;
+  letter-spacing: 0.004em;
+}
+
+/* Outline display type, for marquees */
+.type-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242, 235, 223, 0.42);
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout                                                              */
+/* ------------------------------------------------------------------ */
+
+@utility shell {
+  width: 100%;
+  max-width: 1680px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+  @variant md {
+    padding-inline: 2.5rem;
+  }
+  @variant xl {
+    padding-inline: 3.5rem;
+  }
+}
+
+@utility hairline {
+  height: 1px;
+  background: var(--color-line);
+  border: 0;
+}
+
+/* ------------------------------------------------------------------ */
+/* Film grain — static, sitewide, cheap                                */
+/* ------------------------------------------------------------------ */
+
+.grain {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  opacity: 0.055;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.9 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  mix-blend-mode: overlay;
+}
+
+/* When the WebGL layer runs its own grain shader, retire the CSS grain */
+html[data-gl="on"] .grain {
+  opacity: 0.025;
+}
+
+/* ------------------------------------------------------------------ */
+/* Reveal system — progressive enhancement                            */
+/* Content is fully visible without JS. The `js` class is added by an  */
+/* inline script, and RevealObserver toggles `is-in`.                 */
+/* ------------------------------------------------------------------ */
+
+.js [data-reveal] {
+  transition:
+    opacity 1.1s var(--ease-cinema),
+    transform 1.1s var(--ease-cinema),
+    clip-path 1.3s var(--ease-cinema);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.js [data-reveal="fade"]:not(.is-in) {
+  opacity: 0;
+  transform: translate3d(0, 1.75rem, 0);
+}
+
+.js [data-reveal="mask"]:not(.is-in) {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 0.35em, 0);
+}
+
+.js [data-reveal="mask"].is-in {
+  clip-path: inset(-0.2em -0.2em -0.25em -0.2em);
+}
+
+.js [data-reveal="frame"]:not(.is-in) {
+  clip-path: inset(12% 8% 12% 8%);
+  opacity: 0.001;
+}
+
+.js [data-reveal="frame"].is-in {
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-reveal] {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Media                                                               */
+/* ------------------------------------------------------------------ */
+
+.media-zoom img,
+.media-zoom video {
+  transition:
+    transform 1.6s var(--ease-cinema),
+    filter 1.2s var(--ease-cinema);
+}
+
+@media (hover: hover) {
+  .group:hover .media-zoom img,
+  .group:hover .media-zoom video {
+    transform: scale(1.035);
+  }
+}
+
+/* Letterbox bars that close slightly on hover — a projector gesture */
+.letterbox::before,
+.letterbox::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 0;
+  background: var(--color-ink);
+  z-index: 2;
+  transition: height 0.9s var(--ease-cinema);
+  pointer-events: none;
+}
+.letterbox::before {
+  top: 0;
+}
+.letterbox::after {
+  bottom: 0;
+}
+@media (hover: hover) {
+  .group:hover .letterbox::before,
+  .group:hover .letterbox::after {
+    height: 6%;
+  }
+}
+
+/* Animated underline for text links */
+.link-line {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.6s var(--ease-cinema);
+}
+.link-line:hover,
+.link-line:focus-visible,
+.group:hover .link-line {
+  background-size: 100% 1px;
+}
+
+/* Scroll cue */
+@keyframes cue {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  45% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  55% {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
+  100% {
+    transform: scaleY(0);
+    transform-origin: bottom;
+  }
+}
+.cue-line {
+  animation: cue 2.6s var(--ease-inout) infinite;
+}
+
+/* Mobile menu dialog */
+dialog.menu-dialog {
+  max-width: none;
+  max-height: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--color-ink);
+  color: var(--color-cream);
+}
+dialog.menu-dialog::backdrop {
+  background: transparent;
+}
+dialog.menu-dialog[open] {
+  animation: menu-in 0.55s var(--ease-cinema);
+}
+@keyframes menu-in {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Intro cover — painted before hydration only when the intro will run */
+.intro-cover {
+  display: none;
+}
+html[data-intro="pending"] .intro-cover {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--color-ink);
+}
+
+/* In immersive mode the hero's static media gives way to the canvas,
+   and the body lets the fixed canvas (z-index < 0) show through. */
+html[data-gl="on"] [data-hero-media] {
+  opacity: 0;
+}
+
+/* Prose (journal articles) */
+.prose-editorial {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--color-bone);
+}
+.prose-editorial > * + * {
+  margin-top: 1.4em;
+}
+.prose-editorial h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 3vw, 2.4rem);
+  line-height: 1.1;
+  color: var(--color-cream);
+  margin-top: 2.2em;
+  letter-spacing: -0.015em;
+}
+.prose-editorial h3 {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--color-cream);
+  margin-top: 2em;
+}
+.prose-editorial a {
+  color: var(--color-cream);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gold-soft);
+  text-underline-offset: 0.2em;
+}
+.prose-editorial a:hover {
+  text-decoration-color: var(--color-gold);
+}
+.prose-editorial ul,
+.prose-editorial ol {
+  padding-left: 1.25em;
+}
+.prose-editorial ul {
+  list-style: disc;
+}
+.prose-editorial ol {
+  list-style: decimal;
+}
+.prose-editorial li + li {
+  margin-top: 0.5em;
+}
+.prose-editorial li::marker {
+  color: var(--color-gold-soft);
+}
+.prose-editorial blockquote {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  line-height: 1.25;
+  color: var(--color-cream);
+  border-left: 1px solid var(--color-gold-soft);
+  padding-left: 1.25rem;
+}
+.prose-editorial strong {
+  color: var(--color-cream);
+  font-weight: 500;
+}
+.prose-editorial hr {
+  border: 0;
+  height: 1px;
+  background: var(--color-line);
+}
+.prose-editorial img {
+  width: 100%;
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Academy leader countdown (intro cover)                             */
+/* ------------------------------------------------------------------ */
+
+.leader {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--color-bone);
+  animation: leader-out 0.6s 2.5s var(--ease-inout) forwards;
+}
+.leader > * {
+  grid-area: 1 / 1;
+}
+.leader-cross {
+  width: 100vw;
+  height: 100vh;
+  background:
+    linear-gradient(var(--color-line-strong), var(--color-line-strong)) center / 1px 100% no-repeat,
+    linear-gradient(var(--color-line-strong), var(--color-line-strong)) center / 100% 1px no-repeat;
+}
+.leader-ring {
+  width: min(62vmin, 520px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-bone);
+}
+.leader-ring--inner {
+  width: min(52vmin, 440px);
+  border-width: 1px;
+  border-color: var(--color-line-strong);
+}
+.leader-sweep {
+  width: min(52vmin, 440px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(242, 235, 223, 0.16) 0deg,
+    rgba(242, 235, 223, 0.16) var(--sweep, 0deg),
+    transparent var(--sweep, 0deg)
+  );
+  animation: leader-sweep 0.8s linear 3;
+}
+@property --sweep {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+@keyframes leader-sweep {
+  to {
+    --sweep: 360deg;
+  }
+}
+.leader-num {
+  display: grid;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: min(38vmin, 320px);
+  line-height: 1;
+}
+.leader-num > span {
+  grid-area: 1 / 1;
+  text-align: center;
+  opacity: 0;
+  animation: leader-num 0.8s steps(1) forwards;
+}
+.leader-num > span:nth-child(2) {
+  animation-delay: 0.8s;
+}
+.leader-num > span:nth-child(3) {
+  animation-delay: 1.6s;
+}
+@keyframes leader-num {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes leader-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Camera viewfinder HUD                                               */
+/* ------------------------------------------------------------------ */
+
+.vf-corner {
+  position: fixed;
+  width: 22px;
+  height: 22px;
+  border-color: rgba(242, 235, 223, 0.35);
+  border-style: solid;
+  border-width: 0;
+  pointer-events: none;
+  z-index: 55;
+}
+@keyframes rec {
+  0%,
+  55% {
+    opacity: 1;
+  }
+  56%,
+  100% {
+    opacity: 0.15;
+  }
+}
+.rec-dot {
+  animation: rec 1.2s steps(1) infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* Marquee                                                             */
+/* ------------------------------------------------------------------ */
+
+@keyframes marquee {
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 38s linear infinite;
+}
+
+/* ------------------------------------------------------------------ */
+/* WebGL takeover: once a GL element has drawn, its DOM twin steps     */
+/* back (it stays in the DOM for search engines and assistive tech).  */
+/* ------------------------------------------------------------------ */
+
+html[data-gl="on"] body {
+  background: transparent;
+}
+html[data-gl="on"] [data-gl-ready] {
+  color: transparent !important;
+}
+html[data-gl="on"] [data-gl-ready] * {
+  color: transparent !important;
+  -webkit-text-stroke: 0 !important;
+}
+html[data-gl="on"] [data-gl-media-ready] > :not([data-gl-view]) {
+  opacity: 0;
+}
+
+/* 35 mm perforations */
+.sprockets {
+  background-image: repeating-linear-gradient(
+    90deg,
+    transparent 0 9px,
+    rgba(242, 235, 223, 0.78) 9px 21px,
+    transparent 21px 30px
+  );
+  border-radius: 2px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+}

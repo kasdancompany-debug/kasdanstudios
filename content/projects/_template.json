@@ -1,0 +1,62 @@
+{
+  "slug": "project-slug-matching-file-name",
+  "status": "draft",
+  "order": 50,
+  "featured": false,
+  "title": "Project Title",
+  "client": "Client Name (only with permission)",
+  "year": 2026,
+  "categories": ["commercials"],
+  "disciplines": ["Direction", "Production", "Edit", "Colour"],
+  "summary": "One sentence for project cards.",
+  "overview": "Two to four sentences that open the case study.",
+  "cover": {
+    "type": "image",
+    "src": "/work/project-slug-matching-file-name/cover.jpg",
+    "alt": "Describe what is in the frame",
+    "width": 2400,
+    "height": 1350
+  },
+  "heroVideo": {
+    "type": "video",
+    "src": "/work/project-slug-matching-file-name/hero-loop.mp4",
+    "poster": "/work/project-slug-matching-file-name/cover.jpg",
+    "width": 1920,
+    "height": 1080,
+    "title": "Silent hero loop from the project"
+  },
+  "film": {
+    "type": "vimeo",
+    "id": "000000000",
+    "title": "Project Title — final film",
+    "poster": "/work/project-slug-matching-file-name/cover.jpg",
+    "aspect": "16:9"
+  },
+  "challenge": { "heading": "The challenge", "body": ["Paragraph one.", "Paragraph two."] },
+  "idea": { "heading": "The idea", "body": ["Paragraph."] },
+  "execution": { "heading": "The execution", "body": ["Paragraph."] },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/project-slug-matching-file-name/still-01.jpg",
+      "alt": "Describe the still",
+      "width": 2400,
+      "height": 1350,
+      "caption": "Optional caption"
+    },
+    {
+      "type": "youtube",
+      "id": "VIDEO_ID",
+      "title": "Behind the scenes",
+      "aspect": "16:9"
+    }
+  ],
+  "results": [{ "value": "120k", "label": "organic views in 30 days", "source": "Instagram Insights, Mar 2026" }],
+  "awards": [{ "year": 2026, "name": "Award Name", "organization": "Awarding Body", "recipient": "Who received it" }],
+  "credits": [
+    { "role": "Director", "name": "Name" },
+    { "role": "Director of Photography", "name": "Name" }
+  ],
+  "seo": { "title": "Optional custom title", "description": "Optional, under 170 characters." },
+  "notes": "Internal notes. Never rendered."
+}
