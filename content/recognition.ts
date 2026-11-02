@@ -50,22 +50,34 @@ export const founderAwards: Award[] = [
  * confirmed; the site renders whatever is present and nothing more.
  */
 export type RollEntry = {
-  /** null = year not yet confirmed; the reel shows "—". */
+  /** null = year not yet confirmed; no year is shown. */
   year: number | null;
   name: string;
   organization: string | null;
-  /** null = recipient not yet confirmed; no attribution line is shown. */
+  /** Kept for the record; not shown in the reel. null = not yet confirmed. */
   recipient: string | null;
+  /** Which hand-drawn trophy illustrates the frame (src/components/awards/TrophySketch.tsx). */
+  sketch: "emmy" | "quill" | "pencil" | "ribbon" | "muse" | "bottle" | "certificate" | "hooded" | "pitch";
 };
 
 export const awardsRoll: RollEntry[] = [
-  ...founderAwards,
+  { ...founderAwards[0], sketch: "emmy" },
+  { ...founderAwards[1], sketch: "quill" },
+  { ...founderAwards[2], sketch: "pencil" },
   // TODO(owner): confirm recipient (Dan O'Brien / Kasdan Co. / studio) and year for each entry below.
-  { year: null, name: "Tokyo Design Awards", organization: null, recipient: null },
-  { year: null, name: "Muse Creative Awards", organization: null, recipient: null },
-  { year: null, name: "Craft Beverage Marketing Awards", organization: "CBMAs", recipient: null },
-  { year: 2024, name: "Guinness World Record", organization: "Guinness World Records", recipient: null },
-  { year: 2017, name: "iHorror Award", organization: null, recipient: null },
+  { year: null, name: "Tokyo Design Awards", organization: null, recipient: null, sketch: "ribbon" },
+  { year: null, name: "Muse Creative Awards", organization: null, recipient: null, sketch: "muse" },
+  { year: null, name: "Craft Beverage Marketing Awards", organization: "CBMAs", recipient: null, sketch: "bottle" },
+  {
+    year: 2024,
+    name: "Guinness World Record",
+    organization: "Guinness World Records",
+    recipient: null,
+    sketch: "certificate",
+  },
+  { year: 2017, name: "iHorror Award", organization: null, recipient: null, sketch: "hooded" },
+  // TODO(owner): add the competition name and year once confirmed.
+  { year: null, name: "Business Pitch Competition", organization: null, recipient: "Kasdan Co.", sketch: "pitch" },
 ];
 
 export type Credential = {

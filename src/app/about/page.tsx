@@ -196,18 +196,7 @@ export default function AboutPage() {
 
       {/* 5. Recognition */}
       <div className="border-t border-line pt-16">
-        <AwardsReel
-          id="awards"
-          entries={[
-            ...awardsRoll,
-            {
-              year: null,
-              name: businessRecognition.label.replace(" recognition", ""),
-              organization: businessRecognition.detail,
-              recipient: businessRecognition.recipient,
-            },
-          ]}
-        />
+        <AwardsReel id="awards" entries={awardsRoll} />
       </div>
 
       {/* 6. Philosophy */}

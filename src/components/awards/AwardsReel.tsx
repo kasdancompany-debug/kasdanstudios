@@ -4,14 +4,14 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/cn";
+import { TrophySketch, type TrophyKind } from "./TrophySketch";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export type ReelEntry = {
   year: number | null;
   name: string;
-  organization: string | null;
-  recipient: string | null;
+  sketch: TrophyKind;
 };
 
 // Each frame gets its own exposure: tungsten, safelight, cyan fringe, cream.
@@ -105,27 +105,20 @@ function Frame({ entry, index }: { entry: ReelEntry; index: number }) {
       <span aria-hidden className="sprockets absolute inset-x-3 top-3 h-4" />
       <span aria-hidden className="sprockets absolute inset-x-3 bottom-3 h-4" />
 
-      <div className="relative flex aspect-[4/5] flex-col justify-between overflow-hidden bg-coal p-[7cqw]">
+      <div className="relative flex aspect-[4/5] flex-col overflow-hidden bg-coal p-[7cqw]">
         <div aria-hidden className="absolute inset-0" style={{ background: LEAKS[index % LEAKS.length] }} />
-        <div className="relative flex items-start justify-between gap-4">
-          <span className="type-label text-gold">KS·AW {String(index + 1).padStart(2, "0")}</span>
-          {/* No year until it's confirmed — nothing is shown rather than a placeholder */}
-          {entry.year && <span className="font-display text-[24cqw] leading-[0.8] text-cream">{entry.year}</span>}
+
+        {/* No year until it's confirmed — nothing is shown rather than a placeholder */}
+        {entry.year && (
+          <span className="relative self-end font-display text-[15cqw] leading-[0.8] text-cream">{entry.year}</span>
+        )}
+
+        <div data-reveal="draw" className="relative min-h-0 flex-1 py-[3cqw]">
+          <TrophySketch kind={entry.sketch} className="h-full w-full text-cream" />
         </div>
 
-        <div className="relative">
-          <h3 className="font-display text-[13cqw] leading-[0.88] text-cream">{entry.name}</h3>
-          {entry.organization && <p className="type-label mt-4 text-bone">{entry.organization}</p>}
-          {entry.recipient && <p className="mt-3 text-sm text-mute">Awarded to {entry.recipient}</p>}
-        </div>
+        <h3 className="relative font-display text-[11cqw] leading-[0.9] text-cream">{entry.name}</h3>
       </div>
-
-      <span
-        aria-hidden
-        className="type-label absolute bottom-[1.15rem] left-1/2 -translate-x-1/2 text-[0.5rem] text-dim"
-      >
-        SAFETY FILM · {String(index + 1).padStart(3, "0")}A
-      </span>
     </article>
   );
 }

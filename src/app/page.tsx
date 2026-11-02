@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { services } from "@content/services";
-import { awardsRoll, businessRecognition, kasdanCoFacts } from "@content/recognition";
+import { awardsRoll, kasdanCoFacts } from "@content/recognition";
 import { getVisibleProjects } from "@/lib/content/projects";
 import { Hero } from "@/components/home/Hero";
 import { ImmersiveLayer } from "@/components/studio/ImmersiveLayer";
@@ -189,18 +189,7 @@ export default function HomePage() {
       {/* Awards & recognition                                         */}
       {/* ------------------------------------------------------------ */}
       <div className="pt-28 md:pt-40">
-        <AwardsReel
-          id="awards"
-          entries={[
-            ...awardsRoll,
-            {
-              year: null,
-              name: businessRecognition.label.replace(" recognition", ""),
-              organization: businessRecognition.detail,
-              recipient: businessRecognition.recipient,
-            },
-          ]}
-        />
+        <AwardsReel id="awards" entries={awardsRoll} />
       </div>
 
       {/* ------------------------------------------------------------ */}
