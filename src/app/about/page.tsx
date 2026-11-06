@@ -167,7 +167,7 @@ export default function AboutPage() {
               </Reveal>
               <Reveal as="p" delay={80}>
                 The café&apos;s short-form content has passed one million cumulative views on TikTok, and the business
-                has been recognized in a business pitch competition.
+                was recognized in the 2025 Bridges to Better Business pitch competition.
               </Reveal>
             </div>
             <dl className="mt-14 grid grid-cols-1 gap-10 border-t border-line pt-10 sm:grid-cols-2">

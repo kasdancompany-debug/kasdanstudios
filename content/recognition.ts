@@ -64,10 +64,11 @@ export const awardsRoll: RollEntry[] = [
   { ...founderAwards[0], sketch: "emmy" },
   { ...founderAwards[1], sketch: "quill" },
   { ...founderAwards[2], sketch: "pencil" },
-  // TODO(owner): confirm recipient (Dan O'Brien / Kasdan Co. / studio) and year for each entry below.
-  { year: null, name: "Tokyo Design Awards", organization: null, recipient: null, sketch: "ribbon" },
-  { year: null, name: "Muse Creative Awards", organization: null, recipient: null, sketch: "muse" },
-  { year: null, name: "Craft Beverage Marketing Awards", organization: "CBMAs", recipient: null, sketch: "bottle" },
+  // Years confirmed by the owner (Nov 2026).
+  // TODO(owner): confirm recipient (Dan O'Brien / Kasdan Co. / studio) for each entry below.
+  { year: 2026, name: "Tokyo Design Awards", organization: null, recipient: null, sketch: "ribbon" },
+  { year: 2024, name: "Muse Creative Awards", organization: null, recipient: null, sketch: "muse" },
+  { year: 2025, name: "Craft Beverage Marketing Awards", organization: "CBMAs", recipient: null, sketch: "bottle" },
   {
     year: 2024,
     name: "Guinness World Record",
@@ -76,8 +77,13 @@ export const awardsRoll: RollEntry[] = [
     sketch: "certificate",
   },
   { year: 2017, name: "iHorror Award", organization: null, recipient: null, sketch: "hooded" },
-  // TODO(owner): add the competition name and year once confirmed.
-  { year: null, name: "Business Pitch Competition", organization: null, recipient: "Kasdan Co.", sketch: "pitch" },
+  {
+    year: 2025,
+    name: "Bridges to Better Business Pitch Competition",
+    organization: null,
+    recipient: "Kasdan Co.",
+    sketch: "pitch",
+  },
 ];
 
 export type Credential = {
@@ -101,12 +107,11 @@ export const founderExperience: string[] = [
 
 /**
  * Recognition earned by Kasdan Co., the café business.
- * TODO(owner): add the competition name, organizer and year once confirmed.
  */
 export const businessRecognition = {
-  label: "Business pitch competition recognition",
+  label: "Bridges to Better Business Pitch Competition",
   recipient: "Kasdan Co.",
-  detail: null as string | null,
+  detail: "2025" as string | null,
 };
 
 export const kasdanCoFacts = {
