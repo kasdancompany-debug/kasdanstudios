@@ -13,15 +13,25 @@ import { organizationJsonLd } from "@/lib/seo";
 import { isIndexable } from "@/lib/content/preview";
 import "./globals.css";
 
-// Condensed poster capitals for display type
-const display = Big_Shoulders({ variable: "--font-shoulders", subsets: ["latin"], axes: ["opsz"], display: "swap" });
+// Condensed poster capitals for display type. "block", not "swap": Next can't
+// build a metric-matched fallback for Big Shoulders, so swapping would flash
+// every headline in a wide system face and then reflow it. Both display faces
+// are preloaded, so the block period is short.
+const display = Big_Shoulders({
+  variable: "--font-shoulders",
+  subsets: ["latin"],
+  axes: ["opsz"],
+  display: "block",
+  adjustFontFallback: false,
+  fallback: ["Impact", "Haettenschweiler", "Arial Narrow", "sans-serif"],
+});
 // Soft, wonky italics that cut through the capitals
 const accent = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
   style: ["italic"],
   axes: ["SOFT", "WONK", "opsz"],
-  display: "swap",
+  display: "block",
 });
 const sans = Schibsted_Grotesk({ variable: "--font-schibsted", subsets: ["latin"], display: "swap" });
 // Camera-HUD readouts
@@ -52,13 +62,18 @@ export const viewport: Viewport = {
 /**
  * Runs before first paint:
  * - flags JS so reveal animations can hide content that will animate in
+ * - marks WebGL as pending when it is likely to run, so headings that WebGL
+ *   redraws stay hidden until their GL copy dissolves in (no visible →
+ *   blank → visible flash). GLRoot confirms or clears it; a failsafe clears it.
  * - marks the homepage intro as pending (first visit per session, motion
  *   allowed, no data saver). The cover shows the intro's title and a
  *   working Skip immediately; the WebGL aperture fades in behind it once
  *   loaded. A failsafe removes the cover after 8s if it never does.
  */
 const bootScript = `(function(){var d=document.documentElement;d.classList.add('js');try{
-var m=window.matchMedia;if(location.pathname==='/'&&!sessionStorage.getItem('ks-intro-seen')&&localStorage.getItem('ks-immersive')!=='off'&&!m('(prefers-reduced-motion: reduce)').matches&&!(navigator.connection&&navigator.connection.saveData)){d.setAttribute('data-intro','pending');var skip=function(){try{sessionStorage.setItem('ks-intro-seen','1')}catch(e){}if(d.getAttribute('data-intro')==='pending')d.removeAttribute('data-intro')};
+var m=window.matchMedia;var off=false;try{off=localStorage.getItem('ks-immersive')==='off'}catch(e){}
+if(window.WebGLRenderingContext&&!off&&!m('(prefers-reduced-motion: reduce)').matches&&!(navigator.connection&&navigator.connection.saveData)){d.setAttribute('data-gl','pending');var gf=function(){if(d.getAttribute('data-gl')!=='pending')return;if(d.getAttribute('data-intro')){setTimeout(gf,2000);return}d.removeAttribute('data-gl')};setTimeout(gf,12000)}
+if(location.pathname==='/'&&!sessionStorage.getItem('ks-intro-seen')&&localStorage.getItem('ks-immersive')!=='off'&&!m('(prefers-reduced-motion: reduce)').matches&&!(navigator.connection&&navigator.connection.saveData)){d.setAttribute('data-intro','pending');var skip=function(){try{sessionStorage.setItem('ks-intro-seen','1')}catch(e){}if(d.getAttribute('data-intro')==='pending')d.removeAttribute('data-intro')};
 document.addEventListener('click',function(e){if(e.target&&e.target.closest&&e.target.closest('[data-intro-skip]'))skip()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')skip()});
 setTimeout(function(){if(d.getAttribute('data-intro')==='pending')d.removeAttribute('data-intro')},8000)}}catch(e){}})();`;

@@ -238,6 +238,14 @@ Two R3F gotchas the code works around, worth knowing before you add views:
 1. **Use `frame.time` / `frame.delta`** from `studio/store.ts` inside views, not `state.clock`. View portals get their own clock that never ticks.
 2. **Build `ShaderMaterial`s yourself** (`new THREE.ShaderMaterial({ uniforms })`) and mutate `material.uniforms`. Passing `uniforms={…}` as a JSX prop gives the material a copy, so per-frame updates never reach the GPU.
 
+**Motion rules** (break these and you get flicker, swimming text or ugly resting frames):
+
+- **One clock.** Lenis, ScrollTrigger and the WebGL canvas all advance inside `gsap.ticker`, in a fixed order (`src/lib/motion/ticker.ts`): scroll first, then render. The canvas runs `frameloop="never"`. Don't add another `requestAnimationFrame` loop that moves things the canvas tracks.
+- **No twin flash.** While WebGL is expected (`html[data-gl]`, set before first paint), GL headings and media are held hidden until their GL copy is ready, then dissolve in once. Failsafes reveal the DOM version after 3.5 s or if WebGL turns out not to run.
+- **Rest on composed frames.** Scroll sequences use `useScrollRest` (`src/lib/motion/useScrollRest.ts`): when a gesture ends mid-sequence, the page eases to the next composed frame in the direction of travel (homepage: hero, each chapter, the screens; awards: one whole frame at the left margin). To add a frame to the homepage story, add a chapter; its resting point is derived from it.
+- **The hero fits one screen.** It sits in a fixed-height stage, so its type and spacing scale with viewport height. Below 500 px of height (landscape phones) the stage switches off and the hero scrolls normally.
+- **Display faces use `font-display: block`.** Next can't build a metric-matched fallback for Big Shoulders, so swapping would flash and reflow every headline.
+
 Performance safeguards: one WebGL context at a time (the sitewide canvas waits for the intro); views off screen are skipped; DPR is capped at 1.25; the light count in each scene is constant, so nothing recompiles mid-scroll; and everything created outside JSX is disposed on unmount. Three.js loads only when GL actually runs; it is not in any page's initial HTML. Sound is synthesised with WebAudio, off by default.
 
 ### Asset pipeline and outstanding art direction

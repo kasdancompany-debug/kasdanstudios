@@ -24,7 +24,11 @@ export function GLRoot() {
       pref = localStorage.getItem(PREF_KEY);
     } catch {}
     const cap = detectCapabilities();
-    if (!cap.webgl || cap.reducedMotion || cap.saveData || pref === "off") return;
+    if (!cap.webgl || cap.reducedMotion || cap.saveData || pref === "off") {
+      // The boot script guessed WebGL would run; it won't, so show the DOM headings.
+      html.removeAttribute("data-gl");
+      return;
+    }
 
     // Wait for the intro (if any) so only one WebGL context runs at a time.
     const start = () => {

@@ -9,7 +9,7 @@ import { morph } from "@/components/gl/morphStore";
 type Item = { id: string; index: string; name: string; summary: string; offerings: string[] };
 
 /**
- * "What we do": four disciplines beside one morphing object. Hovering,
+ * "What we do": six disciplines beside one morphing object. Hovering,
  * focusing or scrolling to a discipline changes the object's temperament.
  */
 export function Disciplines({ items }: { items: Item[] }) {
@@ -31,10 +31,10 @@ export function Disciplines({ items }: { items: Item[] }) {
 
   return (
     <div className="grid gap-10 md:grid-cols-12 md:gap-x-8">
-      <div className="md:col-span-5">
+      <div className="min-w-0 md:col-span-5">
         <GLMorph className="relative mx-auto aspect-square w-full max-w-[22rem] md:sticky md:top-28 md:max-w-none" />
       </div>
-      <ol ref={list} className="border-t border-line md:col-span-7">
+      <ol ref={list} className="min-w-0 border-t border-line md:col-span-7">
         {items.map((s, i) => (
           <li key={s.id} data-row={i} className="border-b border-line">
             <Link
@@ -45,9 +45,11 @@ export function Disciplines({ items }: { items: Item[] }) {
               data-sound="tick"
             >
               <div className="flex items-start justify-between gap-6">
-                <div className="flex items-baseline gap-5">
+                <div className="flex min-w-0 items-baseline gap-5">
                   <span className="type-label text-gold">{s.index}</span>
-                  <span className="type-display text-cream transition-[color,transform] duration-700 ease-[var(--ease-cinema)] group-hover:translate-x-3 group-hover:text-gold">
+                  {/* Headline size, not display: six names stay one or two lines each, and the
+                      longest single word ("Commercials") fits a phone column */}
+                  <span className="type-headline min-w-0 text-cream transition-[color,transform] duration-700 ease-[var(--ease-cinema)] group-hover:translate-x-3 group-hover:text-gold">
                     {s.name}
                   </span>
                 </div>

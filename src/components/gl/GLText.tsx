@@ -52,8 +52,19 @@ export function GLText({
 
   useEffect(() => () => ref.current?.removeAttribute("data-gl-ready"), []);
 
+  // The heading is held hidden while its GL copy loads (see globals.css). If
+  // that takes too long, give up and show the real text.
+  useEffect(() => {
+    if (!enabled) return;
+    const node = ref.current;
+    const t = window.setTimeout(() => {
+      if (node && !node.hasAttribute("data-gl-ready")) node.setAttribute("data-gl-fail", "");
+    }, 3500);
+    return () => window.clearTimeout(t);
+  }, [enabled]);
+
   return (
-    <Tag ref={ref} id={id} className={`relative ${className ?? ""}`}>
+    <Tag ref={ref} id={id} data-gl-text="" className={`relative ${className ?? ""}`}>
       {children}
       {enabled && el && <TextView target={el} pad={pad} onReady={onReady} />}
     </Tag>

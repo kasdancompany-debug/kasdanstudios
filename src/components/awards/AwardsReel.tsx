@@ -4,6 +4,7 @@ import { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { cn } from "@/lib/cn";
+import { useScrollRest } from "@/lib/motion/useScrollRest";
 import { TrophySketch, type TrophyKind } from "./TrophySketch";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -40,6 +41,7 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     el.dataset.pinned = "";
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     const ctx = gsap.context(() => {
       const distance = () => Math.max(0, tr.scrollWidth - window.innerWidth);
       const skew = gsap.quickTo(tr, "skewX", { duration: 0.5, ease: "power3" });
@@ -51,7 +53,8 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
           start: "top top",
           end: () => `+=${distance()}`,
           pin: sticky.current,
-          scrub: 0.6,
+          // Lenis already smooths the scroll; a second easing layer here only adds lag.
+          scrub: fine ? true : 0.4,
           invalidateOnRefresh: true,
           onUpdate: (self) => skew(gsap.utils.clamp(-6, 6, self.getVelocity() / -350)),
         },
@@ -62,6 +65,29 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
       delete el.dataset.pinned;
     };
   }, []);
+
+  // Rest with a whole frame aligned to the left margin, never half-cut at both edges.
+  useScrollRest(
+    true,
+    () => {
+      const el = section.current;
+      const tr = track.current;
+      if (!el || !tr || !("pinned" in el.dataset)) return null; // native scroller: nothing to settle
+      return {
+        top: el.getBoundingClientRect().top + window.scrollY,
+        span: Math.max(0, tr.scrollWidth - window.innerWidth),
+      };
+    },
+    () => {
+      const tr = track.current;
+      const items = tr ? Array.from(tr.children as HTMLCollectionOf<HTMLElement>) : [];
+      const span = tr ? tr.scrollWidth - window.innerWidth : 0;
+      if (!items.length || span <= 0) return [];
+      const first = items[0].offsetLeft;
+      const pts = items.map((li) => Math.min(1, (li.offsetLeft - first) / span));
+      return [...new Set([...pts, 1])];
+    },
+  );
 
   return (
     <section ref={section} id={id} aria-labelledby="awards-title" className="group/reel relative">

@@ -96,7 +96,8 @@
 @utility type-mega {
   font-family: var(--font-display);
   font-weight: 850;
-  font-size: clamp(4.25rem, 16.5vw, 19rem);
+  /* Width-led, but capped by height so two lines never crowd out a short laptop screen */
+  font-size: clamp(4.25rem, min(16.5vw, 24svh), 19rem);
   line-height: 0.8;
   letter-spacing: -0.012em;
   text-transform: uppercase;
@@ -138,9 +139,9 @@
 /* Instrument / camera-HUD metadata */
 @utility type-label {
   font-family: var(--font-mono);
-  font-size: 0.64rem;
+  font-size: 0.6875rem;
   line-height: 1.45;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
 }
 
@@ -161,7 +162,9 @@
   font-style: italic;
   font-weight: 300;
   text-transform: none;
-  letter-spacing: -0.045em;
+  /* Tight enough to sit with the capitals, open enough that words never run together */
+  letter-spacing: -0.028em;
+  word-spacing: 0.1em;
   font-variation-settings:
     "SOFT" 100,
     "WONK" 1,
@@ -621,6 +624,13 @@ html[data-gl="on"] [data-gl-ready] {
 html[data-gl="on"] [data-gl-ready] * {
   color: transparent !important;
   -webkit-text-stroke: 0 !important;
+}
+/* Headings WebGL will redraw wait, hidden, for their GL copy to dissolve in,
+   rather than showing, vanishing, then dissolving back. Failsafes: GLRoot and
+   the boot script clear data-gl, and GLText sets data-gl-fail after 3.5s. */
+html[data-gl] [data-gl-text]:not([data-gl-ready]):not([data-gl-fail]),
+html[data-gl] [data-gl-media]:not([data-gl-media-ready]):not([data-gl-fail]) > :not([data-gl-view]) {
+  opacity: 0;
 }
 html[data-gl="on"] [data-gl-media-ready] > :not([data-gl-view]) {
   opacity: 0;

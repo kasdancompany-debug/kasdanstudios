@@ -39,17 +39,19 @@ export function Hero() {
         </p>
       )}
 
-      <div className="shell flex flex-1 flex-col justify-end pt-32 pb-10 md:pb-14">
+      {/* Spacing is height-aware: the hero must fit one screen, even a short laptop's,
+          because with WebGL on it sits inside a fixed-height stage. */}
+      <div className="shell flex flex-1 flex-col justify-end pt-[clamp(5.5rem,15svh,8rem)] pb-[clamp(1.5rem,5svh,3.5rem)]">
         <p className="type-label text-gold" data-reveal="fade" suppressHydrationWarning>
           Kasdan Studios — {site.location.city}, {site.location.regionCode}
         </p>
 
-        <GLText as="h1" id="hero-title" className="type-mega mt-6 text-cream md:mt-8">
+        <GLText as="h1" id="hero-title" className="type-mega mt-[clamp(1rem,3svh,2rem)] text-cream">
           <span className="block">Ideas worth</span>
           <span className="block italic text-bone">watching.</span>
         </GLText>
 
-        <div className="mt-10 grid gap-8 md:mt-14 md:grid-cols-12 md:items-end">
+        <div className="mt-[clamp(1.5rem,5svh,3.5rem)] grid gap-6 md:grid-cols-12 md:items-end md:gap-8">
           <div
             className="md:col-span-5"
             data-reveal="fade"
@@ -57,7 +59,7 @@ export function Hero() {
             style={{ "--reveal-delay": "260ms" } as React.CSSProperties}
           >
             <p className="type-nav text-cream">Commercials. Web. Social. Design.</p>
-            <p className="mt-3 max-w-[34ch] text-mute">
+            <p className="mt-3 max-w-[34ch] text-mute [@media(max-height:560px)]:hidden">
               An independent creative studio based in {site.location.regionLabel}.
             </p>
           </div>
@@ -79,21 +81,25 @@ export function Hero() {
 
       {/* Recognition strip — founder honours, text only until logos are licensed */}
       <div className="border-t border-line/80 bg-ink/70">
-        <div className="shell grid grid-cols-1 gap-y-4 py-5 md:grid-cols-12 md:items-center md:py-6">
+        <div className="shell grid grid-cols-1 gap-y-3 py-4 md:grid-cols-12 md:items-center md:py-[clamp(1rem,2.5svh,1.5rem)]">
           <p className="type-label text-mute md:col-span-3">
             Founder recognition
             <span
-              className="block text-dim normal-case tracking-normal"
+              className="text-dim normal-case tracking-normal max-md:before:content-['_·_'] md:block"
               style={{ fontFamily: "var(--font-sans)", fontSize: "0.8rem" }}
             >
               Awarded to {site.founder.name}
             </span>
           </p>
-          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-3 md:col-span-8 md:gap-8" aria-label="Founder awards">
+          {/* Phones: one wrapped run of awards instead of three stacked rows */}
+          <ul
+            className="flex flex-wrap gap-x-5 gap-y-1.5 sm:grid sm:grid-cols-3 sm:gap-3 md:col-span-8 md:gap-8"
+            aria-label="Founder awards"
+          >
             {founderAwards.map((a) => (
-              <li key={a.name} className="flex items-baseline gap-3">
+              <li key={a.name} className="flex items-baseline gap-2 sm:gap-3">
                 <span className="type-label text-gold">{a.year}</span>
-                <span className="font-display text-lg leading-tight text-cream md:text-xl">{a.name}</span>
+                <span className="font-display text-base leading-tight text-cream sm:text-lg md:text-xl">{a.name}</span>
               </li>
             ))}
           </ul>

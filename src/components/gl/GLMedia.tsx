@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useCallback, useRef, type ReactNode } from "react";
+import { useCallback, useEffect, useRef, type ReactNode } from "react";
 import { useGL } from "./useGL";
 import type { MediaInput } from "./views/MediaView";
 import { cn } from "@/lib/cn";
@@ -42,9 +42,20 @@ export function GLMedia({
     wrap.current?.setAttribute("data-gl-media-ready", "");
   }, []);
 
+  // Held hidden while the GL copy loads (see globals.css); give up after a while.
+  useEffect(() => {
+    if (!enabled) return;
+    const node = wrap.current;
+    const t = window.setTimeout(() => {
+      if (node && !node.hasAttribute("data-gl-media-ready")) node.setAttribute("data-gl-fail", "");
+    }, 3500);
+    return () => window.clearTimeout(t);
+  }, [enabled]);
+
   return (
     <div
       ref={wrap}
+      data-gl-media=""
       className={cn("relative", className)}
       onPointerEnter={() => (input.current.hover = 1)}
       onPointerLeave={() => (input.current.hover = 0)}

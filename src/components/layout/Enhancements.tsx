@@ -3,9 +3,14 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import Lenis from "lenis";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { lenisStore } from "@/lib/motion/lenis-store";
+import { onFrame } from "@/lib/motion/ticker";
 import { sound } from "@/lib/sound";
 import { CustomCursor } from "./CustomCursor";
+
+gsap.registerPlugin(ScrollTrigger);
 
 /**
  * Client-only progressive enhancements, mounted once in the root layout:
@@ -77,9 +82,16 @@ export function Enhancements() {
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (!fine || reduce) return;
 
-    const lenis = new Lenis({ lerp: 0.11, anchors: true, autoRaf: true });
+    // Driven from the shared clock (not its own rAF) and wired straight into
+    // ScrollTrigger, so timelines and the WebGL layer see the same scroll
+    // position in the same frame.
+    const lenis = new Lenis({ lerp: 0.1, anchors: true, autoRaf: false });
     lenisStore.set(lenis);
+    const offScroll = lenis.on("scroll", ScrollTrigger.update);
+    const offFrame = onFrame("scroll", (time) => lenis.raf(time * 1000));
     return () => {
+      offFrame();
+      offScroll();
       lenis.destroy();
       lenisStore.set(null);
     };

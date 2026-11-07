@@ -38,6 +38,7 @@ export default function HomePage() {
 
       {/* Hero → 3D reel → selected work, as one scroll-driven sequence when WebGL is on */}
       <ReelStory
+        slots={slotLabels}
         projects={shown.map((p) => ({
           slug: p.slug,
           title: p.title,
