@@ -28,6 +28,7 @@ ${noise}
 uniform sampler2D uTex;
 uniform vec2 uPlane;
 uniform vec2 uImage;
+uniform vec2 uFocus;     // focal point, 0..1, y up (matches CSS object-position)
 uniform float uTime;
 uniform float uHover;
 uniform vec2 uPointer;
@@ -39,7 +40,8 @@ vec2 cover(vec2 uv) {
   float rp = uPlane.x / uPlane.y;
   float ri = uImage.x / uImage.y;
   vec2 s = rp > ri ? vec2(1.0, ri / rp) : vec2(rp / ri, 1.0);
-  return (uv - 0.5) * s + 0.5;
+  // Crop towards the focal point instead of always from the centre
+  return (uv - 0.5) * s + 0.5 + (uFocus - 0.5) * (1.0 - s);
 }
 
 void main() {
@@ -152,12 +154,15 @@ function slateCanvas(label: string, hint: string, w: number, h: number) {
 function MediaPlane({
   texture,
   imageSize,
+  focus = [0.5, 0.5],
   viewEl,
   input,
   onReady,
 }: {
   texture: THREE.Texture;
   imageSize: [number, number];
+  /** Focal point as CSS object-position fractions (x from left, y from top). */
+  focus?: [number, number];
   viewEl: React.RefObject<HTMLElement | null>;
   input: React.RefObject<MediaInput>;
   onReady: () => void;
@@ -179,6 +184,7 @@ function MediaPlane({
           uTex: { value: texture },
           uPlane: { value: new THREE.Vector2(1, 1) },
           uImage: { value: new THREE.Vector2(...imageSize) },
+          uFocus: { value: new THREE.Vector2(focus[0], 1 - focus[1]) },
           uTime: { value: 0 },
           uHover: { value: 0 },
           uPointer: { value: new THREE.Vector2(0.5, 0.5) },
@@ -186,6 +192,7 @@ function MediaPlane({
           uReveal: { value: 0 },
         },
       }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- focus is fixed per image
     [texture, imageSize],
   );
   useEffect(() => () => material.dispose(), [material]);
@@ -224,6 +231,7 @@ function MediaPlane({
 
 function ImagePlane(props: {
   src: string;
+  focus?: [number, number];
   viewEl: React.RefObject<HTMLElement | null>;
   input: React.RefObject<MediaInput>;
   onReady: () => void;
@@ -260,12 +268,14 @@ function SlatePlane({
 
 export default function MediaView({
   src,
+  focus,
   label,
   hint,
   input,
   onReady,
 }: {
   src?: string | null;
+  focus?: [number, number];
   label: string;
   hint: string;
   input: React.RefObject<MediaInput>;
@@ -281,7 +291,7 @@ export default function MediaView({
     >
       <Suspense fallback={null}>
         {src ? (
-          <ImagePlane src={src} viewEl={viewEl} input={input} onReady={onReady} />
+          <ImagePlane src={src} focus={focus} viewEl={viewEl} input={input} onReady={onReady} />
         ) : (
           <SlatePlane label={label} hint={hint} viewEl={viewEl} input={input} onReady={onReady} />
         )}

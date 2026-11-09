@@ -15,6 +15,7 @@ const MediaView = dynamic(() => import("./views/MediaView"), { ssr: false });
  */
 export function GLMedia({
   src,
+  focus,
   label,
   hint = "",
   className,
@@ -22,6 +23,8 @@ export function GLMedia({
 }: {
   /** Image path, or omit for a labelled production-slate placeholder. */
   src?: string | null;
+  /** Focal point for cropping, as object-position fractions (x from left, y from top). */
+  focus?: [number, number];
   label: string;
   hint?: string;
   className?: string;
@@ -62,7 +65,7 @@ export function GLMedia({
       onPointerMove={onMove}
     >
       {children}
-      {enabled && <MediaView src={src} label={label} hint={hint} input={input} onReady={onReady} />}
+      {enabled && <MediaView src={src} focus={focus} label={label} hint={hint} input={input} onReady={onReady} />}
     </div>
   );
 }

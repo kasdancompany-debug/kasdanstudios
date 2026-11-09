@@ -9,7 +9,7 @@ import { site } from "@content/site";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { AwardsReel } from "@/components/awards/AwardsReel";
 import { GLText } from "@/components/gl/GLText";
-import { AssetPlaceholder } from "@/components/ui/AssetPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { Reveal } from "@/components/ui/Reveal";
 import { Label, SectionMarker } from "@/components/ui/Label";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -54,10 +54,13 @@ export default function AboutPage() {
           </Reveal>
         </GLText>
         <Reveal variant="frame" className="mt-16 md:mt-24">
-          <AssetPlaceholder
-            ratio="21/9"
-            label="Behind-the-scenes or founder portrait"
-            hint="Landscape 21:9, 3000 × 1286 — on set, natural light"
+          <Photo
+            src="/media/studio/kasdan-co-family.jpg"
+            alt="Dan and Kass with family outside Kasdan Co."
+            ratio="16/9"
+            focus={[0.5, 0.3]}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            priority
           />
         </Reveal>
       </section>
@@ -99,7 +102,13 @@ export default function AboutPage() {
       <section aria-labelledby="founder-title" className="border-t border-line">
         <div className="shell grid gap-14 py-28 md:grid-cols-12 md:gap-x-8 md:py-44">
           <Reveal variant="frame" className="md:col-span-5">
-            <AssetPlaceholder ratio="4/5" label={`${site.founder.name} — portrait`} hint="Portrait 4:5, 1600 × 2000" />
+            <Photo
+              src="/media/studio/dan-obrien-emmy.jpg"
+              alt={`${site.founder.name} holding his Midsouth Emmy Award`}
+              ratio="4/5"
+              focus={[0.5, 0.25]}
+              sizes="(min-width: 768px) 40vw, 100vw"
+            />
           </Reveal>
           <div className="md:col-span-6 md:col-start-7">
             <Reveal>
@@ -189,7 +198,13 @@ export default function AboutPage() {
             </dl>
           </div>
           <Reveal variant="frame" className="md:col-span-5 md:col-start-8">
-            <AssetPlaceholder ratio="4/5" label="Kasdan Co. — café, product or content shoot" hint="Portrait 4:5" />
+            <Photo
+              src="/media/studio/kasdan-co-exterior.jpg"
+              alt="Dan O'Brien and Kass outside the Kasdan Co. storefront"
+              ratio="4/5"
+              focus={[0.63, 0.5]}
+              sizes="(min-width: 768px) 40vw, 100vw"
+            />
           </Reveal>
         </div>
       </section>

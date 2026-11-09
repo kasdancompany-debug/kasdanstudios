@@ -11,7 +11,7 @@ import { Marquee } from "@/components/ui/Marquee";
 import { GLText } from "@/components/gl/GLText";
 import { ProjectCard, ProjectSlot } from "@/components/work/ProjectCard";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { AssetPlaceholder } from "@/components/ui/AssetPlaceholder";
+import { Photo } from "@/components/ui/Photo";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionMarker } from "@/components/ui/Label";
@@ -199,10 +199,12 @@ export default function HomePage() {
       <section aria-labelledby="difference-title" className="shell pt-36 pb-36 md:pt-56 md:pb-56">
         <div className="grid gap-14 md:grid-cols-12 md:gap-x-8">
           <Reveal variant="frame" className="md:col-span-5">
-            <AssetPlaceholder
+            <Photo
+              src="/media/studio/kasdan-co-exterior.jpg"
+              alt="Dan O'Brien and Kass outside the Kasdan Co. storefront in Sault Ste. Marie"
               ratio="4/5"
-              label="Kasdan Co. café — interior or content shoot"
-              hint="Portrait 4:5, 1600 × 2000"
+              focus={[0.63, 0.5]}
+              sizes="(min-width: 768px) 40vw, 100vw"
             />
           </Reveal>
           <div className="md:col-span-6 md:col-start-7 md:pt-16">
