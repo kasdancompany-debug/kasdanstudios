@@ -7,8 +7,8 @@
   "client": "Lupin Leads",
   "categories": ["paid-ads", "marketing", "design"],
   "disciplines": ["Meta Ads", "Lead Generation", "Ad Creative", "Campaign Management"],
-  "summary": "A Facebook and Instagram lead campaign for contractors, with ad creative built for every trade.",
-  "overview": "Lupin Leads sells qualified leads to contractors for a flat $100 a week. We built the paid campaign that finds those contractors on Facebook and Instagram: the offer, the audiences, the lead form and a family of ads that speaks to each trade in its own language.",
+  "summary": "Facebook and Instagram lead ads for contractors, with a version for each trade.",
+  "overview": "Lupin Leads offers contractors qualified leads for $100 a week. We made the ad creative and set up and manage the Facebook and Instagram campaign that brings those contractors in.",
   "cover": {
     "type": "image",
     "src": "/work/lupin-leads-meta-ads/ad-general-contractor.webp",
@@ -18,26 +18,24 @@
   },
   "coverFit": "contain",
   "challenge": {
-    "heading": "The challenge",
+    "heading": "The brief",
     "body": [
-      "Contractors are busy, sceptical and used to being sold leads that never pick up the phone. An ad has about a second to look like it was made for them, not for \"small businesses\" in general.",
-      "The offer also had to be impossible to misread: one price, one promise, no fine print."
+      "Reach contractors in a way that feels relevant to their trade, and make the offer clear in a quick scroll: one price, one promise."
     ]
   },
   "idea": {
-    "heading": "The idea",
+    "heading": "The approach",
     "body": [
-      "Keep the message identical and change the person. Every ad carries the same headline — \"Get more qualified leads for only $100/week\" — in the same heavy type and Lupin green, while the image swaps to the trade we're targeting: a general contractor on site, a plumber under a sink, a framer driving a nail.",
-      "The purple-and-black grade and the rising arrow tie the set together, so the brand builds recognition even as the audiences change."
+      "Every ad keeps the same headline and price, and the image changes to match the trade — a general contractor, a plumber, a framer. The purple-and-black look and the arrow keep them recognisable as one brand."
     ]
   },
   "execution": {
     "heading": "How the campaign runs",
     "body": [
-      "Strategy and offer: audiences set by trade and service area, with the offer front and centre in every ad.",
-      "Creative: square and vertical versions of each trade variation, made in-house, so new ads can go into testing within days rather than weeks.",
-      "Lead capture: Meta instant forms with qualifying questions, so contractors who aren't a fit filter themselves out before they reach the sales team.",
-      "Management: tracking from ad to lead, weekly optimisation of budgets and creative, and a plain-English monthly report on cost per lead and what we're changing next."
+      "Audiences set by trade and area, with the offer in every ad.",
+      "Square and vertical versions of each ad, made in-house so new ones can be tested quickly.",
+      "Meta instant forms with a few qualifying questions.",
+      "Tracking from ad to lead, regular budget and creative adjustments, and a monthly report on cost per lead."
     ]
   },
   "gallery": [

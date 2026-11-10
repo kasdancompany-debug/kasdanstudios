@@ -7,8 +7,8 @@
   "client": "Kasdan Co.",
   "categories": ["photography", "social"],
   "disciplines": ["Food Photography", "Drink Photography", "Art Direction", "Seasonal Campaigns"],
-  "summary": "Seasonal menu photography for our café — shot outside, styled with a sense of humour and made for the feed.",
-  "overview": "Menu photos don't have to be shot on a white table. For Kasdan Co., our café in Sault Ste. Marie, we take the drinks and donuts outside — into the autumn woods, onto an iron fence, into a flowering garden — and give each seasonal launch an image people stop and share.",
+  "summary": "Seasonal menu photography for our café, shot outdoors with a bit of humour.",
+  "overview": "We photograph the menu at Kasdan Co., our café in Sault Ste. Marie, each season. Instead of a plain backdrop we usually take the drinks and donuts outside — the autumn woods, a garden, an iron fence.",
   "cover": {
     "type": "image",
     "src": "/work/kasdan-co-food-photography/ghost-iced-latte.jpg",
@@ -19,14 +19,14 @@
   "idea": {
     "heading": "The approach",
     "body": [
-      "Each menu has a story, and the photo should tell it before anyone reads the caption. The Halloween iced latte has ghost faces on the cup, so it's held by ghosts. The fall donuts line up on a fence under a maple in full colour.",
-      "We plan the styling, location and light together, then shoot a set that works for menu boards, Instagram posts, Reels covers and paid ads."
+      "We try to let each photo say something about the item. The Halloween latte has ghosts on the cup, so ghosts are holding it. The fall donuts sit on a fence under a maple tree.",
+      "Each shoot is planned for where the photos will be used: menu boards, Instagram, Reels covers and ads."
     ]
   },
   "execution": {
-    "heading": "What you get",
+    "heading": "What's included",
     "body": [
-      "Concept and styling, an on-location shoot, colour-graded selects in square, portrait and vertical crops, and short behind-the-scenes clips for Stories and TikTok."
+      "Styling, an on-location shoot, edited photos in square, portrait and vertical crops, and short clips for Stories and TikTok."
     ]
   },
   "gallery": [
@@ -56,6 +56,9 @@
     }
   ],
   "galleryLayout": "grid",
-  "link": { "label": "@kasdan_co on TikTok", "href": "https://www.tiktok.com/@kasdan_co" },
+  "link": {
+    "label": "@kasdan_co on TikTok",
+    "href": "https://www.tiktok.com/@kasdan_co"
+  },
   "notes": "Owner to confirm all four photos are Kasdan Co. menu items."
 }

@@ -29,10 +29,10 @@ export default function WorkPage() {
         marker="Work"
         title={
           <>
-            Work that <span className="italic text-bone">gets noticed.</span>
+            Recent <span className="italic text-bone">work.</span>
           </>
         }
-        lede="Meta ad campaigns, posters and brand design, food photography, websites, social content and film. Each case study covers the brief, the idea and exactly what we delivered."
+        lede="Meta ad campaigns, posters and brand design, food photography, websites, social content and film. Each project covers the brief, our approach and what we made."
       />
 
       {projects.length === 0 ? (

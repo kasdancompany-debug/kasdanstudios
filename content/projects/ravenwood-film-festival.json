@@ -7,8 +7,8 @@
   "client": "Ravenwood Film Festival",
   "categories": ["design", "marketing"],
   "disciplines": ["Poster Design", "Key Art", "Event Branding"],
-  "summary": "Festival key art and a retro B-movie poster for three nights of horror, sci-fi and thrillers in Sault Ste. Marie.",
-  "overview": "Ravenwood is a genre film festival held at The Queen of Hearts Club in Sault Ste. Marie. We designed two looks for it: a brooding key art built around the festival's raven, and a loud, tongue-in-cheek poster that borrows from drive-in horror one-sheets to sell the weekend.",
+  "summary": "Key art and an event poster for a weekend of horror, sci-fi and thriller films in Sault Ste. Marie.",
+  "overview": "Ravenwood is a genre film festival at The Queen of Hearts Club in Sault Ste. Marie. We made two pieces for it: a moody key art for the festival's identity, and a playful retro poster to promote the October 26–28 weekend.",
   "cover": {
     "type": "image",
     "src": "/work/ravenwood-film-festival/key-art.webp",
@@ -19,22 +19,19 @@
   "challenge": {
     "heading": "The brief",
     "body": [
-      "A new festival needs two things at once: an identity that feels like it has always been there, and promotion loud enough to fill a room for October 26–28.",
-      "One poster couldn't do both jobs, so we designed a system with two voices."
+      "The festival needed an image to represent it, and a poster that would get people to come out for the weekend. Those were different enough jobs that we made two pieces."
     ]
   },
   "idea": {
-    "heading": "The idea",
+    "heading": "The approach",
     "body": [
-      "The key art is the festival's signature. A raven fades into a fog of Northern Ontario pines, with a film-leader countdown running through its wing and a projector throwing light out of the dark. It's the image for the website, the screen before every film and anything that needs to feel premium.",
-      "The event poster is the opposite: torn paper, a hand-drawn diner waitress with a vintage camera for a head and a tentacled monster under the cloche. Big yellow type, \"Horror! Sci-fi! Thriller!\" up top, and every practical detail — dates, venue, address and URL — easy to read from across the street."
+      "The key art uses a raven filled with misty pine forest, with a strip of film leader and a small projector. It's used on the website and on screen at the festival.",
+      "The poster takes its cue from old drive-in horror one-sheets — torn paper, a camera-headed waitress serving a tentacled monster, big yellow type — with the dates, venue and website kept easy to read."
     ]
   },
   "execution": {
     "heading": "What we delivered",
-    "body": [
-      "Festival key art and wordmark lockup, a print poster with venue and date details, and matching assets for social and the festival website."
-    ]
+    "body": ["Key art and logo lockup, a print poster, and versions of both for social and the website."]
   },
   "gallery": [
     {

@@ -8,8 +8,8 @@
   "year": 2026,
   "categories": ["social", "commercials", "marketing"],
   "disciplines": ["Short-Form Video", "Vehicle Spotlight", "Edit"],
-  "summary": "A vertical vehicle spotlight for a local dealership, made for Shorts, Reels and TikTok.",
-  "overview": "Dealership content works best when it feels like someone showing you around the lot. For Sault Nissan we made a vertical walkaround introducing the 2026 Nissan Rogue Rock Creek Edition — on-camera host, punchy captions and a pace built for the feed.",
+  "summary": "A short vertical video introducing a new model for a local dealership.",
+  "overview": "A vertical walkaround of the 2026 Nissan Rogue Rock Creek Edition for Sault Nissan, with an on-camera host and captions, made for Shorts, Reels and TikTok.",
   "cover": {
     "type": "image",
     "src": "/work/sault-nissan-rogue-rock-creek/cover.jpg",
@@ -24,6 +24,9 @@
     "poster": "/work/sault-nissan-rogue-rock-creek/poster-vertical.jpg",
     "aspect": "9:16"
   },
-  "link": { "label": "Watch on YouTube", "href": "https://www.youtube.com/shorts/DS7HRU1TVEw" },
+  "link": {
+    "label": "Watch on YouTube",
+    "href": "https://www.youtube.com/shorts/DS7HRU1TVEw"
+  },
   "notes": "Title from the YouTube listing on Sault Nissan's channel. Confirm Sault Nissan can be named and our exact role."
 }

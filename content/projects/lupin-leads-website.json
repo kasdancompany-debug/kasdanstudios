@@ -7,8 +7,8 @@
   "client": "Lupin Leads",
   "categories": ["web", "design", "marketing"],
   "disciplines": ["Web Design", "Web Development", "Copywriting", "Conversion"],
-  "summary": "A dark, confident landing site that turns contractors into booked strategy calls.",
-  "overview": "Lupin Leads runs Meta advertising for contractors. Its website has one job: get a roofer, plumber or renovator to book a free strategy call. We designed and built it around that single action — a clear promise, proof of how the system works and a booking button that's never more than a scroll away.",
+  "summary": "A landing site for Lupin Leads, built to get contractors to book a strategy call.",
+  "overview": "Lupin Leads runs Meta ads for contractors. We designed and built its website around one goal: booking a free strategy call.",
   "cover": {
     "type": "image",
     "src": "/work/lupin-leads-website/desktop.png",
@@ -17,16 +17,15 @@
     "height": 1200
   },
   "idea": {
-    "heading": "The idea",
+    "heading": "The approach",
     "body": [
-      "Contractors don't want marketing jargon; they want to see the lead come in. The hero pairs a blunt headline — \"Less Guesswork.\" — with an interface preview of a lead arriving in the pipeline and a sample monthly report, so the product is shown, not described.",
-      "Every section answers a contractor's next question in order: how it works, which trades it's for, what it costs and what happens on the call."
+      "The homepage leads with a short headline and a preview of what a lead and a monthly report look like, so contractors can see how it works. The rest of the page covers how it works, which trades it's for, and what happens on the call."
     ]
   },
   "execution": {
     "heading": "What we built",
     "body": [
-      "Brand-matched design in black, deep green and Lupin purple; responsive build tuned for phones; copywriting and page structure; booking calls-to-action throughout; SEO metadata and social sharing images."
+      "Design in the Lupin colours, a mobile-friendly build, copy and page structure, booking buttons throughout, and SEO and sharing setup."
     ]
   },
   "gallery": [
@@ -48,6 +47,9 @@
     }
   ],
   "galleryLayout": "grid",
-  "link": { "label": "lupinleads.com", "href": "https://lupinleads.com/" },
+  "link": {
+    "label": "lupinleads.com",
+    "href": "https://lupinleads.com/"
+  },
   "notes": "Screenshots captured from the live site (Nov 2026). Dashboard figures on the site are labelled sample data — never present them as results."
 }

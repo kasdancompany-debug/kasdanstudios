@@ -19,15 +19,13 @@
   "idea": {
     "heading": "How we run it",
     "body": [
-      "Content works when it's a habit, not a campaign. Every week we plan hooks around what's actually happening at the counter — new drinks, seasonal donuts, regulars and the odd stunt — then batch-shoot, edit and post.",
-      "Some of those stunts get bigger than the feed. On 27 October 2024, Daniel O'Brien and Kassandra Yee set the Guinness World Record for the tallest stack of doughnuts in one minute by a team of two — ten doughnuts — at the café."
+      "We plan, shoot, edit and post for the café every week, mostly around what's happening at the counter — new drinks, seasonal donuts, regulars and the occasional stunt.",
+      "One of those stunts became a Guinness World Record: on 27 October 2024, Daniel O'Brien and Kassandra Yee stacked ten doughnuts in one minute, the tallest stack by a team of two."
     ]
   },
   "execution": {
-    "heading": "What this means for clients",
-    "body": [
-      "The same loop we run for ourselves — plan, shoot, edit, post, look at what worked — is what we run for the businesses we partner with."
-    ]
+    "heading": "Why it matters for clients",
+    "body": ["It's the same weekly routine we offer the businesses we work with."]
   },
   "gallery": [
     {
@@ -52,6 +50,9 @@
       "recipient": "Daniel O'Brien & Kassandra Yee"
     }
   ],
-  "link": { "label": "@kasdan_co on TikTok", "href": "https://www.tiktok.com/@kasdan_co" },
+  "link": {
+    "label": "@kasdan_co on TikTok",
+    "href": "https://www.tiktok.com/@kasdan_co"
+  },
   "notes": "Guinness details from the certificate photo supplied by the owner (Nov 2026). Add the certificate photo to the gallery once saved to /public. Give the TikToks descriptive titles."
 }
