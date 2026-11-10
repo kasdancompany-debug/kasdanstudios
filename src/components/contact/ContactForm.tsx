@@ -327,7 +327,7 @@ export function ContactForm() {
             className="mt-1 size-5 shrink-0 cursor-pointer appearance-none border border-line-strong bg-transparent checked:border-gold checked:bg-gold checked:bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 20 20%22><path d=%22M5 10.5l3 3 7-7%22 fill=%22none%22 stroke=%22%230c0b09%22 stroke-width=%221.8%22/></svg>')] focus-visible:outline-gold"
           />
           <label htmlFor="consent" className="text-bone">
-            I agree that Kasdan Studios may use these details to respond to my enquiry, as described in the{" "}
+            I agree that kasdan studios may use these details to respond to my enquiry, as described in the{" "}
             <Link
               href="/privacy"
               className="text-cream underline decoration-gold-soft underline-offset-4 hover:decoration-gold"

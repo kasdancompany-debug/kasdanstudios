@@ -10,7 +10,7 @@ export const metadata = pageMetadata({
   title: "Contact",
   path: "/contact",
   description:
-    "Start a project with Kasdan Studios — film, creative, content and marketing strategy from Sault Ste. Marie, Ontario. Tell us what you're working on.",
+    "Start a project with kasdan studios — film, creative, content and marketing strategy from Sault Ste. Marie, Ontario. Tell us what you're working on.",
 });
 
 export default function ContactPage() {

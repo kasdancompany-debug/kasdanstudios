@@ -5,7 +5,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Privacy Policy",
   path: "/privacy",
-  description: "How Kasdan Studios collects, uses and protects personal information submitted through this website.",
+  description: "How kasdan studios collects, uses and protects personal information submitted through this website.",
 });
 
 /**

@@ -27,7 +27,7 @@ export function AssetPlaceholder({
   fill = false,
   tone = "default",
 }: {
-  /** What belongs here, e.g. "Showreel" or "Kasdan Co. café interior". */
+  /** What belongs here, e.g. "Showreel" or "kasdan co. café interior". */
   label: string;
   /** Format / spec hint shown in small type. */
   hint?: string;

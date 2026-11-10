@@ -136,7 +136,7 @@ export const services: Service[] = [
     ],
     image: {
       src: "/work/kasdan-co-food-photography/ghost-duo.webp",
-      alt: "Two sheet ghosts in sunglasses holding Kasdan Co. iced lattes in autumn woods",
+      alt: "Two sheet ghosts in sunglasses holding kasdan co. iced lattes in autumn woods",
       width: 1289,
       height: 1670,
     },
@@ -201,7 +201,7 @@ export const services: Service[] = [
     ],
     image: {
       src: "/work/lupin-leads-website/desktop.png",
-      alt: "The Lupin Leads website homepage, designed and built by Kasdan Studios",
+      alt: "The Lupin Leads website homepage, designed and built by kasdan studios",
       width: 1920,
       height: 1200,
     },

@@ -43,7 +43,7 @@ export function Hero() {
           because with WebGL on it sits inside a fixed-height stage. */}
       <div className="shell flex flex-1 flex-col justify-end pt-[clamp(5.5rem,15svh,8rem)] pb-[clamp(1.5rem,5svh,3.5rem)]">
         <p className="type-label text-gold" data-reveal="fade" suppressHydrationWarning>
-          Kasdan Studios — {site.location.city}, {site.location.regionCode}
+          <span className="brand-case">kasdan studios</span> — {site.location.city}, {site.location.regionCode}
         </p>
 
         <GLText as="h1" id="hero-title" className="type-mega mt-[clamp(1rem,3svh,2rem)] text-cream">

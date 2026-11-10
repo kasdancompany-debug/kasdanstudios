@@ -16,11 +16,7 @@ type Geometry = { top: number; span: number };
  * Progress is 0..1 through the sequence: `geometry()` gives its start (page
  * Y) and length in px; `rest()` the progress values of its composed frames.
  */
-export function useScrollRest(
-  enabled: boolean,
-  geometry: () => Geometry | null,
-  rest: () => number[],
-) {
+export function useScrollRest(enabled: boolean, geometry: () => Geometry | null, rest: () => number[]) {
   // Latest callbacks without re-binding listeners every render.
   const geo = useRef(geometry);
   const pts = useRef(rest);

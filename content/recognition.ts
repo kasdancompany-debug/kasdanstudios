@@ -3,7 +3,7 @@
  *
  * Attribution matters: the three awards below were earned by founder
  * Dan O'Brien as an individual. They are never presented as awards won
- * by Kasdan Studios the company.
+ * by kasdan studios the company.
  *
  * Do not add award categories, project names or placements here unless they
  * have been verified against the awarding body's published records.
@@ -65,7 +65,7 @@ export const awardsRoll: RollEntry[] = [
   { ...founderAwards[1], sketch: "quill" },
   { ...founderAwards[2], sketch: "pencil" },
   // Years confirmed by the owner (Nov 2026).
-  // TODO(owner): confirm recipient (Dan O'Brien / Kasdan Co. / studio) for each entry below.
+  // TODO(owner): confirm recipient (Dan O'Brien / kasdan co. / studio) for each entry below.
   { year: 2026, name: "Tokyo Design Awards", organization: null, recipient: null, sketch: "ribbon" },
   { year: 2024, name: "Muse Creative Awards", organization: null, recipient: null, sketch: "muse" },
   { year: 2025, name: "Craft Beverage Marketing Awards", organization: "CBMAs", recipient: null, sketch: "bottle" },
@@ -82,21 +82,21 @@ export const awardsRoll: RollEntry[] = [
     year: 2025,
     name: "Bridges to Better Business Pitch Competition",
     organization: null,
-    recipient: "Kasdan Co.",
+    recipient: "kasdan co.",
     sketch: "pitch",
   },
 ];
 
 /**
- * Recognition earned by Kasdan Co., the café business.
+ * Recognition earned by kasdan co., the café business.
  */
 export const businessRecognition = {
   label: "Bridges to Better Business Pitch Competition",
-  recipient: "Kasdan Co.",
+  recipient: "kasdan co.",
   detail: "2025" as string | null,
 };
 
 export const kasdanCoFacts = {
   tiktokViews: "1M+",
-  tiktokViewsLabel: "cumulative TikTok views across Kasdan Co. café content",
+  tiktokViewsLabel: "cumulative TikTok views across kasdan co. café content",
 };

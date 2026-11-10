@@ -13,6 +13,7 @@ import { Label } from "@/components/ui/Label";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { absoluteUrl, organizationId, pageMetadata } from "@/lib/seo";
 import { site } from "@content/site";
+import { brandCase } from "@/lib/brand";
 
 export const dynamicParams = false;
 
@@ -143,7 +144,7 @@ export default async function ProjectPage({ params }: Props) {
           </Reveal>
           <h1 className="type-display mt-8 max-w-[16ch] text-cream">
             <Reveal as="span" variant="mask" className="block">
-              {project.title}
+              {brandCase(project.title)}
             </Reveal>
           </h1>
           <Reveal delay={120}>
@@ -290,7 +291,7 @@ export default async function ProjectPage({ params }: Props) {
           <Link href={`/work/${next.slug}`} className="group shell block py-20 md:py-32" data-cursor="view">
             <Label>Next project</Label>
             <p className="type-display mt-6 text-cream transition-colors duration-500 group-hover:text-gold">
-              {next.title}
+              {brandCase(next.title)}
             </p>
             <p className="type-label mt-6 text-mute">{next.categories.map((c) => categoryLabels[c]).join(" / ")}</p>
           </Link>

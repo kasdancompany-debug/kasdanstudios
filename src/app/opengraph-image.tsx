@@ -24,7 +24,7 @@ export default function OpengraphImage() {
       <div
         style={{ display: "flex", justifyContent: "space-between", fontSize: 22, letterSpacing: 6, color: "#c7aa76" }}
       >
-        <span>KASDAN STUDIOS</span>
+        <span>kasdan studios</span>
         <span style={{ color: "#9d9588" }}>SAULT STE. MARIE, ON</span>
       </div>
       <div style={{ display: "flex", flexDirection: "column", fontSize: 118, lineHeight: 0.95, letterSpacing: -3 }}>

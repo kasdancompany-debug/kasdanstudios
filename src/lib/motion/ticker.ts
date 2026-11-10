@@ -16,7 +16,8 @@ type Fn = (time: number, deltaMs: number) => void;
 const phases: Record<Phase, Set<Fn>> = { scroll: new Set(), render: new Set() };
 let started = false;
 
-function tick(time: number, deltaMs: number) {  phases.scroll.forEach((f) => f(time, deltaMs));
+function tick(time: number, deltaMs: number) {
+  phases.scroll.forEach((f) => f(time, deltaMs));
   phases.render.forEach((f) => f(time, deltaMs));
 }
 

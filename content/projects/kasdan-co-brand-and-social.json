@@ -3,16 +3,16 @@
   "status": "published",
   "order": 5,
   "featured": false,
-  "title": "Kasdan Co. — Brand & Social",
-  "client": "Kasdan Co.",
+  "title": "kasdan co. — Brand & Social",
+  "client": "kasdan co.",
   "categories": ["social", "marketing", "design"],
   "disciplines": ["Brand", "Social Content", "Short-Form Video"],
   "summary": "The café we run, and the TikTok channel we make for it every week.",
-  "overview": "Kasdan Co. is our own café in Sault Ste. Marie. We plan, shoot, edit and post its short-form content ourselves, and the channel has passed one million cumulative views on TikTok.",
+  "overview": "kasdan co. is our own café in Sault Ste. Marie. We plan, shoot, edit and post its short-form content ourselves, and the channel has passed one million cumulative views on TikTok.",
   "cover": {
     "type": "image",
     "src": "/media/studio/kasdan-co-exterior.jpg",
-    "alt": "Dan O'Brien and Kass outside the Kasdan Co. storefront",
+    "alt": "Dan O'Brien and Kass outside the kasdan co. storefront",
     "width": 1440,
     "height": 964
   },
@@ -31,13 +31,19 @@
     {
       "type": "tiktok",
       "id": "7626133243640696084",
-      "title": "Kasdan Co. TikTok video",
+      "title": "kasdan co. TikTok video",
       "aspect": "9:16"
     },
     {
       "type": "tiktok",
       "id": "7512208411992329478",
-      "title": "Kasdan Co. TikTok video",
+      "title": "kasdan co. TikTok video",
+      "aspect": "9:16"
+    },
+    {
+      "type": "tiktok",
+      "id": "7622040472122395925",
+      "title": "kasdan co. TikTok video",
       "aspect": "9:16"
     }
   ],

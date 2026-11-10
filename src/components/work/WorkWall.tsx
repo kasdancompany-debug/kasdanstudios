@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { categoryLabels, type ImageMedia, type Project } from "@/lib/content/schemas";
 import { cn } from "@/lib/cn";
+import { brandCase } from "@/lib/brand";
 
 type Tile =
   | { kind: "image"; key: string; project: Project; image: Omit<ImageMedia, "type" | "caption"> }
@@ -93,7 +94,9 @@ function WallTile({ tile, sizes }: { tile: Tile; sizes: string }) {
         )}
       />
       <span className="absolute inset-0 flex flex-col items-center justify-center bg-gold/85 p-6 text-center text-ink opacity-0 transition-opacity duration-500 group-hover:opacity-100 group-focus-visible:opacity-100">
-        <span className="font-display text-[clamp(1.25rem,1.6vw,1.75rem)] leading-tight">{project.title}</span>
+        <span className="font-display text-[clamp(1.25rem,1.6vw,1.75rem)] leading-tight">
+          {brandCase(project.title)}
+        </span>
         <span className="type-label mt-3">{project.categories.map((c) => categoryLabels[c]).join(" / ")}</span>
         <span className="type-label mt-4 italic">— view —</span>
       </span>

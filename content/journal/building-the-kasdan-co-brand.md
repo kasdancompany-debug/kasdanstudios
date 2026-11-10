@@ -1,5 +1,5 @@
 ---
-title: "Building the Kasdan Co. Brand"
+title: "Building the kasdan co. Brand"
 status: draft
 description: "DRAFT OUTLINE — what running our own café taught us about brand, content and local marketing in Sault Ste. Marie."
 category: studio
@@ -11,7 +11,7 @@ author: "Dan O'Brien"
 
 ## Why we started with our own business
 
-- How Kasdan Co. began (real dates and details to be supplied)
+- How kasdan co. began (real dates and details to be supplied)
 - The decision to treat the café as a brand, not just a storefront
 
 ## Finding the voice

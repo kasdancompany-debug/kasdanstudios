@@ -185,7 +185,7 @@ export const postFrontmatterSchema = z
     description: z.string().min(1).max(170),
     category: z.enum(journalCategories),
     tags: z.array(z.string()).default([]),
-    author: z.string().default("Kasdan Studios"),
+    author: z.string().default("kasdan studios"),
     /** Required once published. Use the real publication date. */
     publishedAt: isoDate.optional(),
     updatedAt: isoDate.optional(),

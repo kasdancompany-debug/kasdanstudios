@@ -683,3 +683,8 @@ html[data-gl="on"] [data-gl-media-ready] > :not([data-gl-view]) {
     transition: none;
   }
 }
+
+/* The names "kasdan studios" and "kasdan co." are always lowercase, even inside uppercase type. */
+.brand-case {
+  text-transform: none !important;
+}

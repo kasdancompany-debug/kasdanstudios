@@ -110,7 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
           <div className="relative flex h-full flex-col justify-between p-5 md:p-10 xl:p-14">
             <div className="flex items-start justify-between">
-              <span className="font-display text-xl tracking-[0.2em] text-cream">Kasdan</span>
+              <span className="font-display brand-case text-xl tracking-[0.2em] text-cream">kasdan</span>
               <button type="button" data-intro-skip className="type-nav -mr-2 p-2 text-mute">
                 Skip intro
               </button>

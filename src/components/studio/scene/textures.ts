@@ -146,7 +146,7 @@ export function engravingTexture(): THREE.CanvasTexture {
   ctx.clearRect(0, 0, S, S);
   ctx.translate(S / 2, S / 2);
 
-  const text = "KASDAN STUDIOS · CINE 35mm · 1:1.4 · ∞ · IDEAS WORTH WATCHING · ";
+  const text = "kasdan studios · CINE 35mm · 1:1.4 · ∞ · IDEAS WORTH WATCHING · ";
   ctx.fillStyle = "rgba(238,231,218,0.85)";
   ctx.font = "600 26px monospace";
   const radius = S * 0.405;

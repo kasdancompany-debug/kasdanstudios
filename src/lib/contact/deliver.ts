@@ -38,7 +38,7 @@ function compose(input: ContactInput) {
     .join("")}</table>
 <h3 style="font-weight:500;margin:24px 0 8px">Project description</h3>
 <p style="white-space:pre-wrap;margin:0">${escapeHtml(input.message)}</p>
-<p style="color:#9d9588;font-size:12px;margin-top:32px">Sent from the contact form on the Kasdan Studios website. Reply directly to respond to the sender.</p>
+<p style="color:#9d9588;font-size:12px;margin-top:32px">Sent from the contact form on the kasdan studios website. Reply directly to respond to the sender.</p>
 </body></html>`;
 
   return {

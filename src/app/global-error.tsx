@@ -14,7 +14,7 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
             padding: "0 8vw",
           }}
         >
-          <p style={{ fontFamily: "monospace", fontSize: 12, letterSpacing: 3, color: "#c7aa76" }}>KASDAN STUDIOS</p>
+          <p style={{ fontFamily: "monospace", fontSize: 12, letterSpacing: 3, color: "#c7aa76" }}>kasdan studios</p>
           <h1 style={{ fontSize: "clamp(2.5rem, 7vw, 6rem)", fontWeight: 400, lineHeight: 1, margin: "24px 0" }}>
             Something went wrong.
           </h1>

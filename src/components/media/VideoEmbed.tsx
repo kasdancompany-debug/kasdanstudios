@@ -19,18 +19,19 @@ function embedUrl(media: EmbedMedia) {
     return `https://player.vimeo.com/video/${media.id}?autoplay=1&dnt=1&title=0&byline=0&portrait=0`;
   }
   if (media.type === "tiktok") {
-    return `https://www.tiktok.com/player/v1/${media.id}?autoplay=1&rel=0&description=1`;
+    return `https://www.tiktok.com/player/v1/${media.id}?rel=0&description=1`;
   }
   return `https://www.youtube-nocookie.com/embed/${media.id}?autoplay=1&rel=0&modestbranding=1`;
 }
 
 /**
- * Click-to-load facade for Vimeo / YouTube / TikTok. No third-party script, cookie
+ * Click-to-load facade for Vimeo / YouTube (TikToks load with the page). No third-party script, cookie
  * or request is made until the visitor chooses to play — faster pages and
  * a cleaner privacy story.
  */
 export function VideoEmbed({ media, priority = false }: { media: EmbedMedia; priority?: boolean }) {
-  const [active, setActive] = useState(false);
+  // TikToks have no poster to show, so their player loads with the page and is ready to play.
+  const [active, setActive] = useState(media.type === "tiktok");
   const provider = { vimeo: "Vimeo", youtube: "YouTube", tiktok: "TikTok" }[media.type];
 
   return (
@@ -43,6 +44,7 @@ export function VideoEmbed({ media, priority = false }: { media: EmbedMedia; pri
             className="absolute inset-0 h-full w-full"
             allow="autoplay; fullscreen; picture-in-picture; encrypted-media"
             allowFullScreen
+            loading={media.type === "tiktok" ? "eager" : undefined}
             referrerPolicy="strict-origin-when-cross-origin"
           />
         ) : (

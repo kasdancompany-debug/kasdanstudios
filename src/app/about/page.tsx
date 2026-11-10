@@ -1,8 +1,4 @@
-import {
-  awardsRoll,
-  businessRecognition,
-  kasdanCoFacts,
-} from "@content/recognition";
+import { awardsRoll, businessRecognition, kasdanCoFacts } from "@content/recognition";
 import { site } from "@content/site";
 import { CtaSection } from "@/components/sections/CtaSection";
 import { AwardsReel } from "@/components/awards/AwardsReel";
@@ -18,7 +14,7 @@ export const metadata = pageMetadata({
   title: "About",
   path: "/about",
   description:
-    "Kasdan Studios is an independent creative production and marketing studio in Sault Ste. Marie, Ontario, founded by Dan O'Brien and grown out of Kasdan Co.",
+    "kasdan studios is an independent creative production and marketing studio in Sault Ste. Marie, Ontario, founded by Dan O'Brien and grown out of kasdan co.",
 });
 
 const philosophy = [
@@ -70,7 +66,7 @@ export default function AboutPage() {
         <Reveal variant="frame" className="mt-16 md:mt-24">
           <Photo
             src="/media/studio/kasdan-co-family.jpg"
-            alt="Dan and Kass with family outside Kasdan Co."
+            alt="Dan and Kass with family outside kasdan co."
             ratio="16/9"
             focus={[0.5, 0.3]}
             sizes="(min-width: 1280px) 1200px, 100vw"
@@ -95,7 +91,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-10 space-y-6 text-bone">
               <Reveal as="p">
-                Kasdan Studios grew out of Kasdan Co., the café our founders run in {site.location.city}. Building that
+                kasdan studios grew out of kasdan co., the café our founders run in {site.location.city}. Building that
                 business meant doing our own marketing: shaping a brand, shooting content, figuring out what actually
                 brings people through the door.
               </Reveal>
@@ -131,7 +127,7 @@ export default function AboutPage() {
             </h2>
             <div className="mt-8 space-y-5 text-bone">
               <Reveal as="p">
-                When you work with Kasdan Studios, you work with Dan. He&apos;s in the first conversation, on set and in
+                When you work with kasdan studios, you work with Dan. He&apos;s in the first conversation, on set and in
                 the edit, so the idea you agree on is the one that makes it to screen.
               </Reveal>
               <Reveal as="p" delay={80}>
@@ -167,8 +163,8 @@ export default function AboutPage() {
               <SectionMarker index="03">Building our own brand</SectionMarker>
             </Reveal>
             <h2 id="own-brand-title" className="type-headline mt-6 text-cream">
-              <Reveal as="span" variant="mask" className="block">
-                Kasdan Co.
+              <Reveal as="span" variant="mask" className="brand-case block">
+                kasdan co.
               </Reveal>
             </h2>
             <div className="mt-8 space-y-5 text-bone">
@@ -203,7 +199,7 @@ export default function AboutPage() {
           <Reveal variant="frame" className="md:col-span-5 md:col-start-8">
             <Photo
               src="/media/studio/kasdan-co-exterior.jpg"
-              alt="Dan O'Brien and Kass outside the Kasdan Co. storefront"
+              alt="Dan O'Brien and Kass outside the kasdan co. storefront"
               ratio="4/5"
               focus={[0.63, 0.5]}
               sizes="(min-width: 768px) 40vw, 100vw"

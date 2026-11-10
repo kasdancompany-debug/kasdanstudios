@@ -20,7 +20,7 @@ author: "Dan O'Brien"
 
 ## What we've seen running our own café
 
-- Lessons from Kasdan Co.'s TikTok (state figures with source; no causal sales claims)
+- Lessons from kasdan co.'s TikTok (state figures with source; no causal sales claims)
 
 ## Getting started
 

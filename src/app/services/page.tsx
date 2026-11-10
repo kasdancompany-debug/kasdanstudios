@@ -17,7 +17,7 @@ export const metadata = pageMetadata({
   title: "Services",
   path: "/services",
   description:
-    "Marketing strategy, Meta ads and lead generation, graphic design, social content, web design and film from Kasdan Studios in Sault Ste. Marie — by project or as an ongoing partner.",
+    "Marketing strategy, Meta ads and lead generation, graphic design, social content, web design and film from kasdan studios in Sault Ste. Marie — by project or as an ongoing partner.",
 });
 
 export default function ServicesPage() {

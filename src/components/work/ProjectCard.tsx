@@ -4,6 +4,7 @@ import { ArrowUpRight } from "lucide-react";
 import { categoryLabels, type Project } from "@/lib/content/schemas";
 import { AssetPlaceholder } from "@/components/ui/AssetPlaceholder";
 import { cn } from "@/lib/cn";
+import { brandCase } from "@/lib/brand";
 
 type Size = "feature" | "large" | "medium";
 
@@ -76,7 +77,7 @@ export function ProjectCard({
                 size === "feature" ? "text-[clamp(2rem,4.2vw,4rem)]" : "text-[clamp(1.6rem,2.6vw,2.5rem)]",
               )}
             >
-              <span className="link-line pb-1">{project.title}</span>
+              <span className="link-line pb-1">{brandCase(project.title)}</span>
               <ArrowUpRight
                 aria-hidden
                 strokeWidth={1}

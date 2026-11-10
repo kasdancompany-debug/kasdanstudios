@@ -55,10 +55,10 @@ export function SiteHeader({ nav, location }: { nav: NavItem[]; location: string
         onFocusCapture={() => setHidden(false)}
       >
         <div className="shell flex h-16 items-center justify-between md:h-20">
-          <Link href="/" className="group flex items-baseline gap-3" aria-label="Kasdan Studios — home">
-            <span className="text-[0.82rem] font-medium tracking-[0.32em] text-cream uppercase">Kasdan</span>
-            <span className="type-label hidden text-mute transition-colors group-hover:text-gold sm:inline">
-              Studios
+          <Link href="/" className="group flex items-baseline gap-3" aria-label="kasdan studios — home">
+            <span className="text-[0.82rem] font-medium tracking-[0.32em] text-cream">kasdan</span>
+            <span className="type-label brand-case hidden text-mute transition-colors group-hover:text-gold sm:inline">
+              studios
             </span>
           </Link>
 
@@ -105,7 +105,7 @@ export function SiteHeader({ nav, location }: { nav: NavItem[]; location: string
       >
         <div className="shell flex h-full flex-col">
           <div className="flex h-16 items-center justify-between">
-            <span className="text-[0.82rem] font-medium tracking-[0.32em] text-cream uppercase">Kasdan</span>
+            <span className="text-[0.82rem] font-medium tracking-[0.32em] text-cream">kasdan</span>
             <button type="button" onClick={closeMenu} className="type-nav -mr-2 p-2 text-cream" autoFocus>
               Close
             </button>

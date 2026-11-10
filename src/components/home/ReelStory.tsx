@@ -11,6 +11,7 @@ import { studio } from "@/components/studio/store";
 import type { ScreenProject } from "@/components/studio/scene/StudioScene";
 import { useScrollRest } from "@/lib/motion/useScrollRest";
 import { sound } from "@/lib/sound";
+import { brandCase } from "@/lib/brand";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -148,7 +149,7 @@ export function ReelStory({
   return (
     <section
       ref={section}
-      aria-label="Kasdan Studios — opening reel"
+      aria-label="kasdan studios — opening reel"
       className={enabled ? "relative h-[440svh]" : "relative"}
     >
       <div className={enabled ? "sticky top-0 h-[100svh] overflow-hidden" : undefined}>
@@ -212,7 +213,7 @@ export function ReelStory({
                         >
                           <span className="type-label text-gold">{String(i + 1).padStart(2, "0")}</span>
                           <span>
-                            <span className="link-line type-title block pb-1 text-cream">{p.title}</span>
+                            <span className="link-line type-title block pb-1 text-cream">{brandCase(p.title)}</span>
                             <span className="type-label text-mute">{p.discipline}</span>
                           </span>
                         </Link>

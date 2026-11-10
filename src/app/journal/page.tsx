@@ -13,7 +13,7 @@ export function generateMetadata() {
     title: "Journal",
     path: "/journal",
     description:
-      "Notes from Kasdan Studios on filmmaking, brand building and content for businesses in Sault Ste. Marie and Northern Ontario.",
+      "Notes from kasdan studios on filmmaking, brand building and content for businesses in Sault Ste. Marie and Northern Ontario.",
     // An empty journal shouldn't be indexed as thin content.
     noindex: !hasPosts,
   });

@@ -13,7 +13,9 @@ export function SiteFooter({ nav }: { nav: NavItem[] }) {
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-6">
             <p className="font-display text-[clamp(2.5rem,6vw,5.5rem)] leading-[0.92] tracking-[-0.03em] text-cream">
-              Kasdan <span className="italic text-bone">Studios</span>
+              <span className="brand-case">
+                kasdan <span className="italic text-bone">studios</span>
+              </span>
             </p>
             <p className="mt-6 max-w-sm text-mute">
               {site.tagline} An independent creative studio from Northern Ontario.

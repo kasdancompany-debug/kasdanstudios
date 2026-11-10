@@ -168,7 +168,7 @@ export default function Intro({ tier, onDone }: { tier: Tier; onDone: () => void
       {/* Title + actions */}
       <div className="pointer-events-none absolute inset-0 flex flex-col justify-between p-5 md:p-10 xl:p-14">
         <div className="flex items-start justify-between">
-          <span className="text-[0.82rem] font-medium tracking-[0.32em] uppercase">Kasdan</span>
+          <span className="text-[0.82rem] font-medium tracking-[0.32em]">kasdan</span>
           <button
             type="button"
             onClick={skip}

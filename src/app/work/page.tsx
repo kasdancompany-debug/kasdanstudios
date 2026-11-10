@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
   title: "Work",
   path: "/work",
   description:
-    "Meta ad campaigns, graphic design, food photography, websites, social content and film from Kasdan Studios, a creative and marketing studio in Sault Ste. Marie, Ontario.",
+    "Meta ad campaigns, graphic design, food photography, websites, social content and film from kasdan studios, a creative and marketing studio in Sault Ste. Marie, Ontario.",
 });
 
 export default function WorkPage() {
@@ -32,7 +32,6 @@ export default function WorkPage() {
             Recent <span className="italic text-bone">work.</span>
           </>
         }
-        lede="Meta ad campaigns, posters and brand design, food photography, websites, social content and film. Each project covers the brief, our approach and what we made."
       />
 
       {projects.length === 0 ? (

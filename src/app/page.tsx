@@ -204,14 +204,14 @@ export default function HomePage() {
       </div>
 
       {/* ------------------------------------------------------------ */}
-      {/* The Kasdan difference                                        */}
+      {/* The kasdan difference                                        */}
       {/* ------------------------------------------------------------ */}
       <section aria-labelledby="difference-title" className="shell pt-36 pb-36 md:pt-56 md:pb-56">
         <div className="grid gap-14 md:grid-cols-12 md:gap-x-8">
           <Reveal variant="frame" className="md:col-span-5">
             <Photo
               src="/media/studio/kasdan-co-exterior.jpg"
-              alt="Dan O'Brien and Kass outside the Kasdan Co. storefront in Sault Ste. Marie"
+              alt="Dan O'Brien and Kass outside the kasdan co. storefront in Sault Ste. Marie"
               ratio="4/5"
               focus={[0.63, 0.5]}
               sizes="(min-width: 768px) 40vw, 100vw"
@@ -219,7 +219,9 @@ export default function HomePage() {
           </Reveal>
           <div className="md:col-span-6 md:col-start-7 md:pt-16">
             <Reveal>
-              <SectionMarker index="04">The Kasdan difference</SectionMarker>
+              <SectionMarker index="04">
+                The <span className="brand-case">kasdan</span> difference
+              </SectionMarker>
             </Reveal>
             <GLText as="h2" id="difference-title" className="type-display mt-8 text-cream">
               <span className="block">We don&apos;t just build brands.</span>
@@ -227,7 +229,7 @@ export default function HomePage() {
             </GLText>
             <div className="mt-10 space-y-5 text-bone">
               <Reveal as="p">
-                Kasdan Studios grew out of Kasdan Co., the café our founders run in Sault Ste. Marie. Every week we plan
+                kasdan studios grew out of kasdan co., the café our founders run in Sault Ste. Marie. Every week we plan
                 content, make it, post it and live with the result — the same loop our clients are in.
               </Reveal>
               <Reveal as="p" delay={80}>
@@ -238,7 +240,7 @@ export default function HomePage() {
 
             <Reveal delay={140} className="mt-14 border-t border-line pt-8">
               <dl className="flex flex-col gap-2 sm:flex-row sm:items-end sm:gap-8">
-                <dt className="sr-only">Kasdan Co. TikTok</dt>
+                <dt className="sr-only">kasdan co. TikTok</dt>
                 <dd className="font-display text-[clamp(5rem,13vw,11rem)] leading-[0.8] text-gold">
                   {kasdanCoFacts.tiktokViews}
                 </dd>
