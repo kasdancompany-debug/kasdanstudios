@@ -33,12 +33,6 @@ export function Hero() {
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(12,11,9,0.55)_0%,rgba(12,11,9,0.1)_35%,rgba(12,11,9,0.55)_70%,rgba(12,11,9,0.96)_100%)]" />
       </div>
 
-      {!reel.src && !reel.poster && (
-        <p data-hero-media className="type-label absolute top-24 right-5 text-dim md:top-28 md:right-10 xl:right-14">
-          Showreel placeholder — awaiting footage
-        </p>
-      )}
-
       {/* Spacing is height-aware: the hero must fit one screen, even a short laptop's,
           because with WebGL on it sits inside a fixed-height stage. */}
       <div className="shell flex flex-1 flex-col justify-end pt-[clamp(5.5rem,15svh,8rem)] pb-[clamp(1.5rem,5svh,3.5rem)]">

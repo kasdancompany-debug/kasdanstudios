@@ -41,7 +41,12 @@ export const services: Service[] = [
       "Creative and channel plan for every campaign",
       "Monthly reporting with clear next steps",
     ],
-    image: null,
+    image: {
+      src: "/work/showtime-the-story-is-ours/bus-shelter.jpg",
+      alt: "Showtime launch campaign posters in a bus shelter",
+      width: 1920,
+      height: 1080,
+    },
     imageHint: "Planning session or workspace still, landscape 3:2",
   },
   {
@@ -261,7 +266,12 @@ export const services: Service[] = [
       "Versions for TV, YouTube and social",
       "Colour-graded, mixed, captioned masters",
     ],
-    image: null,
+    image: {
+      src: "/work/seclusion/cover.jpg",
+      alt: "Still from the trailer for the film Seclusion",
+      width: 1280,
+      height: 720,
+    },
     imageHint: "On-set still or frame grab, landscape 3:2",
   },
   {

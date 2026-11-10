@@ -2,7 +2,6 @@ import Image from "next/image";
 import { engagementModels, faqs, process, services } from "@content/services";
 import { PageHero } from "@/components/sections/PageHero";
 import { CtaSection } from "@/components/sections/CtaSection";
-import { AssetPlaceholder } from "@/components/ui/AssetPlaceholder";
 import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
 import { Label, SectionMarker } from "@/components/ui/Label";
@@ -71,8 +70,8 @@ export default function ServicesPage() {
           return (
             <section key={s.id} id={s.id} data-morph={s.id} aria-labelledby={`${s.id}-title`} className="scroll-mt-28">
               <div className="grid gap-12 md:grid-cols-12 md:gap-x-8">
-                <Reveal variant="frame" className={cn("md:col-span-6", flip && "md:order-2 md:col-start-7")}>
-                  {s.image ? (
+                {s.image && (
+                  <Reveal variant="frame" className={cn("md:col-span-6", flip && "md:order-2 md:col-start-7")}>
                     <Image
                       src={s.image.src}
                       alt={s.image.alt}
@@ -81,16 +80,15 @@ export default function ServicesPage() {
                       sizes="(min-width: 768px) 50vw, 100vw"
                       className="h-auto w-full"
                     />
-                  ) : (
-                    <AssetPlaceholder
-                      ratio={i % 2 === 0 ? "4/5" : "4/5"}
-                      label={`${s.name} — still`}
-                      hint={s.imageHint}
-                    />
-                  )}
-                </Reveal>
+                  </Reveal>
+                )}
 
-                <div className={cn("md:col-span-5 md:pt-10", flip ? "md:order-1 md:col-start-1" : "md:col-start-8")}>
+                <div
+                  className={cn(
+                    "md:col-span-5 md:pt-10",
+                    !s.image ? "md:col-span-7" : flip ? "md:order-1 md:col-start-1" : "md:col-start-8",
+                  )}
+                >
                   <h2 id={`${s.id}-title`} className="type-headline text-cream">
                     <Reveal as="span" variant="mask" className="block">
                       {s.name}
