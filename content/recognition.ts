@@ -86,25 +86,6 @@ export const awardsRoll: RollEntry[] = [
   },
 ];
 
-export type Credential = {
-  label: string;
-  detail: string;
-};
-
-export const founderEducation: Credential[] = [
-  { label: "Film", detail: "Sault College" },
-  { label: "Marketing Management", detail: "Fanshawe College" },
-  { label: "Project Management", detail: "Fanshawe College" },
-];
-
-export const founderExperience: string[] = [
-  "Corporate film production",
-  "Wedding films",
-  "Advertising and digital content",
-  "Automotive dealership marketing management",
-  "Social content for Kasdan Co.",
-];
-
 /**
  * Recognition earned by Kasdan Co., the café business.
  */

@@ -1,8 +1,6 @@
 import {
   awardsRoll,
   businessRecognition,
-  founderEducation,
-  founderExperience,
   kasdanCoFacts,
 } from "@content/recognition";
 import { site } from "@content/site";
@@ -10,8 +8,9 @@ import { CtaSection } from "@/components/sections/CtaSection";
 import { AwardsReel } from "@/components/awards/AwardsReel";
 import { GLText } from "@/components/gl/GLText";
 import { Photo } from "@/components/ui/Photo";
+import { ButtonLink } from "@/components/ui/Button";
 import { Reveal } from "@/components/ui/Reveal";
-import { Label, SectionMarker } from "@/components/ui/Label";
+import { SectionMarker } from "@/components/ui/Label";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { founderJsonLd, pageMetadata } from "@/lib/seo";
 
@@ -34,6 +33,21 @@ const philosophy = [
   {
     title: "Work should serve a purpose",
     body: "Creative work for a business has a job to do. We like it beautiful, and we like it useful — ideally at the same time.",
+  },
+];
+
+const promises = [
+  {
+    title: "One team, idea to final cut",
+    body: "No hand-offs between agencies, so nothing gets lost along the way.",
+  },
+  {
+    title: "Film-grade craft at every size",
+    body: "Commercials, social, web and design held to the same standard.",
+  },
+  {
+    title: "Marketing we've tested on ourselves",
+    body: "We run a business too, and we know the work has to pay its way.",
   },
 ];
 
@@ -86,12 +100,8 @@ export default function AboutPage() {
                 brings people through the door.
               </Reveal>
               <Reveal as="p" delay={80}>
-                Alongside it ran a background in film and marketing — corporate films, wedding films, advertising,
-                in-house marketing for an automotive dealership. Kasdan Studios brings those threads together: the
-                storyteller&apos;s instinct and the owner&apos;s sense of what the work has to accomplish.
-              </Reveal>
-              <Reveal as="p" delay={140}>
-                We&apos;re a young, independent studio, and we&apos;re building it carefully.
+                Now we bring that to you: the storyteller&apos;s instinct to make people feel something, and the
+                owner&apos;s sense of what the work has to accomplish.
               </Reveal>
             </div>
           </div>
@@ -121,37 +131,30 @@ export default function AboutPage() {
             </h2>
             <div className="mt-8 space-y-5 text-bone">
               <Reveal as="p">
-                Dan studied film at Sault College and Marketing Management and Project Management at Fanshawe College.
-                His work has spanned corporate and wedding films, advertising and digital content, and marketing
-                management at an automotive dealership — and today, the social content for Kasdan Co.
+                When you work with Kasdan Studios, you work with Dan. He&apos;s in the first conversation, on set and in
+                the edit, so the idea you agree on is the one that makes it to screen.
               </Reveal>
               <Reveal as="p" delay={80}>
                 His work has been recognized with a Midsouth Emmy Award, a Gold Quill Award and a D&amp;AD New Blood
-                Award.
+                Award. He brings the same standard to a 15-second TikTok as to a broadcast spot.
               </Reveal>
             </div>
 
-            <div className="mt-14 grid gap-10 sm:grid-cols-2">
-              <Reveal>
-                <Label as="h3">Education</Label>
-                <ul className="mt-4 space-y-3">
-                  {founderEducation.map((e) => (
-                    <li key={e.label}>
-                      <span className="block text-cream">{e.label}</span>
-                      <span className="text-mute">{e.detail}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              <Reveal delay={80}>
-                <Label as="h3">Experience</Label>
-                <ul className="mt-4 space-y-2 text-bone">
-                  {founderExperience.map((x) => (
-                    <li key={x}>{x}</li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
+            <ul className="mt-14 space-y-6 border-t border-line pt-10">
+              {promises.map((p, i) => (
+                <Reveal as="li" key={p.title} delay={i * 80} className="grid grid-cols-[3rem_1fr] gap-x-4">
+                  <span className="type-label pt-1 text-gold">{String(i + 1).padStart(2, "0")}</span>
+                  <span>
+                    <span className="block text-cream">{p.title}</span>
+                    <span className="mt-1 block text-mute">{p.body}</span>
+                  </span>
+                </Reveal>
+              ))}
+            </ul>
+
+            <Reveal delay={200} className="mt-12">
+              <ButtonLink href="/contact">Start a Project</ButtonLink>
+            </Reveal>
           </div>
         </div>
       </section>

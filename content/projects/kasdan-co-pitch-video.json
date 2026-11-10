@@ -1,0 +1,29 @@
+{
+  "slug": "kasdan-co-pitch-video",
+  "status": "published",
+  "order": 10,
+  "featured": true,
+  "title": "Kasdan Co. Pitch Video",
+  "client": "Kasdan Co.",
+  "year": 2025,
+  "categories": ["commercials", "marketing"],
+  "disciplines": ["Pitch Film", "Story", "Edit"],
+  "summary": "Our pitch film for the 2025 Bridges to Better Business Pitch Competition.",
+  "overview": "The pitch video for Kasdan Co., made for the 2025 Bridges to Better Business Pitch Competition. Kasdan Co. was among the top five applicants and was selected to move on to the next stage of the competition.",
+  "cover": {
+    "type": "image",
+    "src": "/work/kasdan-co-pitch-video/cover.jpg",
+    "alt": "Still from the Kasdan Co. pitch video",
+    "width": 1280,
+    "height": 720
+  },
+  "film": {
+    "type": "youtube",
+    "id": "uAGEa6ZsGfs",
+    "title": "Kasdan Co. Pitch Video",
+    "poster": "/work/kasdan-co-pitch-video/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": { "label": "Watch on YouTube", "href": "https://www.youtube.com/watch?v=uAGEa6ZsGfs" },
+  "notes": "Top-five fact from the YouTube video description (published 2025-09-26)."
+}

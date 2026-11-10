@@ -92,10 +92,6 @@ export function founderJsonLd() {
     "@id": `${site.url}/about#founder`,
     name: site.founder.name,
     worksFor: { "@id": organizationId },
-    alumniOf: [
-      { "@type": "CollegeOrUniversity", name: "Sault College" },
-      { "@type": "CollegeOrUniversity", name: "Fanshawe College" },
-    ],
     award: founderAwards.map((a) => `${a.year} ${a.name} — ${a.organization}`),
   };
 }

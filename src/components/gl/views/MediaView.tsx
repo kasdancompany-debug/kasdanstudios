@@ -236,8 +236,12 @@ function ImagePlane(props: {
   input: React.RefObject<MediaInput>;
   onReady: () => void;
 }) {
+  // The raw shader writes its result straight to the (sRGB) canvas with no
+  // output conversion, so the photo's sRGB values must pass through untouched.
+  // Tagging it SRGBColorSpace would linearise it on sampling and the plane
+  // would render roughly gamma-squared, i.e. far darker than the real photo.
   const tex = useTexture(props.src, (t) => {
-    t.colorSpace = THREE.SRGBColorSpace;
+    t.colorSpace = THREE.NoColorSpace;
   });
   const img = tex.image as { width: number; height: number };
   return <MediaPlane texture={tex} imageSize={[img.width, img.height]} {...props} />;

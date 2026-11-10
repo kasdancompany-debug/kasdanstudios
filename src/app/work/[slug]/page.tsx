@@ -160,6 +160,21 @@ export default async function ProjectPage({ params }: Props) {
               <dd className="mt-2 text-bone">{m.value}</dd>
             </Reveal>
           ))}
+          {project.link && (
+            <Reveal>
+              <Label as="dt">See more</Label>
+              <dd className="mt-2">
+                <a
+                  href={project.link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-cream underline decoration-gold-soft underline-offset-4 hover:decoration-gold"
+                >
+                  {project.link.label}
+                </a>
+              </dd>
+            </Reveal>
+          )}
         </dl>
       </section>
 

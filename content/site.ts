@@ -57,7 +57,7 @@ export const site = {
 
   socials: [
     { label: "Instagram", href: null },
-    { label: "TikTok", href: null },
+    { label: "TikTok", href: "https://www.tiktok.com/@kasdan_co" },
     { label: "Vimeo", href: null },
     { label: "LinkedIn", href: null },
   ] satisfies SocialLink[] as SocialLink[],

@@ -1,0 +1,29 @@
+{
+  "slug": "nashville-music-minute",
+  "status": "published",
+  "order": 20,
+  "featured": false,
+  "title": "Nashville Music Minute — The Record That Built a City",
+  "client": "Silver Spring Pictures",
+  "year": 2025,
+  "categories": ["commercials"],
+  "disciplines": ["Short Film", "Rotoscope Animation"],
+  "summary": "A one-minute rotoscoped short on the 1956 night Nashville became Music City.",
+  "overview": "A one-minute short told through rotoscoped animation. It follows a legendary 1956 recording session, from the first chord to the neon glow of Music City, and the night Nashville turned from a quiet country town into the heart of the music industry.",
+  "cover": {
+    "type": "image",
+    "src": "/work/nashville-music-minute/cover.jpg",
+    "alt": "Rotoscoped animated still from Nashville Music Minute",
+    "width": 1920,
+    "height": 1088
+  },
+  "film": {
+    "type": "vimeo",
+    "id": "1111523790",
+    "title": "Nashville Music Minute — The Record That Built a City",
+    "poster": "/work/nashville-music-minute/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": { "label": "Watch on Vimeo", "href": "https://vimeo.com/1111523790" },
+  "notes": "Published on Vimeo by Silver Spring Pictures, 2025-08-19. Do not link to an award until confirmed which work was recognized."
+}

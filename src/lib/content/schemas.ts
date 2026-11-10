@@ -114,6 +114,8 @@ export const projectSchema = z
     heroVideo: videoFileSchema.optional(),
     /** The finished film, if there is one. */
     film: z.union([embedSchema, videoFileSchema]).optional(),
+    /** Where to see more of the work, e.g. the channel it was published on. */
+    link: z.object({ label: z.string().min(1), href: z.string().url() }).optional(),
 
     challenge: narrativeSchema.optional(),
     idea: narrativeSchema.optional(),
@@ -140,9 +142,6 @@ export const projectSchema = z
     if (p.status !== "published") return;
     if (!p.cover) {
       ctx.addIssue({ code: "custom", path: ["cover"], message: "Published projects need a cover image" });
-    }
-    if (!p.year) {
-      ctx.addIssue({ code: "custom", path: ["year"], message: "Published projects need a year" });
     }
   });
 
