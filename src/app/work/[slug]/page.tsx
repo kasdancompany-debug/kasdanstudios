@@ -124,6 +124,11 @@ export default async function ProjectPage({ params }: Props) {
                   ? "object-contain object-top pt-20 md:object-right md:py-24 md:pr-[4vw]"
                   : "object-cover"
               }
+              style={
+                project.coverFit !== "contain" && project.coverFocus
+                  ? { objectPosition: project.coverFocus }
+                  : undefined
+              }
             />
           ) : (
             <AssetPlaceholder

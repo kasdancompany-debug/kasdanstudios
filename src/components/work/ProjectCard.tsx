@@ -9,7 +9,7 @@ import { brandCase } from "@/lib/brand";
 type Size = "feature" | "large" | "medium";
 
 const ratio: Record<Size, string> = {
-  feature: "aspect-[4/5] sm:aspect-[16/9] lg:aspect-[21/9]",
+  feature: "aspect-[4/5] sm:aspect-[16/9] lg:aspect-[2/1]",
   large: "aspect-[4/5] md:aspect-[3/2]",
   medium: "aspect-[4/5]",
 };
@@ -53,6 +53,7 @@ export function ProjectCard({
               sizes={sizes[size]}
               priority={priority}
               className={project.coverFit === "contain" ? "object-contain" : "object-cover"}
+              style={project.coverFocus ? { objectPosition: project.coverFocus } : undefined}
             />
           ) : (
             <AssetPlaceholder fill label={`${project.title} — cover still`} hint="2400 × 1350 JPG" />

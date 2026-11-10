@@ -124,6 +124,11 @@ export const projectSchema = z
     cover: imageSchema.optional(),
     /** "contain" shows the whole cover on cards (for ads and posters that must not be cropped). */
     coverFit: z.enum(["cover", "contain"]).default("cover"),
+    /** Which part of the cover to keep when it's cropped, as a CSS object-position, e.g. "50% 25%". */
+    coverFocus: z
+      .string()
+      .regex(/^\d{1,3}% \d{1,3}%$/, 'Use "x% y%", e.g. "50% 25%"')
+      .optional(),
     /** Optional hero loop or film; falls back to the cover image. */
     heroVideo: videoFileSchema.optional(),
     /** The finished film, if there is one. */
