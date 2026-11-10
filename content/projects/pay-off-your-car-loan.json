@@ -1,0 +1,28 @@
+{
+  "slug": "pay-off-your-car-loan",
+  "status": "published",
+  "order": 8,
+  "featured": false,
+  "title": "Sault Nissan — Pay Off Your Car Loan",
+  "client": "Sault Nissan",
+  "categories": ["commercials", "marketing"],
+  "disciplines": ["Video Ad", "Promotion", "Edit", "Motion Graphics"],
+  "summary": "A video ad for Sault Nissan's Pay Off Your Car Loan giveaway.",
+  "overview": "A short video ad announcing Sault Nissan's Pay Off Your Car Loan giveaway, with an on-camera host in the showroom explaining how to enter.",
+  "cover": {
+    "type": "image",
+    "src": "/work/pay-off-your-car-loan/cover.jpg",
+    "alt": "Still from the Sault Nissan video ad: a host in the showroom beneath the title Pay Off Your Car Giveaway",
+    "width": 1280,
+    "height": 720
+  },
+  "film": {
+    "type": "youtube",
+    "id": "BK-IQc4wSUQ",
+    "title": "Sault Nissan — Pay Off Your Car Loan giveaway",
+    "poster": "/work/pay-off-your-car-loan/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": { "label": "Watch on YouTube", "href": "https://www.youtube.com/watch?v=BK-IQc4wSUQ" },
+  "notes": "Published on Sault Nissan's YouTube channel as \"Let's Talk About it\". Confirm our exact role and where the ad ran."
+}
