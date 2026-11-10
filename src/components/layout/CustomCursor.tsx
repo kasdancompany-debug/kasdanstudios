@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { onPointerPosition, pointerXY } from "@/lib/motion/pointer";
 
 /**
  * A quiet ring that accompanies — never replaces — the native
@@ -35,11 +36,14 @@ export function CustomCursor() {
     // Position is written straight from the pointer event so the ring sits on the cursor with no lag.
     const place = () => (el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`);
 
+    const onPosition = (e: PointerEvent) => {
+      if (e.pointerType !== "mouse") return;
+      [x, y] = pointerXY(e);
+      place();
+    };
+    // Hover state only needs normal-rate events.
     const onMove = (e: PointerEvent) => {
       if (e.pointerType !== "mouse") return;
-      x = e.clientX;
-      y = e.clientY;
-      place();
       if (!visible) {
         visible = true;
         el.style.opacity = "1";
@@ -65,10 +69,12 @@ export function CustomCursor() {
     };
     raf = requestAnimationFrame(loop);
 
+    const offPosition = onPointerPosition(onPosition);
     window.addEventListener("pointermove", onMove, { passive: true });
     document.documentElement.addEventListener("pointerleave", onLeave);
     return () => {
       cancelAnimationFrame(raf);
+      offPosition();
       window.removeEventListener("pointermove", onMove);
       document.documentElement.removeEventListener("pointerleave", onLeave);
     };

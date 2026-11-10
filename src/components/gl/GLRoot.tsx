@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { detectCapabilities, glStore, scroll, studio } from "@/components/studio/store";
+import { onPointerPosition, pointerXY } from "@/lib/motion/pointer";
 
 const GLCanvas = dynamic(() => import("./GLCanvas"), { ssr: false });
 
@@ -55,10 +56,11 @@ export function GLRoot() {
     let lastY = window.scrollY;
     let lastT = performance.now();
     const onMove = (e: PointerEvent) => {
-      studio.pointer.x = (e.clientX / window.innerWidth) * 2 - 1;
-      studio.pointer.y = -((e.clientY / window.innerHeight) * 2 - 1);
-      mouse.x = e.clientX;
-      mouse.y = e.clientY;
+      const [x, y] = pointerXY(e);
+      studio.pointer.x = (x / window.innerWidth) * 2 - 1;
+      studio.pointer.y = -((y / window.innerHeight) * 2 - 1);
+      mouse.x = x;
+      mouse.y = y;
     };
     const onScroll = () => {
       const now = performance.now();
@@ -69,10 +71,10 @@ export function GLRoot() {
       lastY = window.scrollY;
       lastT = now;
     };
-    window.addEventListener("pointermove", onMove, { passive: true });
+    const offMove = onPointerPosition(onMove);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      window.removeEventListener("pointermove", onMove);
+      offMove();
       window.removeEventListener("scroll", onScroll);
     };
   }, [mount]);
