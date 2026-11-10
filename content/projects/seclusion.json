@@ -1,16 +1,11 @@
 {
   "slug": "seclusion",
   "status": "published",
-  "order": 14,
+  "order": 24,
   "featured": false,
   "title": "Seclusion",
-  "categories": [
-    "commercials"
-  ],
-  "disciplines": [
-    "Film",
-    "Thriller"
-  ],
+  "categories": ["commercials"],
+  "disciplines": ["Film", "Thriller"],
   "summary": "Three friends, one camping trip and a stranger who won't let them leave. On the festival circuit now, streaming after.",
   "overview": "When three friends' camping trip goes wrong, they cross paths with a seemingly helpful stranger whose lonely obsession traps them in a nightmare of captivity. To get out, they have to outwit his twisted devotion before it consumes them. Seclusion is on the film festival circuit now, and will move to streaming after its festival run.",
   "cover": {

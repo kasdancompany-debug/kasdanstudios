@@ -9,7 +9,7 @@ import { morph } from "@/components/gl/morphStore";
 type Item = { id: string; index: string; name: string; summary: string; offerings: string[] };
 
 /**
- * "What we do": six disciplines beside one morphing object. Hovering,
+ * "What we do": the disciplines beside one morphing object. Hovering,
  * focusing or scrolling to a discipline changes the object's temperament.
  */
 export function Disciplines({ items }: { items: Item[] }) {

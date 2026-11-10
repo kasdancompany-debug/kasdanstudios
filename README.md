@@ -104,24 +104,24 @@ No component code changes are needed.
 
 Field reference (validated by `src/lib/content/schemas.ts`):
 
-| Field                            | Notes                                                                                                        |
-| -------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `status`                         | `draft` or `published`. Only published projects appear on the public site and sitemap.                       |
-| `order`, `featured`              | Lower `order` first. One `featured` project leads the homepage and /work.                                    |
-| `title`, `client`, `year`        | Name a client only with their permission. `year` and `cover` are required to publish.                        |
-| `categories`                     | Any of `commercials`, `real-estate`, `social`, `web`, `design`, `marketing` — these drive the /work filters. |
-| `disciplines`                    | Free text, e.g. `"Direction"`, `"Colour"`.                                                                   |
-| `summary`, `overview`            | Card sentence; case-study intro.                                                                             |
-| `cover`                          | `{ type: "image", src, alt, width, height }` — always give real pixel dimensions.                            |
-| `heroVideo`                      | Optional silent loop: `{ type: "video", src, poster, width, height, title }`.                                |
-| `film`                           | Vimeo/YouTube `{ type: "vimeo", id, title, poster?, aspect }`, or a self-hosted MP4.                         |
-| `challenge`, `idea`, `execution` | `{ heading?, body: ["paragraph", …] }`.                                                                      |
-| `gallery`                        | Any mix of images, MP4s and Vimeo/YouTube embeds.                                                            |
-| `results`                        | `{ value, label, source }` — **every metric must name its source.** Leave empty if unknown.                  |
-| `awards`                         | `{ year, name, organization, recipient }` — only after verifying with the awarding body.                     |
-| `credits`                        | `{ role, name }`.                                                                                            |
-| `seo`                            | Optional title/description overrides.                                                                        |
-| `notes`                          | Internal only, never rendered.                                                                               |
+| Field                            | Notes                                                                                                                                                           |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `status`                         | `draft` or `published`. Only published projects appear on the public site and sitemap.                                                                          |
+| `order`, `featured`              | Lower `order` first. One `featured` project leads the homepage and /work.                                                                                       |
+| `title`, `client`, `year`        | Name a client only with their permission. `year` and `cover` are required to publish.                                                                           |
+| `categories`                     | Any of `marketing`, `paid-ads`, `design`, `photography`, `social`, `web`, `commercials`, `real-estate` — these drive the /work filters (empty ones are hidden). |
+| `disciplines`                    | Free text, e.g. `"Direction"`, `"Colour"`.                                                                                                                      |
+| `summary`, `overview`            | Card sentence; case-study intro.                                                                                                                                |
+| `cover`                          | `{ type: "image", src, alt, width, height }` — always give real pixel dimensions.                                                                               |
+| `heroVideo`                      | Optional silent loop: `{ type: "video", src, poster, width, height, title }`.                                                                                   |
+| `film`                           | Vimeo/YouTube `{ type: "vimeo", id, title, poster?, aspect }`, or a self-hosted MP4.                                                                            |
+| `challenge`, `idea`, `execution` | `{ heading?, body: ["paragraph", …] }`.                                                                                                                         |
+| `gallery`                        | Any mix of images, MP4s and Vimeo/YouTube embeds.                                                                                                               |
+| `results`                        | `{ value, label, source }` — **every metric must name its source.** Leave empty if unknown.                                                                     |
+| `awards`                         | `{ year, name, organization, recipient }` — only after verifying with the awarding body.                                                                        |
+| `credits`                        | `{ role, name }`.                                                                                                                                               |
+| `seo`                            | Optional title/description overrides.                                                                                                                           |
+| `notes`                          | Internal only, never rendered.                                                                                                                                  |
 
 Images: export JPGs around 2400 px wide; Next.js generates AVIF/WebP sizes automatically. Vimeo/YouTube players only load when the visitor presses play.
 

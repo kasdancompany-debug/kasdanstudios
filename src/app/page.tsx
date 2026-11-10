@@ -23,7 +23,7 @@ export const metadata = pageMetadata({
     "Creative and marketing studio in Sault Ste. Marie, Ontario — Meta ads and lead generation, marketing strategy, graphic design, branding, social content, web design and film.",
 });
 
-const slotLabels = ["Brand & social content", "Commercial film", "Recognized creative work"];
+const slotLabels = ["Design & campaigns", "Meta ads & lead generation", "Photography & social"];
 
 export default function HomePage() {
   const projects = getVisibleProjects();
@@ -50,7 +50,17 @@ export default function HomePage() {
       </ReelStory>
 
       <Marquee
-        items={["Marketing", "Meta Ads", "Lead Generation", "Graphic Design", "Branding", "Social", "Web Design", "Film"]}
+        items={[
+          "Marketing",
+          "Meta Ads",
+          "Lead Generation",
+          "Graphic Design",
+          "Branding",
+          "Photography",
+          "Social",
+          "Web Design",
+          "Film",
+        ]}
         className="mt-24 md:mt-32"
       />
 
@@ -168,7 +178,7 @@ export default function HomePage() {
               <SectionMarker index="03">What we do</SectionMarker>
             </Reveal>
             <GLText as="h2" id="services-title" className="type-display mt-6 text-cream">
-              Seven disciplines. <span className="italic text-bone">One studio.</span>
+              Eight disciplines. <span className="italic text-bone">One studio.</span>
             </GLText>
           </div>
         </div>

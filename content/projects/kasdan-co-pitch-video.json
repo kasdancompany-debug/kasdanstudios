@@ -1,20 +1,13 @@
 {
   "slug": "kasdan-co-pitch-video",
   "status": "published",
-  "order": 10,
+  "order": 12,
   "featured": false,
   "title": "Kasdan Co. Pitch Video",
   "client": "Kasdan Co.",
   "year": 2025,
-  "categories": [
-    "commercials",
-    "marketing"
-  ],
-  "disciplines": [
-    "Pitch Film",
-    "Story",
-    "Edit"
-  ],
+  "categories": ["commercials", "marketing"],
+  "disciplines": ["Pitch Film", "Story", "Edit"],
   "summary": "Our pitch film for the 2025 Bridges to Better Business Pitch Competition.",
   "overview": "The pitch video for Kasdan Co., made for the 2025 Bridges to Better Business Pitch Competition. Kasdan Co. was among the top five applicants and was selected to move on to the next stage of the competition.",
   "cover": {

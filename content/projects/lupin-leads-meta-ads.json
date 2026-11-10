@@ -1,0 +1,71 @@
+{
+  "slug": "lupin-leads-meta-ads",
+  "status": "published",
+  "order": 2,
+  "featured": false,
+  "title": "Lupin Leads — Meta Lead Campaign",
+  "client": "Lupin Leads",
+  "categories": ["paid-ads", "marketing", "design"],
+  "disciplines": ["Meta Ads", "Lead Generation", "Ad Creative", "Campaign Management"],
+  "summary": "A Facebook and Instagram lead campaign for contractors, with ad creative built for every trade.",
+  "overview": "Lupin Leads sells qualified leads to contractors for a flat $100 a week. We built the paid campaign that finds those contractors on Facebook and Instagram: the offer, the audiences, the lead form and a family of ads that speaks to each trade in its own language.",
+  "cover": {
+    "type": "image",
+    "src": "/work/lupin-leads-meta-ads/ad-general-contractor.webp",
+    "alt": "Lupin Leads ad: a contractor in a cap looks up beside a house frame, with the headline Get more qualified leads for only $100 a week",
+    "width": 1254,
+    "height": 1254
+  },
+  "coverFit": "contain",
+  "challenge": {
+    "heading": "The challenge",
+    "body": [
+      "Contractors are busy, sceptical and used to being sold leads that never pick up the phone. An ad has about a second to look like it was made for them, not for \"small businesses\" in general.",
+      "The offer also had to be impossible to misread: one price, one promise, no fine print."
+    ]
+  },
+  "idea": {
+    "heading": "The idea",
+    "body": [
+      "Keep the message identical and change the person. Every ad carries the same headline — \"Get more qualified leads for only $100/week\" — in the same heavy type and Lupin green, while the image swaps to the trade we're targeting: a general contractor on site, a plumber under a sink, a framer driving a nail.",
+      "The purple-and-black grade and the rising arrow tie the set together, so the brand builds recognition even as the audiences change."
+    ]
+  },
+  "execution": {
+    "heading": "How the campaign runs",
+    "body": [
+      "Strategy and offer: audiences set by trade and service area, with the offer front and centre in every ad.",
+      "Creative: square and vertical versions of each trade variation, made in-house, so new ads can go into testing within days rather than weeks.",
+      "Lead capture: Meta instant forms with qualifying questions, so contractors who aren't a fit filter themselves out before they reach the sales team.",
+      "Management: tracking from ad to lead, weekly optimisation of budgets and creative, and a plain-English monthly report on cost per lead and what we're changing next."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/lupin-leads-meta-ads/ad-general-contractor.webp",
+      "alt": "Lupin Leads ad for general contractors: a bearded contractor looking up beside a framed house and a rising arrow",
+      "width": 1254,
+      "height": 1254,
+      "caption": "General contractors"
+    },
+    {
+      "type": "image",
+      "src": "/work/lupin-leads-meta-ads/ad-plumbing-heating.webp",
+      "alt": "Lupin Leads ad for plumbing and heating: a plumber tightening a pipe with a wrench beside a van reading Plumbing, Heating, Drainage",
+      "width": 1254,
+      "height": 1254,
+      "caption": "Plumbing, heating & drainage"
+    },
+    {
+      "type": "image",
+      "src": "/work/lupin-leads-meta-ads/ad-framing.webp",
+      "alt": "Lupin Leads ad for framers and builders: a hand driving a nail with a hammer in front of a house frame",
+      "width": 1254,
+      "height": 1254,
+      "caption": "Framing & builders"
+    }
+  ],
+  "galleryLayout": "grid",
+  "notes": "Add verified results (leads, cost per lead, date range, source: Meta Ads Manager) once available. Confirm Lupin Leads can be named and that the 'How the campaign runs' steps match what was actually done."
+}

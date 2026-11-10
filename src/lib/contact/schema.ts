@@ -8,6 +8,7 @@ export const projectTypes = [
   { value: "meta-ads-lead-gen", label: "Meta ads & lead generation" },
   { value: "graphic-design", label: "Graphic design & branding" },
   { value: "social-tiktok", label: "Social & TikTok" },
+  { value: "photography", label: "Food & product photography" },
   { value: "web-design", label: "Website" },
   { value: "commercials-film", label: "Commercial / film" },
   { value: "real-estate", label: "Real estate media" },

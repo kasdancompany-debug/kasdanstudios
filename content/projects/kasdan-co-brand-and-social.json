@@ -1,11 +1,11 @@
 {
   "slug": "kasdan-co-brand-and-social",
   "status": "published",
-  "order": 30,
+  "order": 5,
   "featured": false,
   "title": "Kasdan Co. — Brand & Social",
   "client": "Kasdan Co.",
-  "categories": ["social", "design"],
+  "categories": ["social", "marketing", "design"],
   "disciplines": ["Brand", "Social Content", "Short-Form Video"],
   "summary": "The café we run, and the TikTok channel we make for it every week.",
   "overview": "Kasdan Co. is our own café in Sault Ste. Marie. We plan, shoot, edit and post its short-form content ourselves, and the channel has passed one million cumulative views on TikTok.",
@@ -16,6 +16,42 @@
     "width": 1440,
     "height": 964
   },
+  "idea": {
+    "heading": "How we run it",
+    "body": [
+      "Content works when it's a habit, not a campaign. Every week we plan hooks around what's actually happening at the counter — new drinks, seasonal donuts, regulars and the odd stunt — then batch-shoot, edit and post.",
+      "Some of those stunts get bigger than the feed. On 27 October 2024, Daniel O'Brien and Kassandra Yee set the Guinness World Record for the tallest stack of doughnuts in one minute by a team of two — ten doughnuts — at the café."
+    ]
+  },
+  "execution": {
+    "heading": "What this means for clients",
+    "body": [
+      "The same loop we run for ourselves — plan, shoot, edit, post, look at what worked — is what we run for the businesses we partner with."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "tiktok",
+      "id": "7626133243640696084",
+      "title": "Kasdan Co. TikTok video",
+      "aspect": "9:16"
+    },
+    {
+      "type": "tiktok",
+      "id": "7512208411992329478",
+      "title": "Kasdan Co. TikTok video",
+      "aspect": "9:16"
+    }
+  ],
+  "galleryLayout": "grid",
+  "awards": [
+    {
+      "year": 2024,
+      "name": "Guinness World Record — tallest stack of doughnuts in one minute (team of two)",
+      "organization": "Guinness World Records",
+      "recipient": "Daniel O'Brien & Kassandra Yee"
+    }
+  ],
   "link": { "label": "@kasdan_co on TikTok", "href": "https://www.tiktok.com/@kasdan_co" },
-  "notes": "Add a year once confirmed."
+  "notes": "Guinness details from the certificate photo supplied by the owner (Nov 2026). Add the certificate photo to the gallery once saved to /public. Give the TikToks descriptive titles."
 }

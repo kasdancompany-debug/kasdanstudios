@@ -125,6 +125,7 @@ const PRESETS: Record<string, Preset> = {
   "meta-ads-lead-gen": { freq: 3.2, amp: 0.2, twist: 0.8, hue: 0.05 }, // quick, warm, pulling in
   "graphic-design": { freq: 2.6, amp: 0.17, twist: 1.4, hue: 0.22 }, // wrung, safelight
   "social-tiktok": { freq: 4.2, amp: 0.1, twist: 0.0, hue: 0.48 }, // fizzing, quick
+  photography: { freq: 2.0, amp: 0.24, twist: 0.5, hue: 0.32 }, // soft, daylight
   "web-design": { freq: 1.8, amp: 0.14, twist: -1.6, hue: 0.62 }, // engineered spiral, cool
   "commercials-film": { freq: 1.1, amp: 0.3, twist: 0.35, hue: 0.0 }, // slow, tungsten
   "real-estate": { freq: 0.6, amp: 0.22, twist: 0.1, hue: 0.12 }, // calm, architectural

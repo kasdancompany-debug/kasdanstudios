@@ -18,17 +18,20 @@ function embedUrl(media: EmbedMedia) {
   if (media.type === "vimeo") {
     return `https://player.vimeo.com/video/${media.id}?autoplay=1&dnt=1&title=0&byline=0&portrait=0`;
   }
+  if (media.type === "tiktok") {
+    return `https://www.tiktok.com/player/v1/${media.id}?autoplay=1&rel=0&description=1`;
+  }
   return `https://www.youtube-nocookie.com/embed/${media.id}?autoplay=1&rel=0&modestbranding=1`;
 }
 
 /**
- * Click-to-load facade for Vimeo / YouTube. No third-party script, cookie
+ * Click-to-load facade for Vimeo / YouTube / TikTok. No third-party script, cookie
  * or request is made until the visitor chooses to play — faster pages and
  * a cleaner privacy story.
  */
 export function VideoEmbed({ media, priority = false }: { media: EmbedMedia; priority?: boolean }) {
   const [active, setActive] = useState(false);
-  const provider = media.type === "vimeo" ? "Vimeo" : "YouTube";
+  const provider = { vimeo: "Vimeo", youtube: "YouTube", tiktok: "TikTok" }[media.type];
 
   return (
     <figure>
@@ -63,7 +66,7 @@ export function VideoEmbed({ media, priority = false }: { media: EmbedMedia; pri
                 <Play aria-hidden strokeWidth={1} className="ml-1 size-6 fill-cream text-cream" />
               </span>
               <span className="type-nav text-cream">
-                Play film <span className="sr-only">: {media.title}</span>
+                {media.type === "tiktok" ? "Play video" : "Play film"} <span className="sr-only">: {media.title}</span>
               </span>
             </span>
             <span className="type-label absolute bottom-4 left-4 text-mute">Loads {provider} player</span>

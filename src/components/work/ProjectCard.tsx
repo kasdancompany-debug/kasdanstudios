@@ -51,7 +51,7 @@ export function ProjectCard({
               fill
               sizes={sizes[size]}
               priority={priority}
-              className="object-cover"
+              className={project.coverFit === "contain" ? "object-contain" : "object-cover"}
             />
           ) : (
             <AssetPlaceholder fill label={`${project.title} — cover still`} hint="2400 × 1350 JPG" />

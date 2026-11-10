@@ -1,0 +1,33 @@
+{
+  "slug": "kifaru",
+  "status": "draft",
+  "order": 8,
+  "featured": false,
+  "title": "Kifaru",
+  "client": "D&AD New Blood — Rare & Xbox brief",
+  "year": 2021,
+  "categories": ["design"],
+  "disciplines": ["Game Concept", "Art Direction", "Unity Prototype"],
+  "summary": "A game about rhino conservation, made for the Rare & Xbox brief. D&AD New Blood Yellow Pencil, 2021.",
+  "overview": "Kifaru is a game designed as a force for good. Players reunite a rhino calf with its herd across open African landscapes, learning along the way about the real threats rhinos face and how conservation can help. A playable demo was built in Unity to prove the idea.",
+  "challenge": {
+    "heading": "The brief",
+    "body": [
+      "Rare and Xbox asked D&AD New Blood entrants for a game that could entertain and do some good in the world."
+    ]
+  },
+  "idea": {
+    "heading": "The idea",
+    "body": [
+      "Pair striking visuals, light puzzles and open-world exploration with a message players carry out of the game: rhinos need advocates before it's too late."
+    ]
+  },
+  "awards": [
+    { "year": 2021, "name": "D&AD New Blood Yellow Pencil", "organization": "D&AD", "recipient": "Dan O'Brien" }
+  ],
+  "link": {
+    "label": "View on the D&AD New Blood archive",
+    "href": "https://www.dandad.org/work/new-blood-archive/kifaru"
+  },
+  "notes": "Draft until a cover image is supplied (put it at /work/kifaru/cover.jpg and add 'cover'). Yellow Pencil, brief and year verified on dandad.org (Nov 2026); D&AD page lists no team credits — confirm recipient wording."
+}

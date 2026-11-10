@@ -1,0 +1,56 @@
+{
+  "slug": "showtime-the-story-is-ours",
+  "status": "published",
+  "order": 4,
+  "featured": false,
+  "title": "Showtime — The Story Is Ours",
+  "categories": ["marketing", "design", "social"],
+  "disciplines": ["Campaign Concept", "Out-of-Home", "Social Campaign", "Art Direction"],
+  "summary": "A campaign for interactive cinema, where the audience votes on what happens next — from bus shelters to the Instagram grid.",
+  "overview": "Showtime is a concept for interactive cinema: one screen, one room, and an audience that chooses the story together from their phones. \"The Story Is Ours\" introduces the idea across out-of-home and social, using a film-noir world and a single graphic device — a red dot that becomes the choice point in every frame.",
+  "cover": {
+    "type": "image",
+    "src": "/work/showtime-the-story-is-ours/bus-shelter.jpg",
+    "alt": "Five Showtime posters lit up in a city bus shelter at dusk on a wet street, with lines like Same screen. A different story. and You're in.",
+    "width": 1920,
+    "height": 1080
+  },
+  "challenge": {
+    "heading": "The challenge",
+    "body": [
+      "Interactive cinema is a new behaviour. People need to understand at a glance that this isn't streaming at home and isn't a normal movie night — it's a story the whole room decides."
+    ]
+  },
+  "idea": {
+    "heading": "The idea",
+    "body": [
+      "Make the choice the hero. The O in SHOWTIME is a red dot that branches into paths — A, B or C — so the logo itself explains the product. Lines like \"Same screen. A different story.\", \"Every choice a new story.\" and \"You're in.\" do the rest.",
+      "A noir palette of black, cream and cinema red keeps every touchpoint recognisable, from a five-panel bus shelter sequence ending in a QR code (\"Scan. Choose. Watch together.\") to a six-post Instagram launch."
+    ]
+  },
+  "execution": {
+    "heading": "Deliverables",
+    "body": [
+      "Brand mark and tagline, a five-poster out-of-home series, a six-post social launch with captions and hashtags, and concession packaging applications."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/showtime-the-story-is-ours/instagram.jpg",
+      "alt": "Six phones showing the Showtime Instagram launch: the logo under a spotlight, a red-haired woman, a branching A-B-C film strip, a phone vote reading Trust him or Walk away, popcorn packaging, and posters on a brick wall",
+      "width": 1920,
+      "height": 1080,
+      "caption": "Six-post Instagram launch"
+    },
+    {
+      "type": "image",
+      "src": "/work/showtime-the-story-is-ours/bus-shelter.jpg",
+      "alt": "Showtime out-of-home poster series in a bus shelter",
+      "width": 1920,
+      "height": 1080,
+      "caption": "Out-of-home: five-panel bus shelter series"
+    }
+  ],
+  "notes": "Presented as a concept with no client named. Owner to confirm whether it was for a client, a competition or self-initiated."
+}

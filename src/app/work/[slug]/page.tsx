@@ -118,7 +118,11 @@ export default async function ProjectPage({ params }: Props) {
               fill
               priority
               sizes="100vw"
-              className="object-cover"
+              className={
+                project.coverFit === "contain"
+                  ? "object-contain object-top pt-20 md:object-right md:py-24 md:pr-[4vw]"
+                  : "object-cover"
+              }
             />
           ) : (
             <AssetPlaceholder
@@ -192,11 +196,25 @@ export default async function ProjectPage({ params }: Props) {
         <section aria-label="Film and gallery" className="gl-clear bg-coal py-20 md:py-32">
           <div className="shell space-y-14 md:space-y-24">
             {project.film && (
-              <Reveal variant="frame">
+              <Reveal
+                variant="frame"
+                className={
+                  project.film.type !== "video" && project.film.aspect === "9:16" ? "mx-auto max-w-sm" : undefined
+                }
+              >
                 <MediaBlock media={project.film} sizes="100vw" />
               </Reveal>
             )}
-            {project.gallery.length > 0 && (
+            {project.gallery.length > 0 && project.galleryLayout === "grid" && (
+              <div className="grid gap-10 sm:grid-cols-2 md:gap-8 lg:grid-cols-3">
+                {project.gallery.map((m, i) => (
+                  <Reveal key={i} variant="frame" delay={(i % 3) * 80}>
+                    <MediaBlock media={m} sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw" />
+                  </Reveal>
+                ))}
+              </div>
+            )}
+            {project.gallery.length > 0 && project.galleryLayout === "editorial" && (
               <div className="grid gap-10 md:grid-cols-12 md:gap-8">
                 {project.gallery.map((m, i) => (
                   <Reveal

@@ -1,15 +1,11 @@
 {
   "slug": "chaplin-the-tramp-who-changed-the-world",
   "status": "published",
-  "order": 12,
+  "order": 22,
   "featured": false,
   "title": "Chaplin: The Tramp Who Changed the World",
-  "categories": [
-    "commercials"
-  ],
-  "disciplines": [
-    "Documentary"
-  ],
+  "categories": ["commercials"],
+  "disciplines": ["Documentary"],
   "summary": "The rise of cinema's first global icon, now streaming on AB Films TV and Fawesome.",
   "overview": "An exploration of how Charlie Chaplin went from a poverty-stricken London childhood to creating the Tramp, blending laughter and humanity to shape film as an art form and a voice for social change. It's distributed on streaming channels including AB Films TV and Fawesome.",
   "cover": {

@@ -1,0 +1,53 @@
+{
+  "slug": "kasdan-co-website",
+  "status": "published",
+  "order": 7,
+  "featured": false,
+  "title": "Kasdan Co. — Website",
+  "client": "Kasdan Co.",
+  "categories": ["web", "design"],
+  "disciplines": ["Web Design", "Web Development", "Online Ordering", "Local SEO"],
+  "summary": "A bright, playful site for our donut and coffee shop, with ordering ahead and a build-your-own-donut tool.",
+  "overview": "kasdan co. makes small-batch donuts and specialty coffee on Queen St E in Sault Ste. Marie, and at the Soo Mrkt on Saturdays. The website had to feel as fun as the shop and still make the two things customers want — ordering ahead and finding us — effortless.",
+  "cover": {
+    "type": "image",
+    "src": "/work/kasdan-co-website/desktop.png",
+    "alt": "kasdan co. homepage: the headline Donuts worth waking up for, with Order Ahead and Build Your Own Donut buttons and floating illustrated donuts",
+    "width": 1920,
+    "height": 1200
+  },
+  "idea": {
+    "heading": "The idea",
+    "body": [
+      "Make the website taste like the shop. Soft cream backgrounds, a punchy blue, and illustrated donuts drifting across the screen set the mood before a word is read — then \"Donuts worth waking up for\" says the rest.",
+      "Two buttons lead the page: Order Ahead, for regulars on their way in, and Build Your Own Donut, which turns the menu into something to play with and share."
+    ]
+  },
+  "execution": {
+    "heading": "What we built",
+    "body": [
+      "Design and development, online ordering, an interactive donut builder, menu and location pages, and local SEO so the shop shows up for \"donuts in Sault Ste. Marie\"."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/kasdan-co-website/desktop.png",
+      "alt": "kasdan co. website on desktop",
+      "width": 1920,
+      "height": 1200,
+      "caption": "Desktop"
+    },
+    {
+      "type": "image",
+      "src": "/work/kasdan-co-website/mobile.png",
+      "alt": "kasdan co. website on a phone",
+      "width": 860,
+      "height": 1864,
+      "caption": "Mobile"
+    }
+  ],
+  "galleryLayout": "grid",
+  "link": { "label": "kasdan.company", "href": "https://www.kasdan.company/" },
+  "notes": "Screenshots captured from the live site (Nov 2026). Confirm the ordering and donut-builder features are built by us."
+}

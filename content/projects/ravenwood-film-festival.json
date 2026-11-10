@@ -1,0 +1,59 @@
+{
+  "slug": "ravenwood-film-festival",
+  "status": "published",
+  "order": 1,
+  "featured": true,
+  "title": "Ravenwood Film Festival",
+  "client": "Ravenwood Film Festival",
+  "categories": ["design", "marketing"],
+  "disciplines": ["Poster Design", "Key Art", "Event Branding"],
+  "summary": "Festival key art and a retro B-movie poster for three nights of horror, sci-fi and thrillers in Sault Ste. Marie.",
+  "overview": "Ravenwood is a genre film festival held at The Queen of Hearts Club in Sault Ste. Marie. We designed two looks for it: a brooding key art built around the festival's raven, and a loud, tongue-in-cheek poster that borrows from drive-in horror one-sheets to sell the weekend.",
+  "cover": {
+    "type": "image",
+    "src": "/work/ravenwood-film-festival/key-art.webp",
+    "alt": "Ravenwood Film Festival key art: a raven's silhouette filled with misty pine forest, a strip of film leader and a glowing projector",
+    "width": 1536,
+    "height": 1024
+  },
+  "challenge": {
+    "heading": "The brief",
+    "body": [
+      "A new festival needs two things at once: an identity that feels like it has always been there, and promotion loud enough to fill a room for October 26–28.",
+      "One poster couldn't do both jobs, so we designed a system with two voices."
+    ]
+  },
+  "idea": {
+    "heading": "The idea",
+    "body": [
+      "The key art is the festival's signature. A raven fades into a fog of Northern Ontario pines, with a film-leader countdown running through its wing and a projector throwing light out of the dark. It's the image for the website, the screen before every film and anything that needs to feel premium.",
+      "The event poster is the opposite: torn paper, a hand-drawn diner waitress with a vintage camera for a head and a tentacled monster under the cloche. Big yellow type, \"Horror! Sci-fi! Thriller!\" up top, and every practical detail — dates, venue, address and URL — easy to read from across the street."
+    ]
+  },
+  "execution": {
+    "heading": "What we delivered",
+    "body": [
+      "Festival key art and wordmark lockup, a print poster with venue and date details, and matching assets for social and the festival website."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/ravenwood-film-festival/retro-poster.jpg",
+      "alt": "Retro Ravenwood Film Festival poster: a waitress with a vintage film camera for a head serving a tentacled monster, over torn red paper with yellow type",
+      "width": 855,
+      "height": 1080,
+      "caption": "Event poster — October 26–28, The Queen of Hearts Club"
+    },
+    {
+      "type": "image",
+      "src": "/work/ravenwood-film-festival/key-art.webp",
+      "alt": "Ravenwood Film Festival key art with raven, pine forest and projector",
+      "width": 1536,
+      "height": 1024,
+      "caption": "Festival key art"
+    }
+  ],
+  "galleryLayout": "grid",
+  "notes": "Owner to confirm: festival year, that Ravenwood can be named, and that both pieces are Kasdan Studios work."
+}

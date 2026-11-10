@@ -73,7 +73,8 @@ export const awardsRoll: RollEntry[] = [
     year: 2024,
     name: "Guinness World Record",
     organization: "Guinness World Records",
-    recipient: null,
+    // Certificate: tallest stack of doughnuts in one minute (team of two), 27 Oct 2024.
+    recipient: "Daniel O'Brien & Kassandra Yee",
     sketch: "certificate",
   },
   { year: 2017, name: "iHorror Award", organization: null, recipient: null, sketch: "hooded" },

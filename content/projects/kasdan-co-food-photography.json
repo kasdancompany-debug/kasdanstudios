@@ -1,0 +1,61 @@
+{
+  "slug": "kasdan-co-food-photography",
+  "status": "published",
+  "order": 3,
+  "featured": false,
+  "title": "Kasdan Co. — Food & Drink Photography",
+  "client": "Kasdan Co.",
+  "categories": ["photography", "social"],
+  "disciplines": ["Food Photography", "Drink Photography", "Art Direction", "Seasonal Campaigns"],
+  "summary": "Seasonal menu photography for our café — shot outside, styled with a sense of humour and made for the feed.",
+  "overview": "Menu photos don't have to be shot on a white table. For Kasdan Co., our café in Sault Ste. Marie, we take the drinks and donuts outside — into the autumn woods, onto an iron fence, into a flowering garden — and give each seasonal launch an image people stop and share.",
+  "cover": {
+    "type": "image",
+    "src": "/work/kasdan-co-food-photography/ghost-iced-latte.jpg",
+    "alt": "A person in a white bedsheet ghost costume and sunglasses peeks out from behind a tree in autumn woods, holding an iced latte decorated with little ghost faces",
+    "width": 1289,
+    "height": 1670
+  },
+  "idea": {
+    "heading": "The approach",
+    "body": [
+      "Each menu has a story, and the photo should tell it before anyone reads the caption. The Halloween iced latte has ghost faces on the cup, so it's held by ghosts. The fall donuts line up on a fence under a maple in full colour.",
+      "We plan the styling, location and light together, then shoot a set that works for menu boards, Instagram posts, Reels covers and paid ads."
+    ]
+  },
+  "execution": {
+    "heading": "What you get",
+    "body": [
+      "Concept and styling, an on-location shoot, colour-graded selects in square, portrait and vertical crops, and short behind-the-scenes clips for Stories and TikTok."
+    ]
+  },
+  "gallery": [
+    {
+      "type": "image",
+      "src": "/work/kasdan-co-food-photography/ghost-duo.webp",
+      "alt": "Two sheet ghosts in sunglasses on a leafy autumn trail by a lake, each raising an iced latte with a ghost drawn on the cup",
+      "width": 1289,
+      "height": 1670,
+      "caption": "Halloween iced latte launch"
+    },
+    {
+      "type": "image",
+      "src": "/work/kasdan-co-food-photography/autumn-donuts.jpg",
+      "alt": "Three autumn donuts — a glazed swirl, a pumpkin donut with seeds and a dark chocolate donut with coffee beans — balanced on a black iron fence under an orange maple",
+      "width": 1289,
+      "height": 1697,
+      "caption": "Fall donut menu"
+    },
+    {
+      "type": "image",
+      "src": "/work/kasdan-co-food-photography/lavender-matcha.webp",
+      "alt": "An iced matcha latte topped with whipped cream and dried lavender on a brick path beside a pink flowering shrub",
+      "width": 1500,
+      "height": 2000,
+      "caption": "Lavender matcha"
+    }
+  ],
+  "galleryLayout": "grid",
+  "link": { "label": "@kasdan_co on TikTok", "href": "https://www.tiktok.com/@kasdan_co" },
+  "notes": "Owner to confirm all four photos are Kasdan Co. menu items."
+}

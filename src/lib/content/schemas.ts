@@ -31,8 +31,8 @@ export const videoFileSchema = z.object({
 });
 
 export const embedSchema = z.object({
-  type: z.enum(["vimeo", "youtube"]),
-  /** Video id only, e.g. "76979871" for Vimeo or "dQw4w9WgXcQ" for YouTube. */
+  type: z.enum(["vimeo", "youtube", "tiktok"]),
+  /** Video id only, e.g. "76979871" for Vimeo, "dQw4w9WgXcQ" for YouTube or the number at the end of a TikTok URL. */
   id: z.string().regex(/^[\w-]+$/),
   title: z.string().min(1, "Embeds need a title for screen readers"),
   /** Poster shown before the player is loaded. */
@@ -52,16 +52,28 @@ export type Media = z.infer<typeof mediaSchema>;
 /* Projects                                                            */
 /* ------------------------------------------------------------------ */
 
-export const projectCategories = ["commercials", "real-estate", "social", "web", "design", "marketing"] as const;
+// Order here is the order of the /work filters.
+export const projectCategories = [
+  "marketing",
+  "paid-ads",
+  "design",
+  "photography",
+  "social",
+  "web",
+  "commercials",
+  "real-estate",
+] as const;
 export type ProjectCategory = (typeof projectCategories)[number];
 
 export const categoryLabels: Record<ProjectCategory, string> = {
-  commercials: "Commercials & Film",
-  "real-estate": "Real Estate",
+  marketing: "Marketing",
+  "paid-ads": "Meta Ads & Lead Gen",
+  design: "Graphic Design",
+  photography: "Photography",
   social: "Social & TikTok",
   web: "Web",
-  design: "Design",
-  marketing: "Marketing",
+  commercials: "Commercials & Film",
+  "real-estate": "Real Estate",
 };
 
 const creditSchema = z.object({
@@ -110,6 +122,8 @@ export const projectSchema = z
 
     /** Card + hero still. */
     cover: imageSchema.optional(),
+    /** "contain" shows the whole cover on cards (for ads and posters that must not be cropped). */
+    coverFit: z.enum(["cover", "contain"]).default("cover"),
     /** Optional hero loop or film; falls back to the cover image. */
     heroVideo: videoFileSchema.optional(),
     /** The finished film, if there is one. */
@@ -122,6 +136,8 @@ export const projectSchema = z
     execution: narrativeSchema.optional(),
 
     gallery: z.array(mediaSchema).default([]),
+    /** "editorial" alternates wide and narrow frames; "grid" lays out ad sets and photo series evenly. */
+    galleryLayout: z.enum(["editorial", "grid"]).default("editorial"),
 
     /** Only verified outcomes — each needs a source. */
     results: z.array(metricSchema).default([]),
