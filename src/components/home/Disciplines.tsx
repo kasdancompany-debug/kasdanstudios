@@ -35,7 +35,7 @@ export function Disciplines({ items }: { items: Item[] }) {
         <GLMorph className="relative mx-auto aspect-square w-full max-w-[22rem] md:sticky md:top-28 md:max-w-none" />
       </div>
       <ol ref={list} className="min-w-0 border-t border-line md:col-span-7">
-        {items.map((s, i) => (
+        {items.map((s) => (
           <li key={s.id} data-row={s.id} className="border-b border-line">
             <Link
               href={`/services#${s.id}`}

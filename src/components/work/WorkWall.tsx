@@ -15,9 +15,7 @@ const offsets: Record<number, number[]> = {
 };
 
 const accents: { tone: "gold" | "line"; text: string }[] = [
-  { tone: "gold", text: "Made in-house" },
   { tone: "line", text: "Ads · Design · Photo · Web · Film" },
-  { tone: "gold", text: "Sault Ste. Marie" },
 ];
 
 /** Every image from every project, interleaved so one project's frames don't bunch together. */
@@ -36,7 +34,7 @@ function buildTiles(projects: Project[]): Tile[] {
   }
   // Drop an accent block in every so often, like a colour swatch on a pinboard.
   accents.forEach((a, i) => {
-    const at = Math.min(tiles.length, 2 + i * 7);
+    const at = Math.min(tiles.length, 5 + i * 7);
     tiles.splice(at, 0, { kind: "accent", key: `accent-${i}`, ...a });
   });
   return tiles;

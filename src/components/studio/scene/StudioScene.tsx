@@ -251,11 +251,46 @@ function useScreenTexture(project: ScreenProject | undefined, index: number) {
   return slate;
 }
 
-function CoverMaterial({ src }: { src: string }) {
+/** The largest a screen gets; covers are fitted inside it at their own proportions. */
+const SCREEN_W = 4.8;
+const SCREEN_H = 2.7;
+const BEZEL = 0.11;
+
+function fitScreen(aspect: number): [number, number] {
+  // Squarer and portrait covers may stand a little taller than a 16:9 screen, so they don't shrink away.
+  const maxH = aspect < 1.4 ? SCREEN_H * 1.18 : SCREEN_H;
+  return aspect >= SCREEN_W / maxH ? [SCREEN_W, SCREEN_W / aspect] : [maxH * aspect, maxH];
+}
+
+function Bezel({ w, h }: { w: number; h: number }) {
+  return (
+    <mesh position={[0, 0, -0.04]}>
+      <boxGeometry args={[w + BEZEL * 2, h + BEZEL * 2, 0.06]} />
+      <meshStandardMaterial color="#0e0d0b" roughness={0.6} metalness={0.4} />
+    </mesh>
+  );
+}
+
+/**
+ * A project cover at its true aspect ratio — never stretched — and unfogged,
+ * so the work reads at full brightness and colour at the end of the reel.
+ */
+function CoverFace({ src, faceRef }: { src: string; faceRef: React.RefObject<THREE.Mesh | null> }) {
   const tex = useTexture(src, (t) => {
     t.colorSpace = THREE.SRGBColorSpace;
+    t.anisotropy = 8;
   });
-  return <meshBasicMaterial map={tex} toneMapped={false} />;
+  const img = tex.image as { width: number; height: number } | undefined;
+  const [w, h] = fitScreen(img && img.height ? img.width / img.height : SCREEN_W / SCREEN_H);
+  return (
+    <>
+      <Bezel w={w} h={h} />
+      <mesh ref={faceRef}>
+        <planeGeometry args={[w, h]} />
+        <meshBasicMaterial map={tex} toneMapped={false} fog={false} />
+      </mesh>
+    </>
+  );
 }
 
 export function Screen({ project, index, slot }: { project?: ScreenProject; index: number; slot: number }) {
@@ -287,21 +322,19 @@ export function Screen({ project, index, slot }: { project?: ScreenProject; inde
 
   return (
     <group ref={group} position={[x, 0.1, z]} rotation={[0, yaw, 0]}>
-      {/* Bezel */}
-      <mesh position={[0, 0, -0.04]}>
-        <boxGeometry args={[5.02, 2.86, 0.06]} />
-        <meshStandardMaterial color="#0e0d0b" roughness={0.6} metalness={0.4} />
-      </mesh>
-      <mesh ref={face}>
-        <planeGeometry args={[4.8, 2.7]} />
-        {project?.cover ? (
-          <Suspense fallback={<meshBasicMaterial color="#141210" />}>
-            <CoverMaterial src={project.cover} />
-          </Suspense>
-        ) : (
-          <meshBasicMaterial map={slate} toneMapped={false} />
-        )}
-      </mesh>
+      {project?.cover ? (
+        <Suspense fallback={<Bezel w={SCREEN_W} h={SCREEN_H} />}>
+          <CoverFace src={project.cover} faceRef={face} />
+        </Suspense>
+      ) : (
+        <>
+          <Bezel w={SCREEN_W} h={SCREEN_H} />
+          <mesh ref={face}>
+            <planeGeometry args={[SCREEN_W, SCREEN_H]} />
+            <meshBasicMaterial map={slate} toneMapped={false} />
+          </mesh>
+        </>
+      )}
     </group>
   );
 }
