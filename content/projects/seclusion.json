@@ -8,10 +8,11 @@
     "commercials"
   ],
   "disciplines": [
-    "Film", "Thriller"
+    "Film",
+    "Thriller"
   ],
-  "summary": "Three friends, one camping trip and a stranger who won't let them leave.",
-  "overview": "When three friends' camping trip goes wrong, they cross paths with a seemingly helpful stranger whose lonely obsession traps them in a nightmare of captivity. To get out, they have to outwit his twisted devotion before it consumes them.",
+  "summary": "Three friends, one camping trip and a stranger who won't let them leave. On the festival circuit now, streaming after.",
+  "overview": "When three friends' camping trip goes wrong, they cross paths with a seemingly helpful stranger whose lonely obsession traps them in a nightmare of captivity. To get out, they have to outwit his twisted devotion before it consumes them. Seclusion is on the film festival circuit now, and will move to streaming after its festival run.",
   "cover": {
     "type": "image",
     "src": "/work/seclusion/cover.jpg",
@@ -30,5 +31,5 @@
     "label": "Watch the trailer",
     "href": "https://www.youtube.com/watch?v=HYqKdTaCMy8"
   },
-  "notes": "Confirm format (feature vs short), year, credits and where it streams."
+  "notes": "Owner confirmed (Nov 2026): festival run first, then streaming. Confirm format, year and credits."
 }
