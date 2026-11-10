@@ -20,7 +20,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   path: "/",
   description:
-    "Creative and marketing studio in Sault Ste. Marie, Ontario — Meta ads and lead generation, marketing strategy, graphic design, branding, social content, web design and film.",
+    "Creative and marketing studio in Sault Ste. Marie, Ontario — Meta and Google ads, lead generation, marketing strategy, graphic design, branding, social content, web design and film.",
 });
 
 const slotLabels = ["Design & campaigns", "Meta ads & lead generation", "Photography & social"];
@@ -53,6 +53,7 @@ export default function HomePage() {
         items={[
           "Marketing",
           "Meta Ads",
+          "Google Ads",
           "Lead Generation",
           "Graphic Design",
           "Branding",
@@ -71,7 +72,7 @@ export default function HomePage() {
         <div className="flex items-end justify-between gap-6 border-b border-line pb-6">
           <div>
             <Reveal>
-              <SectionMarker index="01">Selected work</SectionMarker>
+              <SectionMarker>Selected work</SectionMarker>
             </Reveal>
             <GLText as="h2" id="work-title" className="type-display mt-6 text-cream">
               Recent <span className="italic text-bone">frames</span>
@@ -87,18 +88,18 @@ export default function HomePage() {
         {shown.length > 0 ? (
           <div className="mt-14 md:mt-20">
             <Reveal variant="frame">
-              <ProjectCard project={shown[0]} size="feature" index={1} headingLevel="h3" />
+              <ProjectCard project={shown[0]} size="feature" headingLevel="h3" />
             </Reveal>
             {shown.length > 1 && (
               <div className="mt-20 grid gap-20 md:mt-32 md:grid-cols-12 md:gap-x-8">
                 {shown[1] && (
                   <Reveal variant="frame" className="md:col-span-7">
-                    <ProjectCard project={shown[1]} size="large" index={2} />
+                    <ProjectCard project={shown[1]} size="large" />
                   </Reveal>
                 )}
                 {shown[2] && (
                   <Reveal variant="frame" delay={120} className="md:col-span-4 md:col-start-9 md:mt-48">
-                    <ProjectCard project={shown[2]} size="medium" index={3} />
+                    <ProjectCard project={shown[2]} size="medium" />
                   </Reveal>
                 )}
               </div>
@@ -112,14 +113,14 @@ export default function HomePage() {
         ) : (
           <div className="mt-14 md:mt-20">
             <Reveal variant="frame">
-              <ProjectSlot size="feature" index={1} label={slotLabels[0]} />
+              <ProjectSlot size="feature" label={slotLabels[0]} />
             </Reveal>
             <div className="mt-20 grid gap-20 md:mt-32 md:grid-cols-12 md:gap-x-8">
               <Reveal variant="frame" className="md:col-span-7">
-                <ProjectSlot size="large" index={2} label={slotLabels[1]} />
+                <ProjectSlot size="large" label={slotLabels[1]} />
               </Reveal>
               <Reveal variant="frame" delay={120} className="md:col-span-4 md:col-start-9 md:mt-48">
-                <ProjectSlot size="medium" index={3} label={slotLabels[2]} />
+                <ProjectSlot size="medium" label={slotLabels[2]} />
               </Reveal>
             </div>
             <p className="mt-16 max-w-[52ch] text-mute">
@@ -144,7 +145,7 @@ export default function HomePage() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-x-8">
           <div className="md:col-span-6">
             <Reveal>
-              <SectionMarker index="02">The studio</SectionMarker>
+              <SectionMarker>The studio</SectionMarker>
             </Reveal>
             <GLText as="h2" id="manifesto-title" className="type-mega mt-8 text-cream">
               <span className="block">Small studio.</span>
@@ -175,10 +176,10 @@ export default function HomePage() {
         <div className="flex items-end justify-between gap-6">
           <div>
             <Reveal>
-              <SectionMarker index="03">What we do</SectionMarker>
+              <SectionMarker>What we do</SectionMarker>
             </Reveal>
             <GLText as="h2" id="services-title" className="type-display mt-6 text-cream">
-              Eight disciplines. <span className="italic text-bone">One studio.</span>
+              What we do, <span className="italic text-bone">under one roof.</span>
             </GLText>
           </div>
         </div>
@@ -219,7 +220,7 @@ export default function HomePage() {
           </Reveal>
           <div className="md:col-span-6 md:col-start-7 md:pt-16">
             <Reveal>
-              <SectionMarker index="04">
+              <SectionMarker>
                 The <span className="brand-case">kasdan</span> difference
               </SectionMarker>
             </Reveal>

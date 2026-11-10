@@ -107,7 +107,6 @@ export default function WorkPage() {
               {services.map((s) => (
                 <li key={s.id}>
                   <Link href={`/services#${s.id}`} className="group flex items-start gap-5 py-6">
-                    <span className="type-label pt-1 text-gold">{s.index}</span>
                     <span className="min-w-0 flex-1">
                       <span className="block font-display text-2xl text-cream transition-colors group-hover:text-gold">
                         {s.name}
@@ -129,8 +128,7 @@ export default function WorkPage() {
           <ol className="mt-8 grid gap-px bg-line sm:grid-cols-2 lg:grid-cols-4">
             {process.map((p, i) => (
               <Reveal as="li" key={p.name} delay={i * 80} className="bg-coal pt-8 pr-6 pb-10 lg:pl-6 lg:first:pl-0">
-                <span className="type-label text-gold">{String(i + 1).padStart(2, "0")}</span>
-                <p className="mt-6 font-display text-3xl text-cream">{p.name}</p>
+                <p className="font-display text-3xl text-cream">{p.name}</p>
                 <p className="mt-4 max-w-[30ch] text-mute">{p.body}</p>
               </Reveal>
             ))}

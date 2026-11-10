@@ -123,6 +123,7 @@ type Preset = { freq: number; amp: number; twist: number; hue: number };
 const PRESETS: Record<string, Preset> = {
   "marketing-strategy": { freq: 0.75, amp: 0.4, twist: -0.7, hue: 0.8 }, // heavy, deliberate
   "meta-ads-lead-gen": { freq: 3.2, amp: 0.2, twist: 0.8, hue: 0.05 }, // quick, warm, pulling in
+  "google-ads": { freq: 2.4, amp: 0.18, twist: -0.4, hue: 0.58 }, // precise, cool
   "graphic-design": { freq: 2.6, amp: 0.17, twist: 1.4, hue: 0.22 }, // wrung, safelight
   "social-tiktok": { freq: 4.2, amp: 0.1, twist: 0.0, hue: 0.48 }, // fizzing, quick
   photography: { freq: 2.0, amp: 0.24, twist: 0.5, hue: 0.32 }, // soft, daylight

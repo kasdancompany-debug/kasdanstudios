@@ -38,12 +38,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   });
 }
 
-function Narrative({ index, heading, body }: { index: string; heading: string; body: string[] }) {
+function Narrative({ heading, body }: { heading: string; body: string[] }) {
   return (
     <section className="grid gap-8 border-t border-line pt-10 md:grid-cols-12 md:gap-x-8 md:pt-14">
       <div className="md:col-span-4">
-        <Reveal className="flex items-baseline gap-4">
-          <span className="type-label text-gold">{index}</span>
+        <Reveal>
           <h2 className="type-label text-mute">{heading}</h2>
         </Reveal>
       </div>
@@ -191,8 +190,8 @@ export default async function ProjectPage({ params }: Props) {
       {/* 4–6. Challenge, idea, execution */}
       {chapters.length > 0 && (
         <div className="shell space-y-20 pb-24 md:space-y-28 md:pb-36">
-          {chapters.map((c, i) => (
-            <Narrative key={c.heading} index={String(i + 1).padStart(2, "0")} heading={c.heading} body={c.body} />
+          {chapters.map((c) => (
+            <Narrative key={c.heading} heading={c.heading} body={c.body} />
           ))}
         </div>
       )}

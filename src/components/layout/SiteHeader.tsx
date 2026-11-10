@@ -121,9 +121,8 @@ export function SiteHeader({ nav, location }: { nav: NavItem[]; location: string
                   Index
                 </Link>
               </li>
-              {nav.map((item, i) => (
+              {nav.map((item) => (
                 <li key={item.href} className="flex items-baseline gap-4">
-                  <span className="type-label w-6 text-gold-soft">{String(i + 1).padStart(2, "0")}</span>
                   <Link
                     href={item.href}
                     onClick={closeMenu}

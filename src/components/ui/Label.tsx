@@ -28,19 +28,10 @@ export function Label({
   );
 }
 
-/** Section marker: "(01) Selected Work" — numbered like a reel. */
-export function SectionMarker({
-  index,
-  children,
-  className,
-}: {
-  index?: string;
-  children: ReactNode;
-  className?: string;
-}) {
+/** Section marker: a small label that opens a section, e.g. "Selected work". */
+export function SectionMarker({ children, className }: { children: ReactNode; className?: string }) {
   return (
     <div className={cn("flex items-baseline gap-4", className)}>
-      {index && <span className="type-label text-gold">({index})</span>}
       <span className="type-label text-mute">{children}</span>
     </div>
   );

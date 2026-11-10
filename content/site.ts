@@ -35,7 +35,7 @@ export const site = {
   tagline: "Ideas worth watching.",
   disciplines: ["Marketing", "Design", "Content", "Film"],
   description:
-    "kasdan studios is an independent creative and marketing studio in Sault Ste. Marie, Ontario — marketing strategy, Meta ads and lead generation, graphic design and branding, social content, web design and film.",
+    "kasdan studios is an independent creative and marketing studio in Sault Ste. Marie, Ontario — marketing strategy, Meta and Google ads, lead generation, graphic design and branding, social content, web design and film.",
   url: resolveSiteUrl(),
   locale: "en_CA",
 

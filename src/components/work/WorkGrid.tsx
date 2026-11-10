@@ -59,9 +59,6 @@ export function WorkGrid({ projects, featuredSlug }: { projects: Project[]; feat
               )}
             >
               <span className={cn("pb-1", filter === f ? "border-b border-gold" : "link-line")}>{label(f)}</span>
-              <span className="type-label text-dim" aria-hidden>
-                {String(counts[f]).padStart(2, "0")}
-              </span>
               <span className="sr-only">({counts[f]} projects)</span>
             </button>
           ))}
@@ -97,7 +94,7 @@ export function WorkGrid({ projects, featuredSlug }: { projects: Project[]; feat
         <ul className="mt-14 grid gap-20 md:mt-20 md:grid-cols-12 md:gap-x-8 md:gap-y-28">
           {visible.map((p, i) => (
             <li key={p.slug} className={layout[i % layout.length]}>
-              <ProjectCard project={p} index={i + 1} size={i % 2 === 0 ? "large" : "medium"} headingLevel="h2" />
+              <ProjectCard project={p} size={i % 2 === 0 ? "large" : "medium"} headingLevel="h2" />
             </li>
           ))}
         </ul>

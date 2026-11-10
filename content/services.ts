@@ -61,7 +61,7 @@ export const services: Service[] = [
       "Video, static & carousel ad creative",
       "Pixel & conversion tracking",
       "Retargeting & audience building",
-      "TikTok & Google ads",
+      "TikTok ads",
     ],
     deliverables: [
       "Campaign strategy, audience and offer",
@@ -78,8 +78,37 @@ export const services: Service[] = [
     imageHint: "Ad creative on a phone, portrait 4:5",
   },
   {
-    id: "graphic-design",
+    id: "google-ads",
     index: "03",
+    name: "Google Ads",
+    cta: "Talk Google Ads",
+    summary:
+      "Search, Performance Max and YouTube campaigns that put you in front of people already looking for what you do.",
+    description: [
+      "When someone searches for a service in your area, Google Ads can put you at the top of the results. We set up and manage campaigns around the searches that matter to your business, and keep spend away from the ones that don't.",
+      "We look after the keywords, ads, landing pages and conversion tracking, then report each month on what calls, forms and bookings cost and what we're adjusting.",
+    ],
+    offerings: [
+      "Google Search campaigns",
+      "Local service & call campaigns",
+      "Performance Max",
+      "YouTube ads",
+      "Keyword research & negative keywords",
+      "Conversion & call tracking",
+      "Landing pages",
+    ],
+    deliverables: [
+      "Account setup or audit",
+      "Keyword plan and ad copy",
+      "Conversion tracking and landing pages",
+      "Monthly reporting on leads and cost per lead",
+    ],
+    image: null,
+    imageHint: "Search ad or landing page on a phone, portrait 4:5",
+  },
+  {
+    id: "graphic-design",
+    index: "04",
     name: "Graphic Design & Branding",
     cta: "Start a brand project",
     summary: "Logos, identities and the everyday design that makes a business look like itself everywhere.",
@@ -112,7 +141,7 @@ export const services: Service[] = [
   },
   {
     id: "social-tiktok",
-    index: "04",
+    index: "05",
     name: "Social & TikTok",
     cta: "Start your content",
     summary: "TikToks, Reels and short-form video made for the feed — planned, shot, edited and posted.",
@@ -144,7 +173,7 @@ export const services: Service[] = [
   },
   {
     id: "photography",
-    index: "05",
+    index: "06",
     name: "Food & Product Photography",
     cta: "Book a shoot",
     summary: "Menu, food, drink and product photography styled to stop the scroll — for menus, socials and ads.",
@@ -176,7 +205,7 @@ export const services: Service[] = [
   },
   {
     id: "web-design",
-    index: "06",
+    index: "07",
     name: "Web Design",
     cta: "Plan a website",
     summary: "Websites that look like your brand and work like a sales tool — designed, built and launched.",
@@ -209,7 +238,7 @@ export const services: Service[] = [
   },
   {
     id: "commercials-film",
-    index: "07",
+    index: "08",
     name: "Commercials & Film",
     cta: "Plan a commercial",
     summary: "Commercials for local businesses, brand films and corporate video — written, shot and finished in-house.",
@@ -237,7 +266,7 @@ export const services: Service[] = [
   },
   {
     id: "real-estate",
-    index: "08",
+    index: "09",
     name: "Real Estate Media",
     cta: "Book a listing shoot",
     summary: "Listing videos, property photography and agent content that make a home look as good as it feels.",
@@ -298,6 +327,10 @@ export const faqs = [
   {
     q: "Can you run our Facebook and Instagram ads?",
     a: "Yes. We plan, create and manage Meta campaigns built around leads and sales, and because we make the ads in-house we can keep testing fresh creative. Each month you get a clear report on what each lead costs and what we're doing next.",
+  },
+  {
+    q: "Do you run Google Ads too?",
+    a: "Yes. We set up and manage Google Search, Performance Max and YouTube campaigns, with tracking on calls and forms so you can see what each lead costs. Meta and Google often work best together, and we can run both.",
   },
   {
     q: "What does a project typically cost?",

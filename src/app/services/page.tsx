@@ -17,7 +17,7 @@ export const metadata = pageMetadata({
   title: "Services",
   path: "/services",
   description:
-    "Marketing strategy, Meta ads and lead generation, graphic design, social content, web design and film from kasdan studios in Sault Ste. Marie — by project or as an ongoing partner.",
+    "Marketing strategy, Meta and Google ads, lead generation, graphic design, social content, web design and film from kasdan studios in Sault Ste. Marie — by project or as an ongoing partner.",
 });
 
 export default function ServicesPage() {
@@ -47,7 +47,7 @@ export default function ServicesPage() {
               From the first idea <span className="italic text-bone">to the final frame.</span>
             </>
           }
-          lede="Marketing, Meta ads and lead generation, branding and design, social, websites and film — on their own or joined up. Most projects start with a conversation about what the work needs to do, and we build the right plan from there."
+          lede="Marketing, Meta and Google ads, lead generation, branding and design, social, websites and film — on their own or joined up. Most projects start with a conversation about what the work needs to do, and we build the right plan from there."
         />
       </div>
 
@@ -57,7 +57,6 @@ export default function ServicesPage() {
           {services.map((s) => (
             <li key={s.id}>
               <a href={`#${s.id}`} className="type-nav group inline-flex gap-3 text-mute hover:text-cream">
-                <span className="text-gold">{s.index}</span>
                 <span className="link-line pb-1">{s.name}</span>
               </a>
             </li>
@@ -92,10 +91,7 @@ export default function ServicesPage() {
                 </Reveal>
 
                 <div className={cn("md:col-span-5 md:pt-10", flip ? "md:order-1 md:col-start-1" : "md:col-start-8")}>
-                  <Reveal>
-                    <span className="type-label text-gold">{s.index}</span>
-                  </Reveal>
-                  <h2 id={`${s.id}-title`} className="type-headline mt-6 text-cream">
+                  <h2 id={`${s.id}-title`} className="type-headline text-cream">
                     <Reveal as="span" variant="mask" className="block">
                       {s.name}
                     </Reveal>
@@ -189,8 +185,7 @@ export default function ServicesPage() {
               delay={i * 80}
               className="bg-ink pt-8 pr-6 pb-12 sm:pl-0 lg:pl-6 lg:first:pl-0"
             >
-              <span className="type-label text-gold">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-6 font-display text-4xl text-cream">{p.name}</h3>
+              <h3 className="font-display text-4xl text-cream">{p.name}</h3>
               <p className="mt-4 max-w-[30ch] text-mute">{p.body}</p>
             </Reveal>
           ))}

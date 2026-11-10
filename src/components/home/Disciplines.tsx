@@ -45,8 +45,7 @@ export function Disciplines({ items }: { items: Item[] }) {
               data-sound="tick"
             >
               <div className="flex items-start justify-between gap-6">
-                <div className="flex min-w-0 items-baseline gap-5">
-                  <span className="type-label text-gold">{s.index}</span>
+                <div className="flex min-w-0 items-baseline">
                   {/* Headline size, not display: six names stay one or two lines each, and the
                       longest single word ("Commercials") fits a phone column */}
                   <span className="type-headline min-w-0 text-cream transition-[color,transform] duration-700 ease-[var(--ease-cinema)] group-hover:translate-x-3 group-hover:text-gold">
@@ -59,8 +58,8 @@ export function Disciplines({ items }: { items: Item[] }) {
                   className="mt-2 size-8 shrink-0 text-mute transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-gold"
                 />
               </div>
-              <p className="mt-5 max-w-[46ch] pl-[3.25rem] text-mute">{s.summary}</p>
-              <ul className="type-label mt-5 flex flex-wrap gap-x-4 gap-y-2 pl-[3.25rem] text-dim">
+              <p className="mt-5 max-w-[46ch] text-mute">{s.summary}</p>
+              <ul className="type-label mt-5 flex flex-wrap gap-x-4 gap-y-2 text-dim">
                 {s.offerings.slice(0, 5).map((o) => (
                   <li key={o}>{o}</li>
                 ))}

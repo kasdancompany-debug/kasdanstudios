@@ -96,9 +96,7 @@ export function AwardsReel({ entries, id }: { entries: ReelEntry[]; id?: string 
           <h2 id="awards-title" className="type-headline text-cream">
             Awards <span className="italic text-bone">&amp; recognition</span>
           </h2>
-          <p className="type-label hidden text-mute md:block">
-            {String(entries.length).padStart(2, "0")} frames · scroll →
-          </p>
+          <p className="type-label hidden text-mute md:block">Scroll →</p>
         </div>
 
         <ol

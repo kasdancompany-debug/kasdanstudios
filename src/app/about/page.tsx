@@ -80,7 +80,7 @@ export default function AboutPage() {
         <div className="grid gap-12 md:grid-cols-12 md:gap-x-8">
           <div className="md:col-span-4">
             <Reveal>
-              <SectionMarker index="01">The story</SectionMarker>
+              <SectionMarker>The story</SectionMarker>
             </Reveal>
           </div>
           <div className="md:col-span-7 md:col-start-6">
@@ -118,7 +118,7 @@ export default function AboutPage() {
           </Reveal>
           <div className="md:col-span-6 md:col-start-7">
             <Reveal>
-              <SectionMarker index="02">Founder</SectionMarker>
+              <SectionMarker>Founder</SectionMarker>
             </Reveal>
             <h2 id="founder-title" className="type-headline mt-6 text-cream">
               <Reveal as="span" variant="mask" className="block">
@@ -138,8 +138,7 @@ export default function AboutPage() {
 
             <ul className="mt-14 space-y-6 border-t border-line pt-10">
               {promises.map((p, i) => (
-                <Reveal as="li" key={p.title} delay={i * 80} className="grid grid-cols-[3rem_1fr] gap-x-4">
-                  <span className="type-label pt-1 text-gold">{String(i + 1).padStart(2, "0")}</span>
+                <Reveal as="li" key={p.title} delay={i * 80}>
                   <span>
                     <span className="block text-cream">{p.title}</span>
                     <span className="mt-1 block text-mute">{p.body}</span>
@@ -160,7 +159,7 @@ export default function AboutPage() {
         <div className="shell grid gap-14 py-28 md:grid-cols-12 md:gap-x-8 md:py-44">
           <div className="md:col-span-6">
             <Reveal>
-              <SectionMarker index="03">Building our own brand</SectionMarker>
+              <SectionMarker>Building our own brand</SectionMarker>
             </Reveal>
             <h2 id="own-brand-title" className="type-headline mt-6 text-cream">
               <Reveal as="span" variant="mask" className="brand-case block">
@@ -217,7 +216,7 @@ export default function AboutPage() {
       <section aria-labelledby="philosophy-title" className="border-t border-line">
         <div className="shell py-28 md:py-44">
           <Reveal>
-            <SectionMarker index="05">Philosophy</SectionMarker>
+            <SectionMarker>Philosophy</SectionMarker>
           </Reveal>
           <h2 id="philosophy-title" className="sr-only">
             Philosophy
@@ -225,8 +224,7 @@ export default function AboutPage() {
           <div className="mt-14 grid gap-16 md:grid-cols-3 md:gap-x-10">
             {philosophy.map((p, i) => (
               <Reveal key={p.title} delay={i * 100}>
-                <span className="type-label text-gold">{String(i + 1).padStart(2, "0")}</span>
-                <h3 className="type-title mt-6 text-cream">{p.title}</h3>
+                <h3 className="type-title text-cream">{p.title}</h3>
                 <p className="mt-5 text-bone">{p.body}</p>
               </Reveal>
             ))}
@@ -239,7 +237,7 @@ export default function AboutPage() {
         <div className="shell grid gap-12 py-28 md:grid-cols-12 md:gap-x-8 md:py-44">
           <div className="md:col-span-6">
             <Reveal>
-              <SectionMarker index="06">Where we are</SectionMarker>
+              <SectionMarker>Where we are</SectionMarker>
             </Reveal>
             <h2 id="location-title" className="type-headline mt-6 text-cream">
               <Reveal as="span" variant="mask" className="block">

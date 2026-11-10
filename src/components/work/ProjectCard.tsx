@@ -22,18 +22,15 @@ const sizes: Record<Size, string> = {
 
 /**
  * A project as a film frame: image first, credits underneath.
- * `index` is shown as a reel number to give the grid an editorial rhythm.
  */
 export function ProjectCard({
   project,
   size = "large",
-  index,
   priority = false,
   headingLevel = "h3",
 }: {
   project: Project;
   size?: Size;
-  index?: number;
   priority?: boolean;
   headingLevel?: "h2" | "h3";
 }) {
@@ -65,7 +62,6 @@ export function ProjectCard({
 
         <div className="mt-5 grid grid-cols-12 gap-x-4 md:mt-6">
           <div className="col-span-12 flex items-baseline gap-4 md:col-span-3">
-            {index !== undefined && <span className="type-label text-gold">{String(index).padStart(2, "0")}</span>}
             <span className="type-label text-mute">
               {cats}
               {project.year ? ` — ${project.year}` : ""}
@@ -97,14 +93,13 @@ export function ProjectCard({
  * A labelled, non-linking slot used on the homepage until real case studies
  * are published. It never exposes draft content.
  */
-export function ProjectSlot({ size = "large", index, label }: { size?: Size; index: number; label: string }) {
+export function ProjectSlot({ size = "large", label }: { size?: Size; label: string }) {
   return (
     <div className="relative">
       <div className={cn("relative overflow-hidden", ratio[size])}>
         <AssetPlaceholder fill tone="deep" label={label} hint="Case study in preparation" />
       </div>
       <div className="mt-5 flex items-baseline gap-4 md:mt-6">
-        <span className="type-label text-gold">{String(index).padStart(2, "0")}</span>
         <span className="type-label text-mute">Unpublished — coming soon</span>
       </div>
     </div>

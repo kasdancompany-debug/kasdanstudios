@@ -211,7 +211,6 @@ export function ReelStory({
                           onBlur={() => (studio.hovered = -1)}
                           className="group flex items-baseline gap-4 py-2"
                         >
-                          <span className="type-label text-gold">{String(i + 1).padStart(2, "0")}</span>
                           <span>
                             <span className="link-line type-title block pb-1 text-cream">{brandCase(p.title)}</span>
                             <span className="type-label text-mute">{p.discipline}</span>
@@ -219,7 +218,6 @@ export function ReelStory({
                         </Link>
                       ) : (
                         <div className="flex items-baseline gap-4 py-2" onMouseEnter={() => (studio.hovered = i)}>
-                          <span className="type-label text-gold-soft">{String(i + 1).padStart(2, "0")}</span>
                           <span>
                             <span className="type-title block pb-1 text-bone">{slots[i] ?? "Coming soon"}</span>
                             <span className="type-label text-dim">Case study in preparation</span>

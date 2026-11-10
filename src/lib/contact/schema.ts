@@ -6,6 +6,7 @@ import { z } from "zod";
 export const projectTypes = [
   { value: "marketing-strategy", label: "Marketing & strategy" },
   { value: "meta-ads-lead-gen", label: "Meta ads & lead generation" },
+  { value: "google-ads", label: "Google Ads" },
   { value: "graphic-design", label: "Graphic design & branding" },
   { value: "social-tiktok", label: "Social & TikTok" },
   { value: "photography", label: "Food & product photography" },
