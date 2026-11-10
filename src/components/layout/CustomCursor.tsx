@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 /**
- * A quiet trailing ring that accompanies — never replaces — the native
+ * A quiet ring that accompanies — never replaces — the native
  * cursor. Fine pointers with motion allowed only. Grows over interactive
  * elements and shows a "View" label over [data-cursor="view"] targets.
  */
@@ -26,20 +26,21 @@ export function CustomCursor() {
     const label = labelRef.current!;
     let x = -100,
       y = -100,
-      cx = -100,
-      cy = -100,
       scale = 1,
       targetScale = 1,
       raf = 0,
+      last = performance.now(),
       visible = false;
+    const ring = el.firstElementChild as HTMLElement;
+    // Position is written straight from the pointer event so the ring sits on the cursor with no lag.
+    const place = () => (el.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`);
 
     const onMove = (e: PointerEvent) => {
       if (e.pointerType !== "mouse") return;
       x = e.clientX;
       y = e.clientY;
+      place();
       if (!visible) {
-        cx = x;
-        cy = y;
         visible = true;
         el.style.opacity = "1";
       }
@@ -54,12 +55,12 @@ export function CustomCursor() {
       el.style.opacity = "0";
     };
 
-    const loop = () => {
-      cx += (x - cx) * 0.2;
-      cy += (y - cy) * 0.2;
-      scale += (targetScale - scale) * 0.16;
-      el.style.transform = `translate3d(${cx}px, ${cy}px, 0) translate(-50%, -50%)`;
-      (el.firstElementChild as HTMLElement).style.transform = `scale(${scale})`;
+    // Only the grow/shrink over links is eased, at the same speed on any refresh rate.
+    const loop = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.1);
+      last = now;
+      scale += (targetScale - scale) * (1 - Math.exp(-18 * dt));
+      ring.style.transform = `scale(${scale})`;
       raf = requestAnimationFrame(loop);
     };
     raf = requestAnimationFrame(loop);
