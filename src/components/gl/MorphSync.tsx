@@ -9,7 +9,7 @@ export function MorphSync() {
     const nodes = document.querySelectorAll<HTMLElement>("[data-morph]");
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) morph.active = Number((e.target as HTMLElement).dataset.morph);
+        for (const e of entries) if (e.isIntersecting) morph.active = (e.target as HTMLElement).dataset.morph ?? "";
       },
       { rootMargin: "-45% 0px -45% 0px" },
     );

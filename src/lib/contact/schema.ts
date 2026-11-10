@@ -4,12 +4,13 @@ import { z } from "zod";
 
 // Values match the service ids in content/services.ts, so /contact?type=<id> preselects.
 export const projectTypes = [
-  { value: "commercials-film", label: "Commercial / film" },
-  { value: "real-estate", label: "Real estate media" },
+  { value: "marketing-strategy", label: "Marketing & strategy" },
+  { value: "meta-ads-lead-gen", label: "Meta ads & lead generation" },
+  { value: "graphic-design", label: "Graphic design & branding" },
   { value: "social-tiktok", label: "Social & TikTok" },
   { value: "web-design", label: "Website" },
-  { value: "graphic-design", label: "Graphic design & branding" },
-  { value: "marketing-strategy", label: "Marketing & strategy" },
+  { value: "commercials-film", label: "Commercial / film" },
+  { value: "real-estate", label: "Real estate media" },
   { value: "not-sure", label: "Not sure yet / a mix" },
 ] as const;
 

@@ -17,7 +17,7 @@ export const metadata = pageMetadata({
   title: "Services",
   path: "/services",
   description:
-    "Commercials, real estate video, TikTok content, web design, graphic design and marketing from Kasdan Studios in Sault Ste. Marie — by project or as an ongoing partner.",
+    "Marketing strategy, Meta ads and lead generation, graphic design, social content, web design and film from Kasdan Studios in Sault Ste. Marie — by project or as an ongoing partner.",
 });
 
 export default function ServicesPage() {
@@ -47,7 +47,7 @@ export default function ServicesPage() {
               From the first idea <span className="italic text-bone">to the final frame.</span>
             </>
           }
-          lede="Commercials, real estate media, TikTok, websites, graphic design and marketing — on their own or joined up. Most projects start with a conversation about what the work needs to do, and we build the right plan from there."
+          lede="Marketing, Meta ads and lead generation, branding and design, social, websites and film — on their own or joined up. Most projects start with a conversation about what the work needs to do, and we build the right plan from there."
         />
       </div>
 
@@ -70,7 +70,7 @@ export default function ServicesPage() {
         {services.map((s, i) => {
           const flip = i % 2 === 1;
           return (
-            <section key={s.id} id={s.id} data-morph={i} aria-labelledby={`${s.id}-title`} className="scroll-mt-28">
+            <section key={s.id} id={s.id} data-morph={s.id} aria-labelledby={`${s.id}-title`} className="scroll-mt-28">
               <div className="grid gap-12 md:grid-cols-12 md:gap-x-8">
                 <Reveal variant="frame" className={cn("md:col-span-6", flip && "md:order-2 md:col-start-7")}>
                   {s.image ? (

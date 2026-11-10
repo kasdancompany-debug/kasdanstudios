@@ -21,7 +21,7 @@ export function Disciplines({ items }: { items: Item[] }) {
     if (!rows) return;
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) morph.active = Number((e.target as HTMLElement).dataset.row);
+        for (const e of entries) if (e.isIntersecting) morph.active = (e.target as HTMLElement).dataset.row ?? "";
       },
       { rootMargin: "-45% 0px -45% 0px" },
     );
@@ -36,11 +36,11 @@ export function Disciplines({ items }: { items: Item[] }) {
       </div>
       <ol ref={list} className="min-w-0 border-t border-line md:col-span-7">
         {items.map((s, i) => (
-          <li key={s.id} data-row={i} className="border-b border-line">
+          <li key={s.id} data-row={s.id} className="border-b border-line">
             <Link
               href={`/services#${s.id}`}
-              onMouseEnter={() => (morph.active = i)}
-              onFocus={() => (morph.active = i)}
+              onMouseEnter={() => (morph.active = s.id)}
+              onFocus={() => (morph.active = s.id)}
               className="group block py-9 md:py-12"
               data-sound="tick"
             >

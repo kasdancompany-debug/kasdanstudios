@@ -117,14 +117,19 @@ void main() {
 `;
 
 // One temperament per discipline, in content/services.ts order.
-const PRESETS = [
-  { freq: 1.1, amp: 0.3, twist: 0.35, hue: 0.0 }, // Commercials & film — slow, tungsten
-  { freq: 0.6, amp: 0.22, twist: 0.1, hue: 0.12 }, // Real estate — calm, architectural
-  { freq: 4.2, amp: 0.1, twist: 0.0, hue: 0.48 }, // Social & TikTok — fizzing, quick
-  { freq: 1.8, amp: 0.14, twist: -1.6, hue: 0.62 }, // Web — engineered spiral, cool
-  { freq: 2.6, amp: 0.17, twist: 1.4, hue: 0.22 }, // Graphic design — wrung, safelight
-  { freq: 0.75, amp: 0.4, twist: -0.7, hue: 0.8 }, // Marketing & strategy — heavy, deliberate
-];
+type Preset = { freq: number; amp: number; twist: number; hue: number };
+
+/** One personality per service, keyed by the ids in content/services.ts. */
+const PRESETS: Record<string, Preset> = {
+  "marketing-strategy": { freq: 0.75, amp: 0.4, twist: -0.7, hue: 0.8 }, // heavy, deliberate
+  "meta-ads-lead-gen": { freq: 3.2, amp: 0.2, twist: 0.8, hue: 0.05 }, // quick, warm, pulling in
+  "graphic-design": { freq: 2.6, amp: 0.17, twist: 1.4, hue: 0.22 }, // wrung, safelight
+  "social-tiktok": { freq: 4.2, amp: 0.1, twist: 0.0, hue: 0.48 }, // fizzing, quick
+  "web-design": { freq: 1.8, amp: 0.14, twist: -1.6, hue: 0.62 }, // engineered spiral, cool
+  "commercials-film": { freq: 1.1, amp: 0.3, twist: 0.35, hue: 0.0 }, // slow, tungsten
+  "real-estate": { freq: 0.6, amp: 0.22, twist: 0.1, hue: 0.12 }, // calm, architectural
+};
+const DEFAULT_PRESET = PRESETS["marketing-strategy"];
 
 function Morph() {
   const mesh = useRef<THREE.Mesh>(null);
@@ -135,10 +140,10 @@ function Morph() {
         fragmentShader: fragment,
         uniforms: {
           uTime: { value: 0 },
-          uFreq: { value: PRESETS[0].freq },
-          uAmp: { value: PRESETS[0].amp },
-          uTwist: { value: PRESETS[0].twist },
-          uHue: { value: PRESETS[0].hue },
+          uFreq: { value: DEFAULT_PRESET.freq },
+          uAmp: { value: DEFAULT_PRESET.amp },
+          uTwist: { value: DEFAULT_PRESET.twist },
+          uHue: { value: DEFAULT_PRESET.hue },
           uPulse: { value: 0 },
         },
       }),
@@ -156,7 +161,7 @@ function Morph() {
   useFrame(() => {
     const u = material.uniforms;
     const dt = frame.delta;
-    const p = PRESETS[morph.active] ?? PRESETS[0];
+    const p = PRESETS[morph.active] ?? DEFAULT_PRESET;
     u.uTime.value = frame.time;
     u.uFreq.value = THREE.MathUtils.damp(u.uFreq.value, p.freq, 2.2, dt);
     u.uAmp.value = THREE.MathUtils.damp(u.uAmp.value, p.amp, 2.2, dt);

@@ -33,9 +33,9 @@ export const site = {
   name: "Kasdan Studios",
   parent: "Kasdan Co.",
   tagline: "Ideas worth watching.",
-  disciplines: ["Film", "Creative", "Content", "Strategy"],
+  disciplines: ["Marketing", "Design", "Content", "Film"],
   description:
-    "Kasdan Studios is an independent creative studio in Sault Ste. Marie, Ontario — commercials, real estate media, TikTok and social content, web design, graphic design and marketing.",
+    "Kasdan Studios is an independent creative and marketing studio in Sault Ste. Marie, Ontario — marketing strategy, Meta ads and lead generation, graphic design and branding, social content, web design and film.",
   url: resolveSiteUrl(),
   locale: "en_CA",
 

@@ -58,9 +58,9 @@ export function Hero() {
             suppressHydrationWarning
             style={{ "--reveal-delay": "260ms" } as React.CSSProperties}
           >
-            <p className="type-nav text-cream">Commercials. Web. Social. Design.</p>
+            <p className="type-nav text-cream">Marketing. Design. Content. Film.</p>
             <p className="mt-3 max-w-[34ch] text-mute [@media(max-height:560px)]:hidden">
-              An independent creative studio based in {site.location.regionLabel}.
+              An independent creative and marketing studio in {site.location.regionLabel}.
             </p>
           </div>
           <div

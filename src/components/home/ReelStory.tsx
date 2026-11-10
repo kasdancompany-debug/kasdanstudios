@@ -17,9 +17,9 @@ gsap.registerPlugin(ScrollTrigger);
 const ReelView = dynamic(() => import("@/components/gl/views/ReelScene"), { ssr: false });
 
 const CHAPTERS = [
-  { at: 0.22, kicker: "01 / Commercials & film", a: "Every frame", b: "is a decision." },
-  { at: 0.44, kicker: "02 / Real estate · TikTok · Social", a: "Listings, launches", b: "and the feed in between." },
-  { at: 0.64, kicker: "03 / Web · Design · Marketing", a: "Made close to home.", b: "Built to be found." },
+  { at: 0.22, kicker: "01 / Marketing · Meta ads · Lead generation", a: "Ideas that", b: "bring people in." },
+  { at: 0.44, kicker: "02 / Branding · Graphic design · Web", a: "A brand that looks", b: "like it means it." },
+  { at: 0.64, kicker: "03 / Social · Content · Film", a: "Every frame", b: "is a decision." },
 ];
 
 /** Chapter timing (fractions of the story's scroll). */

@@ -20,7 +20,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   path: "/",
   description:
-    "Creative studio in Sault Ste. Marie, Ontario — commercials, real estate video, TikTok content, web design, graphic design and marketing.",
+    "Creative and marketing studio in Sault Ste. Marie, Ontario — Meta ads and lead generation, marketing strategy, graphic design, branding, social content, web design and film.",
 });
 
 const slotLabels = ["Brand & social content", "Commercial film", "Recognized creative work"];
@@ -50,7 +50,7 @@ export default function HomePage() {
       </ReelStory>
 
       <Marquee
-        items={["Commercials", "Real Estate", "TikTok", "Web Design", "Graphic Design", "Marketing"]}
+        items={["Marketing", "Meta Ads", "Lead Generation", "Graphic Design", "Branding", "Social", "Web Design", "Film"]}
         className="mt-24 md:mt-32"
       />
 
@@ -144,11 +144,11 @@ export default function HomePage() {
           <div className="space-y-6 text-bone md:col-span-5 md:col-start-8 md:pt-24">
             <Reveal as="p" className="type-lede text-cream">
               We&apos;re a deliberately small team. The people you meet at the first conversation are the people
-              writing, shooting and cutting your film.
+              planning your campaign, designing your brand and making your content.
             </Reveal>
             <Reveal as="p" delay={100}>
-              That keeps the thinking close to the craft. A good idea survives the trip from treatment to final grade
-              because nobody hands it off along the way.
+              That keeps the thinking close to the craft. A good idea survives the trip from first brief to the ad in
+              someone&apos;s feed because nobody hands it off along the way.
             </Reveal>
             <Reveal as="p" delay={180}>
               And because we also run a business of our own, we never lose sight of why the work exists: it has to mean
@@ -168,7 +168,7 @@ export default function HomePage() {
               <SectionMarker index="03">What we do</SectionMarker>
             </Reveal>
             <GLText as="h2" id="services-title" className="type-display mt-6 text-cream">
-              Six disciplines. <span className="italic text-bone">One studio.</span>
+              Seven disciplines. <span className="italic text-bone">One studio.</span>
             </GLText>
           </div>
         </div>

@@ -1,2 +1,2 @@
-/** Which service the morphing object is currently expressing (0–3). */
-export const morph = { active: 0 };
+/** Which service (by id from content/services.ts) the morphing object is expressing. */
+export const morph = { active: "" };

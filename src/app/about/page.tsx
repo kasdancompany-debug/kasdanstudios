@@ -43,7 +43,7 @@ const promises = [
   },
   {
     title: "Film-grade craft at every size",
-    body: "Commercials, social, web and design held to the same standard.",
+    body: "Ads, design, social, web and film held to the same standard.",
   },
   {
     title: "Marketing we've tested on ourselves",

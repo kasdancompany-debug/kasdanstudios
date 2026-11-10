@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
   title: "Work",
   path: "/work",
   description:
-    "Commercials, real estate media, social content, websites and design from Kasdan Studios, an independent creative studio in Sault Ste. Marie, Ontario.",
+    "Campaigns, design, social content and film from Kasdan Studios, an independent creative and marketing studio in Sault Ste. Marie, Ontario.",
 });
 
 export default function WorkPage() {
@@ -29,7 +29,7 @@ export default function WorkPage() {
             The work, <span className="italic text-bone">frame by frame.</span>
           </>
         }
-        lede="Commercials, real estate, social content, websites and design. Each case study covers the brief, the idea and how it was made."
+        lede="Campaigns, design, social content and film. Each case study covers the brief, the idea and how it was made."
       />
 
       {projects.length === 0 ? (
