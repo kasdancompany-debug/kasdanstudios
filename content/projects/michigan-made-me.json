@@ -1,0 +1,42 @@
+{
+  "slug": "michigan-made-me",
+  "status": "published",
+  "order": 5,
+  "featured": true,
+  "title": "Michigan Made Me",
+  "categories": [
+    "commercials"
+  ],
+  "disciplines": [
+    "Short Film",
+    "Writing",
+    "Direction"
+  ],
+  "summary": "A two-minute short film, written and directed by Dan O'Brien.",
+  "overview": "Michigan Made Me is a two-minute short film written and directed by Dan O'Brien.",
+  "cover": {
+    "type": "image",
+    "src": "/work/michigan-made-me/cover.jpg",
+    "alt": "Still from the short film Michigan Made Me",
+    "width": 1280,
+    "height": 720
+  },
+  "film": {
+    "type": "youtube",
+    "id": "Ppi2iTmprro",
+    "title": "Michigan Made Me — short film",
+    "poster": "/work/michigan-made-me/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": {
+    "label": "Watch on YouTube",
+    "href": "https://www.youtube.com/watch?v=Ppi2iTmprro"
+  },
+  "credits": [
+    {
+      "role": "Writer & Director",
+      "name": "Dan O'Brien"
+    }
+  ],
+  "notes": "Credit from the YouTube description. Add year and award only once confirmed."
+}

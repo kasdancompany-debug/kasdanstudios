@@ -1,0 +1,34 @@
+{
+  "slug": "chaplin-the-tramp-who-changed-the-world",
+  "status": "published",
+  "order": 12,
+  "featured": false,
+  "title": "Chaplin: The Tramp Who Changed the World",
+  "categories": [
+    "commercials"
+  ],
+  "disciplines": [
+    "Documentary"
+  ],
+  "summary": "The rise of cinema's first global icon, now streaming on AB Films TV and Fawesome.",
+  "overview": "An exploration of how Charlie Chaplin went from a poverty-stricken London childhood to creating the Tramp, blending laughter and humanity to shape film as an art form and a voice for social change. It's distributed on streaming channels including AB Films TV and Fawesome.",
+  "cover": {
+    "type": "image",
+    "src": "/work/chaplin-the-tramp-who-changed-the-world/cover.jpg",
+    "alt": "Still from the trailer for Chaplin: The Tramp Who Changed the World",
+    "width": 1280,
+    "height": 720
+  },
+  "film": {
+    "type": "youtube",
+    "id": "cp6kUjd17PM",
+    "title": "Chaplin: The Tramp Who Changed the World — official trailer",
+    "poster": "/work/chaplin-the-tramp-who-changed-the-world/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": {
+    "label": "Watch the trailer",
+    "href": "https://www.youtube.com/watch?v=cp6kUjd17PM"
+  },
+  "notes": "Channels confirmed from the owner's Filmhub statements (Nov 2026): AB Films TV, Future Today (Fawesome)."
+}

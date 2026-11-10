@@ -1,0 +1,34 @@
+{
+  "slug": "seclusion",
+  "status": "published",
+  "order": 14,
+  "featured": false,
+  "title": "Seclusion",
+  "categories": [
+    "commercials"
+  ],
+  "disciplines": [
+    "Film", "Thriller"
+  ],
+  "summary": "Three friends, one camping trip and a stranger who won't let them leave.",
+  "overview": "When three friends' camping trip goes wrong, they cross paths with a seemingly helpful stranger whose lonely obsession traps them in a nightmare of captivity. To get out, they have to outwit his twisted devotion before it consumes them.",
+  "cover": {
+    "type": "image",
+    "src": "/work/seclusion/cover.jpg",
+    "alt": "Still from the trailer for Seclusion",
+    "width": 1280,
+    "height": 720
+  },
+  "film": {
+    "type": "youtube",
+    "id": "HYqKdTaCMy8",
+    "title": "Seclusion — official trailer",
+    "poster": "/work/seclusion/cover.jpg",
+    "aspect": "16:9"
+  },
+  "link": {
+    "label": "Watch the trailer",
+    "href": "https://www.youtube.com/watch?v=HYqKdTaCMy8"
+  },
+  "notes": "Confirm format (feature vs short), year, credits and where it streams."
+}
