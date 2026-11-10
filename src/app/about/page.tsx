@@ -157,7 +157,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. Building our own brand */}
-      <section aria-labelledby="own-brand-title" className="bg-coal">
+      <section aria-labelledby="own-brand-title" className="gl-clear bg-coal">
         <div className="shell grid gap-14 py-28 md:grid-cols-12 md:gap-x-8 md:py-44">
           <div className="md:col-span-6">
             <Reveal>

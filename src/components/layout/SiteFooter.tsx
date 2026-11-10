@@ -8,7 +8,7 @@ export function SiteFooter({ nav }: { nav: NavItem[] }) {
   const socials = activeSocials();
 
   return (
-    <footer className="relative border-t border-line bg-ink">
+    <footer className="gl-clear relative border-t border-line bg-ink">
       <div className="shell pt-20 pb-10 md:pt-28">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-6">

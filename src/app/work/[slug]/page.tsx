@@ -174,7 +174,7 @@ export default async function ProjectPage({ params }: Props) {
 
       {/* 7. Film + gallery */}
       {(project.film || project.gallery.length > 0) && (
-        <section aria-label="Film and gallery" className="bg-coal py-20 md:py-32">
+        <section aria-label="Film and gallery" className="gl-clear bg-coal py-20 md:py-32">
           <div className="shell space-y-14 md:space-y-24">
             {project.film && (
               <Reveal variant="frame">

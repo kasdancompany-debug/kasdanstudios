@@ -618,6 +618,11 @@ html[data-gl="on"] [data-hero-media] {
 html[data-gl="on"] body {
   background: transparent;
 }
+/* The canvas sits behind the page, so an opaque section background would hide
+   every GL element inside it. Such sections let the emulsion show through. */
+html[data-gl="on"] .gl-clear {
+  background-color: transparent;
+}
 html[data-gl="on"] [data-gl-ready] {
   color: transparent !important;
 }

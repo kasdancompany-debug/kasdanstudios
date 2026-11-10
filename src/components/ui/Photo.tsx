@@ -38,7 +38,9 @@ export function Photo({
   className?: string;
 }) {
   return (
-    <GLMedia src={src} focus={focus} label={alt} className={cn(ratioClass[ratio], "overflow-hidden bg-coal", className)}>
+    // No background on this wrapper: the WebGL canvas draws *behind* the page,
+    // so anything opaque here would cover the GL copy once the <img> steps back.
+    <GLMedia src={src} focus={focus} label={alt} className={cn(ratioClass[ratio], "overflow-hidden", className)}>
       <Image
         src={src}
         alt={alt}

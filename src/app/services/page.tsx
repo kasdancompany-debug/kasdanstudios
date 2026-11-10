@@ -142,7 +142,7 @@ export default function ServicesPage() {
       <Marquee items={["Discover", "Develop", "Produce", "Deliver"]} />
 
       {/* Engagement models */}
-      <section aria-labelledby="engage-title" className="border-t border-line bg-coal">
+      <section aria-labelledby="engage-title" className="gl-clear border-t border-line bg-coal">
         <div className="shell py-28 md:py-40">
           <div className="grid gap-12 md:grid-cols-12 md:gap-x-8">
             <div className="md:col-span-5">
